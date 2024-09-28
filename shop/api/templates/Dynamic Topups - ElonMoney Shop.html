@@ -1,723 +1,262 @@
 <!DOCTYPE html>
 <!-- saved from url=(0096)https://elonmoney.cx/dashboard/dynamic-topups?tableSortColumn=created_at&tableSortDirection=desc -->
-<html lang="en" dir="ltr" class="antialiased bg-gray-100 filament js-focus-visible dark"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_Px7Imv"></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css" data-tag-name="trix-editor">trix-editor {
-  display: block;
-}
+<html lang="en" dir="ltr" class="antialiased bg-gray-100 filament js-focus-visible dark">
+<div id="in-page-channel-node-id" data-channel-name="in_page_channel_Px7Imv"></div>
 
-trix-editor:empty:not(:focus)::before {
-  content: attr(placeholder);
-  color: graytext;
-  cursor: text;
-  pointer-events: none;
-}
+<head>
+    {% load static %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css" data-tag-name="trix-editor">
+        trix-editor {
+            display: block;
+        }
 
-trix-editor a[contenteditable=false] {
-  cursor: text;
-}
+        trix-editor:empty:not(:focus)::before {
+            content: attr(placeholder);
+            color: graytext;
+            cursor: text;
+            pointer-events: none;
+        }
 
-trix-editor img {
-  max-width: 100%;
-  height: auto;
-}
+        trix-editor a[contenteditable=false] {
+            cursor: text;
+        }
 
-trix-editor [data-trix-attachment] figcaption textarea {
-  resize: none;
-}
+        trix-editor img {
+            max-width: 100%;
+            height: auto;
+        }
 
-trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
-  position: absolute;
-  left: -9999px;
-  max-height: 0px;
-}
+        trix-editor [data-trix-attachment] figcaption textarea {
+            resize: none;
+        }
 
-trix-editor [data-trix-attachment] figcaption[data-trix-placeholder]:empty::before {
-  content: attr(data-trix-placeholder);
-  color: graytext;
-}
+        trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+            position: absolute;
+            left: -9999px;
+            max-height: 0px;
+        }
 
-trix-editor [data-trix-cursor-target] {
-  display: inline-block !important;
-  width: 1px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-}
+        trix-editor [data-trix-attachment] figcaption[data-trix-placeholder]:empty::before {
+            content: attr(data-trix-placeholder);
+            color: graytext;
+        }
 
-trix-editor [data-trix-cursor-target=left] {
-  vertical-align: top !important;
-  margin-left: -1px !important;
-}
+        trix-editor [data-trix-cursor-target] {
+            display: inline-block !important;
+            width: 1px !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+        }
 
-trix-editor [data-trix-cursor-target=right] {
-  vertical-align: bottom !important;
-  margin-right: -1px !important;
-}</style><style type="text/css" data-tag-name="trix-toolbar">trix-toolbar {
-  display: block;
-}
+        trix-editor [data-trix-cursor-target=left] {
+            vertical-align: top !important;
+            margin-left: -1px !important;
+        }
 
-trix-toolbar {
-  white-space: nowrap;
-}
+        trix-editor [data-trix-cursor-target=right] {
+            vertical-align: bottom !important;
+            margin-right: -1px !important;
+        }
+    </style>
+    <style type="text/css" data-tag-name="trix-toolbar">
+        trix-toolbar {
+            display: block;
+        }
 
-trix-toolbar [data-trix-dialog] {
-  display: none;
-}
+        trix-toolbar {
+            white-space: nowrap;
+        }
 
-trix-toolbar [data-trix-dialog][data-trix-active] {
-  display: block;
-}
+        trix-toolbar [data-trix-dialog] {
+            display: none;
+        }
 
-trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
-  background-color: #ffdddd;
-}</style>
-        
+        trix-toolbar [data-trix-dialog][data-trix-active] {
+            display: block;
+        }
 
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR">
+        trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
+            background-color: #ffdddd;
+        }
+    </style>
 
-        
-        
-        <title>Dynamic Topups -  ElonMoney Shop</title>
 
-        
 
-        <style>
-            [x-cloak=""], [x-cloak="x-cloak"], [x-cloak="1"] { display: none !important; }
-            @media (max-width: 1023px) { [x-cloak="-lg"] { display: none !important; } }
-            @media (min-width: 1024px) { [x-cloak="lg"] { display: none !important; } }
-            :root {
-                --sidebar-width: 250px;
-                --collapsed-sidebar-width: 65px;
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR">
+
+
+
+    <title>Dynamic Topups - ElonMoney Shop</title>
+
+
+
+    <style>
+        [x-cloak=""],
+        [x-cloak="x-cloak"],
+        [x-cloak="1"] {
+            display: none !important;
+        }
+
+        @media (max-width: 1023px) {
+            [x-cloak="-lg"] {
+                display: none !important;
             }
-        </style>
+        }
 
-        <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+        @media (min-width: 1024px) {
+            [x-cloak="lg"] {
+                display: none !important;
+            }
+        }
 
-                    <link rel="preconnect" href="https://fonts.googleapis.com/">
-            <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-            <link href="./Dynamic Topups - ElonMoney Shop_files/css2" rel="stylesheet">
-        
-        
-        <link rel="preload" as="style" href="./Dynamic Topups - ElonMoney Shop_files/filament.58c4a07b.css"><link rel="stylesheet" href="./Dynamic Topups - ElonMoney Shop_files/filament.58c4a07b.css">
+        :root {
+            --sidebar-width: 250px;
+            --collapsed-sidebar-width: 65px;
+        }
+    </style>
 
-        
+    <style>
+        [wire\:loading],
+        [wire\:loading\.delay],
+        [wire\:loading\.inline-block],
+        [wire\:loading\.inline],
+        [wire\:loading\.block],
+        [wire\:loading\.flex],
+        [wire\:loading\.table],
+        [wire\:loading\.grid],
+        [wire\:loading\.inline-flex] {
+            display: none;
+        }
 
-                    <script>
-                const theme = localStorage.getItem('theme')
+        [wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest] {
+            display: none;
+        }
 
-                if ((theme === 'dark') || (! theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark')
-                }
-            </script>
-        
-        
-    </head>
+        [wire\:offline] {
+            display: none;
+        }
 
-    <body style="background-image: url(); background-size: cover;" class="filament-body bg-gray-100 text-gray-900 dark:text-gray-100 dark:bg-gray-900">
-        
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
 
-        <div class="filament-app-layout flex w-full min-h-screen overflow-x-clip">
-        <div x-data="{}" x-show="$store.sidebar.isOpen" x-transition.opacity.500ms="" x-on:click="$store.sidebar.close()" class="filament-sidebar-close-overlay fixed inset-0 z-20 w-full h-full bg-gray-900/50 lg:hidden" style="display: none;"></div>
+        input:-webkit-autofill,
+        select:-webkit-autofill,
+        textarea:-webkit-autofill {
+            animation-duration: 50000s;
+            animation-name: livewireautofill;
+        }
 
-        <aside x-data="{}" x-bind:class="$store.sidebar.isOpen ? &#39;filament-sidebar-open translate-x-0 max-w-[20em] lg:max-w-[var(--sidebar-width)]&#39; : &#39;-translate-x-full lg:translate-x-0 lg:max-w-[var(--collapsed-sidebar-width)] rtl:lg:-translate-x-0 rtl:translate-x-full&#39;" class="filament-sidebar fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-20 flex flex-col h-screen overflow-hidden shadow-2xl transition-all bg-white lg:border-r rtl:lg:border-r-0 rtl:lg:border-l w-[var(--sidebar-width)] lg:z-0 dark:bg-gray-800 dark:border-gray-700 -translate-x-full lg:translate-x-0 lg:max-w-[var(--collapsed-sidebar-width)] rtl:lg:-translate-x-0 rtl:translate-x-full">
-    <header class="filament-sidebar-header border-b h-[4rem] shrink-0 flex items-center justify-center relative dark:border-gray-700">
-        <div class="flex items-center justify-center px-6 w-full lg:px-4" x-show="$store.sidebar.isOpen || false || false" style="display: none;">
-                            <button type="button" class="filament-sidebar-collapse-button shrink-0 hidden lg:flex items-center justify-center w-10 h-10 text-primary-500 rounded-full hover:bg-gray-500/5 focus:bg-primary-500/10 focus:outline-none" x-bind:aria-label="$store.sidebar.isOpen ? &#39;Collapse sidebar&#39; : &#39;Expand sidebar&#39;" x-on:click.stop="$store.sidebar.isOpen ? $store.sidebar.close() : $store.sidebar.open()" x-transition:enter="lg:transition delay-100" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" aria-label="Expand sidebar">
-                    <svg class="h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.25 7.5L16 12L20.25 16.5M3.75 12H12M3.75 17.25H16M3.75 6.75H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                </button>
-            
-            <a href="https://elonmoney.cx/" data-turbo="false" class="block w-full lg:ml-3">
-                <div class="filament-brand text-xl font-bold tracking-tight dark:text-white">
-        ElonMoney Shop
-    </div>
-            </a>
-        </div>
+        @keyframes livewireautofill {
+            from {}
+        }
+    </style>
 
-                    <button type="button" class="filament-sidebar-close-button shrink-0 flex items-center justify-center w-10 h-10 text-primary-500 rounded-full hover:bg-gray-500/5 focus:bg-primary-500/10 focus:outline-none" x-bind:aria-label="$store.sidebar.isOpen ? &#39;Collapse sidebar&#39; : &#39;Expand sidebar&#39;" x-on:click.stop="$store.sidebar.isOpen ? $store.sidebar.close() : $store.sidebar.open()" x-show="(! $store.sidebar.isOpen) &amp;&amp; true" x-transition:enter="lg:transition delay-100" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" aria-label="Expand sidebar">
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-                </svg>
-            </button>
-            </header>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="{% static './Dynamic Topups - ElonMoney Shop_files/css2.css' %}" rel="stylesheet">
 
-    <nav class="flex-1 py-6 overflow-x-hidden overflow-y-auto filament-sidebar-nav">
-                
 
-        
+    <link rel="preload" as="style" href="{% static './Dynamic Topups - ElonMoney Shop_files/filament.58c4a07b.css' %}">
+    <link rel="stylesheet" href="{% static './Dynamic Topups - ElonMoney Shop_files/filament.58c4a07b.css' %}">
+
+
+
+    <script>
+        const theme = localStorage.getItem('theme')
+
+        if ((theme === 'dark') || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        }
+    </script>
+
+
+</head>
+
+<body style="background-image: url(); background-size: cover;"
+    class="filament-body bg-gray-100 text-gray-900 dark:text-gray-100 dark:bg-gray-900">
+
+
+    <div id="div_nav" class="filament-app-layout flex w-full min-h-screen overflow-x-clip">
+        <div x-data="{}" x-show="$store.sidebar.isOpen" x-transition.opacity.500ms=""
+            x-on:click="$store.sidebar.close()"
+            class="filament-sidebar-close-overlay fixed inset-0 z-20 w-full h-full bg-gray-900/50 lg:hidden"
+            style="display: none;"></div>
+
+        <aside id="aside1" x-data="{}"
+            x-bind:class="$store.sidebar.isOpen ? &#39;filament-sidebar-open translate-x-0 max-w-[20em] lg:max-w-[var(--sidebar-width)]&#39; : &#39;-translate-x-full lg:translate-x-0 lg:max-w-[var(--collapsed-sidebar-width)] rtl:lg:-translate-x-0 rtl:translate-x-full&#39;"
+            class="filament-sidebar fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-20 flex flex-col h-screen overflow-hidden shadow-2xl transition-all bg-white lg:border-r rtl:lg:border-r-0 rtl:lg:border-l w-[var(--sidebar-width)] lg:z-0 dark:bg-gray-800 dark:border-gray-700 -translate-x-full lg:translate-x-0 lg:max-w-[var(--collapsed-sidebar-width)] rtl:lg:-translate-x-0 rtl:translate-x-full">
+        </aside>
         <script>
-            if (localStorage.getItem('collapsedGroups') === null) {
-                localStorage.setItem('collapsedGroups', JSON.stringify([]))
-            }
+            fetch('nav')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('aside1').innerHTML = html;
+
+                    let currentPath = window.location.pathname;
+
+                    let navItems = document.querySelectorAll('.filament-sidebar-item a');
+
+                    navItems.forEach(item => {
+                        if (item.getAttribute("href") === currentPath) {
+                            item.classList.add("bg-primary-500", "text-white");
+                        } else {
+                            item.classList.remove("bg-primary-500", "text-white");
+                        }
+                    });
+                });
         </script>
-
-        <ul class="px-6 space-y-6">
-                            <li x-data="{ label: &#39;&#39; }" class="filament-sidebar-group">
-    
-    <ul x-show="! ($store.sidebar.groupIsCollapsed(label) &amp;&amp; $store.sidebar.isOpen)" x-collapse.duration.200ms="" class="text-sm space-y-1 -mx-3">
-                                    <li class="filament-sidebar-item overflow-hidden">
-    <a href="https://elonmoney.cx/dashboard" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Dashboard&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition hover:bg-gray-500/5 focus:bg-gray-500/5 dark:text-gray-300 dark:hover:bg-gray-700">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Dashboard
-            </span>
-        </div>
-
-            </a>
-</li>
-                        </ul>
-</li>
-
-                                    <li>
-                        <div class="border-t -mr-6 rtl:-mr-auto rtl:-ml-6 dark:border-gray-700"></div>
-                    </li>
-                                            <li x-data="{ label: &#39;Purchase Cards&#39; }" class="filament-sidebar-group">
-            <button x-on:click.prevent="$store.sidebar.toggleCollapsedGroup(label)" x-show="$store.sidebar.isOpen" class="flex items-center justify-between w-full" style="display: none;">
-            <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
-                
-                <p class="flex-1 font-bold uppercase text-xs tracking-wider">
-                    Purchase Cards
-                </p>
-            </div>
-
-                            <svg x-bind:class="$store.sidebar.groupIsCollapsed(label) || &#39;-rotate-180&#39;" class="w-3 h-3 text-gray-600 transition dark:text-gray-300 -rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-</svg>                    </button>
-    
-    <ul x-show="! ($store.sidebar.groupIsCollapsed(label) &amp;&amp; $store.sidebar.isOpen)" x-collapse.duration.200ms="" class="text-sm space-y-1 -mx-3 mt-2">
-                                    <li class="filament-sidebar-item overflow-hidden">
-    <a href="https://elonmoney.cx/dashboard/purchase-cards" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Shop #1 (Main Shop)&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition hover:bg-gray-500/5 focus:bg-gray-500/5 dark:text-gray-300 dark:hover:bg-gray-700">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Shop #1 (Main Shop)
-            </span>
-        </div>
-
-            </a>
-</li>
-                                                <li class="filament-sidebar-item overflow-hidden">
-    <a href="https://elonmoney.cx/dashboard/buy-shop2-access" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Shop #2 (Special Shop)&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition hover:bg-gray-500/5 focus:bg-gray-500/5 dark:text-gray-300 dark:hover:bg-gray-700">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Shop #2 (Special Shop)
-            </span>
-        </div>
-
-            </a>
-</li>
-                        </ul>
-</li>
-
-                                    <li>
-                        <div class="border-t -mr-6 rtl:-mr-auto rtl:-ml-6 dark:border-gray-700"></div>
-                    </li>
-                                            <li x-data="{ label: &#39;Card Management&#39; }" class="filament-sidebar-group">
-            <button x-on:click.prevent="$store.sidebar.toggleCollapsedGroup(label)" x-show="$store.sidebar.isOpen" class="flex items-center justify-between w-full" style="display: none;">
-            <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
-                
-                <p class="flex-1 font-bold uppercase text-xs tracking-wider">
-                    Card Management
-                </p>
-            </div>
-
-                            <svg x-bind:class="$store.sidebar.groupIsCollapsed(label) || &#39;-rotate-180&#39;" class="w-3 h-3 text-gray-600 transition dark:text-gray-300 -rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-</svg>                    </button>
-    
-    <ul x-show="! ($store.sidebar.groupIsCollapsed(label) &amp;&amp; $store.sidebar.isOpen)" x-collapse.duration.200ms="" class="text-sm space-y-1 -mx-3 mt-2">
-                                    <li class="filament-sidebar-item overflow-hidden">
-    <a href="https://elonmoney.cx/dashboard/orders" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Your Cards&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition hover:bg-gray-500/5 focus:bg-gray-500/5 dark:text-gray-300 dark:hover:bg-gray-700">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Your Cards
-            </span>
-        </div>
-
-            </a>
-</li>
-                        </ul>
-</li>
-
-                                    <li>
-                        <div class="border-t -mr-6 rtl:-mr-auto rtl:-ml-6 dark:border-gray-700"></div>
-                    </li>
-                                            <li x-data="{ label: &#39;Others&#39; }" class="filament-sidebar-group">
-            <button x-on:click.prevent="$store.sidebar.toggleCollapsedGroup(label)" x-show="$store.sidebar.isOpen" class="flex items-center justify-between w-full" style="display: none;">
-            <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
-                
-                <p class="flex-1 font-bold uppercase text-xs tracking-wider">
-                    Others
-                </p>
-            </div>
-
-                            <svg x-bind:class="$store.sidebar.groupIsCollapsed(label) || &#39;-rotate-180&#39;" class="w-3 h-3 text-gray-600 transition dark:text-gray-300 -rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-</svg>                    </button>
-    
-    <ul x-show="! ($store.sidebar.groupIsCollapsed(label) &amp;&amp; $store.sidebar.isOpen)" x-collapse.duration.200ms="" class="text-sm space-y-1 -mx-3 mt-2">
-                                    <li class="filament-sidebar-item overflow-hidden">
-    <a href="https://elonmoney.cx/dashboard/card-checker" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Card Checker&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition hover:bg-gray-500/5 focus:bg-gray-500/5 dark:text-gray-300 dark:hover:bg-gray-700">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Card Checker
-            </span>
-        </div>
-
-            </a>
-</li>
-                        </ul>
-</li>
-
-                                    <li>
-                        <div class="border-t -mr-6 rtl:-mr-auto rtl:-ml-6 dark:border-gray-700"></div>
-                    </li>
-                                            <li x-data="{ label: &#39;Account Management&#39; }" class="filament-sidebar-group">
-            <button x-on:click.prevent="$store.sidebar.toggleCollapsedGroup(label)" x-show="$store.sidebar.isOpen" class="flex items-center justify-between w-full" style="display: none;">
-            <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
-                
-                <p class="flex-1 font-bold uppercase text-xs tracking-wider">
-                    Account Management
-                </p>
-            </div>
-
-                            <svg x-bind:class="$store.sidebar.groupIsCollapsed(label) || &#39;-rotate-180&#39;" class="w-3 h-3 text-gray-600 transition dark:text-gray-300 -rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-</svg>                    </button>
-    
-    <ul x-show="! ($store.sidebar.groupIsCollapsed(label) &amp;&amp; $store.sidebar.isOpen)" x-collapse.duration.200ms="" class="text-sm space-y-1 -mx-3 mt-2">
-                                    <li class="filament-sidebar-item overflow-hidden">
-    <a href="https://elonmoney.cx/dashboard/topup" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Add Balance&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition hover:bg-gray-500/5 focus:bg-gray-500/5 dark:text-gray-300 dark:hover:bg-gray-700">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Add Balance
-            </span>
-        </div>
-
-            </a>
-</li>
-                                                <li class="filament-sidebar-item overflow-hidden filament-sidebar-item-active">
-    <a href="https://elonmoney.cx/dashboard/dynamic-topups" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Transaction History&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition bg-primary-500 text-white">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Transaction History
-            </span>
-        </div>
-
-            </a>
-</li>
-                        </ul>
-</li>
-
-                                    <li>
-                        <div class="border-t -mr-6 rtl:-mr-auto rtl:-ml-6 dark:border-gray-700"></div>
-                    </li>
-                                            <li x-data="{ label: &#39;Support&#39; }" class="filament-sidebar-group">
-            <button x-on:click.prevent="$store.sidebar.toggleCollapsedGroup(label)" x-show="$store.sidebar.isOpen" class="flex items-center justify-between w-full" style="display: none;">
-            <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
-                
-                <p class="flex-1 font-bold uppercase text-xs tracking-wider">
-                    Support
-                </p>
-            </div>
-
-                            <svg x-bind:class="$store.sidebar.groupIsCollapsed(label) || &#39;-rotate-180&#39;" class="w-3 h-3 text-gray-600 transition dark:text-gray-300 -rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-</svg>                    </button>
-    
-    <ul x-show="! ($store.sidebar.groupIsCollapsed(label) &amp;&amp; $store.sidebar.isOpen)" x-collapse.duration.200ms="" class="text-sm space-y-1 -mx-3 mt-2">
-                                    <li class="filament-sidebar-item overflow-hidden">
-    <a href="https://elonmoney.cx/dashboard/order-c-c-scan-real-pic-document" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Order CC Scan&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition hover:bg-gray-500/5 focus:bg-gray-500/5 dark:text-gray-300 dark:hover:bg-gray-700">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Order CC Scan
-            </span>
-        </div>
-
-            </a>
-</li>
-                                                <li class="filament-sidebar-item overflow-hidden">
-    <a href="https://elonmoney.cx/dashboard/tickets" x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()" x-data="{ tooltip: {} }" x-init="
-                Alpine.effect(() =&gt; {
-                    if (Alpine.store(&#39;sidebar&#39;).isOpen) {
-                        tooltip = false
-                    } else {
-                        tooltip = {
-                            content: &#39;Tickets&#39;,
-                            theme: Alpine.store(&#39;theme&#39;) === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;,
-                            placement: document.dir === &#39;rtl&#39; ? &#39;left&#39; : &#39;right&#39;,
-                        }
-                    }
-                })
-            " x-tooltip.html="tooltip" class="flex items-center justify-center gap-3 px-3 py-2 rounded-lg font-medium transition hover:bg-gray-500/5 focus:bg-gray-500/5 dark:text-gray-300 dark:hover:bg-gray-700">
-        <svg class="h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-</svg>
-        <div class="flex flex-1" x-show="$store.sidebar.isOpen" style="display: none;">
-            <span>
-                Tickets
-            </span>
-        </div>
-
-            </a>
-</li>
-                        </ul>
-</li>
-
-                                    </ul>
-
-                
-    </nav>
-
-    </aside>
 
         <div x-data="{}" x-bind:class="{
                     &#39;lg:pl-[var(--collapsed-sidebar-width)] rtl:lg:pr-[var(--collapsed-sidebar-width)]&#39;: ! $store.sidebar.isOpen,
                     &#39;filament-main-sidebar-open lg:pl-[var(--sidebar-width)] rtl:lg:pr-[var(--sidebar-width)]&#39;: $store.sidebar.isOpen,
-                }" x-bind:style="&#39;display: flex&#39;" class="filament-main flex-col gap-y-6 w-screen flex-1 rtl:lg:pl-0 hidden h-full transition-all lg:pl-[var(--collapsed-sidebar-width)] rtl:lg:pr-[var(--collapsed-sidebar-width)]" style="display: flex">
-            <header class="filament-main-topbar sticky top-0 z-10 flex h-16 w-full shrink-0 items-center border-b bg-white dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex items-center w-full px-2 sm:px-4 md:px-6 lg:px-8">
-        <button x-data="{}" x-bind:aria-label="$store.sidebar.isOpen ? &#39;Collapse sidebar&#39; : &#39;Expand sidebar&#39;" x-on:click="$store.sidebar.isOpen ? $store.sidebar.close() : $store.sidebar.open()" class="filament-sidebar-open-button shrink-0 flex items-center justify-center w-10 h-10 text-primary-500 rounded-full hover:bg-gray-500/5 focus:bg-primary-500/10 focus:outline-none lg:mr-4 rtl:lg:mr-0 rtl:lg:ml-4 lg:hidden" aria-label="Expand sidebar">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
-        </button>
+                }" x-bind:style="&#39;display: flex&#39;"
+            class="filament-main flex-col gap-y-6 w-screen flex-1 rtl:lg:pl-0 hidden h-full transition-all lg:pl-[var(--collapsed-sidebar-width)] rtl:lg:pr-[var(--collapsed-sidebar-width)]"
+            style="display: flex">
+            <header id="header1"
+                class="filament-main-topbar sticky top-0 z-10 flex h-16 w-full shrink-0 items-center border-b bg-white dark:bg-gray-800 dark:border-gray-700">
+            </header>
 
-        <div class="flex items-center justify-between flex-1">
-            <div class="filament-breadcrumbs flex-1">
-    <ul class="hidden gap-4 items-center font-medium text-sm lg:flex dark:text-white">
-                    <li>
-                <a href="https://elonmoney.cx/dashboard/dynamic-topups" class="dark:text-gray-300">
-                    Dynamic Topups
-                </a>
-            </li>
-
-                            <li class="h-6 border-r border-gray-300 -skew-x-12 dark:border-gray-500"></li>
-                                <li>
-                <a href="https://elonmoney.cx/dashboard/dynamic-topups?tableSortColumn=created_at&amp;tableSortDirection=desc#" class="text-gray-500 dark:text-gray-400">
-                    List
-                </a>
-            </li>
-
-                        </ul>
-</div>
-
-            <div wire:id="gBqeLB1Nq8ee8uJe034Z" class="filament-global-search flex items-center ml-4">
-        
-
-    
-        
-</div>
-
-<!-- Livewire Component wire-end:gBqeLB1Nq8ee8uJe034Z -->
-            <div wire:id="LoU1QnXvdRXKBTfdQcrS">
-    <div class="filament-notifications pointer-events-none fixed inset-4 z-50 mx-auto flex justify-end gap-3 items-end flex-col-reverse" role="status">
-            </div>
-
-    
-            <div x-data="{}" x-init="
-        window.addEventListener(&#39;EchoLoaded&#39;, () =&gt; {
-            window.Echo.private(&#39;App.Models.User.32376&#39;)
-                .notification((notification) =&gt; {
-                    setTimeout(() =&gt; $wire.handleBroadcastNotification(notification), 500)
-                })
-                .listen(&#39;.database-notifications.sent&#39;, () =&gt; {
-                    setTimeout(() =&gt; $wire.call(&#39;$refresh&#39;), 500)
-                })
-        })
-
-        if (window.Echo) {
-            window.dispatchEvent(new CustomEvent(&#39;EchoLoaded&#39;))
-        }
-    "></div>
-    </div>
-
-<!-- Livewire Component wire-end:LoU1QnXvdRXKBTfdQcrS -->
-			<style>
-	.gift-alert {
-		background: #4ade80;
-		color: black;
-		border-radius: 4px;
-		margin-right: 15px;
-	}
-</style>
-
-<a href="https://elonmoney.cx/dashboard/free-gift">
-    <div class="gift-alert group transition-colors flex font-semibold py-1 px-2 bg-green-400 rounded-sm">
-        <span style="font-size: 12px;" class="text-black">Claim your free card!</span>
-    </div>
-</a>
-
-            <a href="https://elonmoney.cx/dashboard/topup">
-    <div class="group transition-colors flex font-semibold py-1 px-1 bg-gray-900 rounded-full pl-3">
-        <span class="text-green-400">$ 0.00</span>
-        <button class="group-hover:bg-green-400 group-hover:text-green-400 w-6 h-6 text-primary bg-gray-800 inline-flex justify-center items-center rounded-full ml-2 text-xs">
-            <svg class="m-0 p-0 group-hover:text-green-900 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
-</svg>        </button>
-    </div>
-</a>
-
-            <div class="filament-dropdown" x-data="{
-        toggle: function (event) {
-            $refs.panel.toggle(event)
-        },
-        open: function (event) {
-            $refs.panel.open(event)
-        },
-        close: function (event) {
-            $refs.panel.close(event)
-        },
-    }">
-    <div x-on:click="toggle" class="filament-dropdown-trigger cursor-pointer ml-4">
-        <button class="block" aria-label="User menu">
-            <div class="w-10 h-10 rounded-full bg-gray-200 bg-cover bg-center dark:bg-gray-900" style="background-image: url(&#39;https://ui-avatars.com/api/?name=g&amp;color=FFFFFF&amp;background=111827&#39;)"></div>
-        </button>
-    </div>
-
-    <div x-ref="panel" x-float.placement.bottom-end.flip.offset="{ offset: 8 }" x-transition:enter-start="opacity-0 scale-95" x-transition:leave-end="opacity-0 scale-95" class="filament-dropdown-panel absolute z-10 w-full divide-y divide-gray-100 rounded-lg bg-white shadow-lg ring-1 ring-black/5 transition dark:divide-gray-700 dark:bg-gray-800 dark:ring-white/10 max-w-[14rem]" style="display: none;">
-        <div class="filament-dropdown-header flex w-full p-3 text-sm">
-                    <svg class="filament-dropdown-header-icon mr-2 h-5 w-5 rtl:ml-2 rtl:mr-0 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-</svg>        
-        <span class="filament-dropdown-header-label">
-            geniy228
-        </span>
-    </div>
-    
-    
-
-    <div class="filament-dropdown-list p-1" dark-mode="dark-mode" x-data="{
-            mode: null,
-
-            theme: null,
-
-            init: function () {
-                this.theme = localStorage.getItem(&#39;theme&#39;) || (this.isSystemDark() ? &#39;dark&#39; : &#39;light&#39;)
-                this.mode = localStorage.getItem(&#39;theme&#39;) ? &#39;manual&#39; : &#39;auto&#39;
-
-                window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).addEventListener(&#39;change&#39;, (event) =&gt; {
-                    if (this.mode === &#39;manual&#39;) return
-
-                    if (event.matches &amp;&amp; (! document.documentElement.classList.contains(&#39;dark&#39;))) {
-                        this.theme = &#39;dark&#39;
-
-                        document.documentElement.classList.add(&#39;dark&#39;)
-                    } else if ((! event.matches) &amp;&amp; document.documentElement.classList.contains(&#39;dark&#39;)) {
-                        this.theme = &#39;light&#39;
-
-                        document.documentElement.classList.remove(&#39;dark&#39;)
-                    }
-                })
-
-                $watch(&#39;theme&#39;, () =&gt; {
-                    if (this.mode === &#39;auto&#39;) return
-
-                    localStorage.setItem(&#39;theme&#39;, this.theme)
-
-                    if (this.theme === &#39;dark&#39; &amp;&amp; (! document.documentElement.classList.contains(&#39;dark&#39;))) {
-                        document.documentElement.classList.add(&#39;dark&#39;)
-                    } else if (this.theme === &#39;light&#39; &amp;&amp; document.documentElement.classList.contains(&#39;dark&#39;)) {
-                        document.documentElement.classList.remove(&#39;dark&#39;)
-                    }
-
-                    $dispatch(&#39;dark-mode-toggled&#39;, this.theme)
-                })
-            },
-
-            isSystemDark: function () {
-                return window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches
-            },
-        }">
-    <div>
-                            <button type="button" wire:loading.attr="disabled" class="filament-dropdown-list-item filament-dropdown-item group flex w-full items-center whitespace-nowrap rounded-md p-2 text-sm focus:outline-none hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500" x-show="theme === &#39;dark&#39;" x-on:click="close(); mode = &#39;manual&#39;; theme = &#39;light&#39;">
-                    <svg wire:loading.remove.delay="" wire:target="" class="filament-dropdown-list-item-icon mr-2 h-5 w-5 rtl:ml-2 rtl:mr-0 group-hover:text-white group-focus:text-white text-primary-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-</svg>        
-        
-        <span class="filament-dropdown-list-item-label truncate w-full text-start">
-            Toggle light mode
-        </span>
-
-            </button>
-
-                <button type="button" wire:loading.attr="disabled" class="filament-dropdown-list-item filament-dropdown-item group flex w-full items-center whitespace-nowrap rounded-md p-2 text-sm focus:outline-none hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500" x-show="theme === &#39;light&#39;" x-on:click="close(); mode = &#39;manual&#39;; theme = &#39;dark&#39;" style="display: none;">
-                    <svg wire:loading.remove.delay="" wire:target="" class="filament-dropdown-list-item-icon mr-2 h-5 w-5 rtl:ml-2 rtl:mr-0 group-hover:text-white group-focus:text-white text-primary-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
-</svg>        
-        
-        <span class="filament-dropdown-list-item-label truncate w-full text-start">
-            Toggle dark mode
-        </span>
-
-            </button>
-                    </div>
-
-        
-        <form action="https://elonmoney.cx/filament/logout" method="post">
-        <input type="hidden" name="_token" value="hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR">
-        <button type="submit" class="filament-dropdown-list-item filament-dropdown-item group flex w-full items-center whitespace-nowrap rounded-md p-2 text-sm focus:outline-none hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500">
-                            <svg class="filament-dropdown-list-item-icon mr-2 h-5 w-5 rtl:ml-2 rtl:mr-0 group-hover:text-white group-focus:text-white text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path>
-</svg>            
-            <span class="filament-dropdown-list-item-label truncate w-full text-start">
-                Sign out
-            </span>
-
-                    </button>
-    </form>
-</div>
-    </div>
-</div>
+            <script>
+                fetch('head')
+                    .then(response => response.text())
+                    .then(html => document.getElementById('header1').innerHTML = html);
+            </script>
 
 
-        </div>
-    </div>
-</header>
-
-            <div class="filament-main-content flex-1 w-full px-4 mx-auto md:px-6 lg:px-8 max-w-full">
-                
-
-                <div wire:id="QudXG1OyVbZhjpqhMrnC" class="filament-page filament-resources-list-records-page filament-resources-dynamic-topups">
-    <div class="space-y-6">
-                    <header class="filament-header space-y-2 items-start justify-between sm:flex sm:space-y-0 sm:space-x-4  sm:rtl:space-x-reverse sm:py-4">
-    <div>
-        <h1 class="filament-header-heading text-2xl font-bold tracking-tight">
-    Dynamic Topups
-</h1>
-
-            </div>
+            <div style="width: 100%;"
+                class="filament-main-content flex-1 w-full px-4 mx-auto md:px-6 lg:px-8 max-w-full">
 
 
-    </header>
-        
-        
+                <div wire:id="QudXG1OyVbZhjpqhMrnC"
+                    class="filament-page filament-resources-list-records-page filament-resources-dynamic-topups">
+                    <div class="space-y-6">
+                        <header
+                            class="filament-header space-y-2 items-start justify-between sm:flex sm:space-y-0 sm:space-x-4  sm:rtl:space-x-reverse sm:py-4">
+                            <div>
+                                <h1 class="filament-header-heading text-2xl font-bold tracking-tight">
+                                    Dynamic Topups
+                                </h1>
 
-        
-        
+                            </div>
 
-        <div x-data="{
+
+                        </header>
+
+
+
+
+
+
+                        <div x-data="{
 
         hasHeader: true,
 
@@ -812,16 +351,21 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
         },
 
     }" class="filament-tables-component">
-    <div class="border border-gray-300 shadow-sm bg-white rounded-xl filament-tables-container dark:bg-gray-800 dark:border-gray-700">
-    <div class="filament-tables-header-container" x-show="hasHeader = (false || selectedRecords.length)" style="display: none;">
-            
-            
-            <div x-show="false || selectedRecords.length" class="filament-tables-header-toolbar flex items-center justify-between p-2 h-14" x-bind:class="{
+                            <div
+                                class="border border-gray-300 shadow-sm bg-white rounded-xl filament-tables-container dark:bg-gray-800 dark:border-gray-700">
+                                <div class="filament-tables-header-container"
+                                    x-show="hasHeader = (false || selectedRecords.length)" style="display: none;">
+
+
+                                    <div x-show="false || selectedRecords.length"
+                                        class="filament-tables-header-toolbar flex items-center justify-between p-2 h-14"
+                                        x-bind:class="{
                     &#39;gap-2&#39;: false || selectedRecords.length,
                 }" style="display: none;">
-                <div class="flex items-center gap-2">
-                    
-                                            <div class="filament-dropdown filament-tables-bulk-actions" x-show="selectedRecords.length" x-data="{
+                                        <div class="flex items-center gap-2">
+
+                                            <div class="filament-dropdown filament-tables-bulk-actions"
+                                                x-show="selectedRecords.length" x-data="{
         toggle: function (event) {
             $refs.panel.toggle(event)
         },
@@ -832,344 +376,426 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
             $refs.panel.close(event)
         },
     }" style="display: none;">
-    <div x-on:click="toggle" class="filament-dropdown-trigger cursor-pointer">
-        <button title="Open actions" type="button" class="filament-icon-button flex items-center justify-center rounded-full relative hover:bg-gray-500/5 focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none text-primary-500 focus:bg-primary-500/10 dark:hover:bg-gray-300/5 w-10 h-10 filament-tables-bulk-actions-trigger">
-                    <span class="sr-only">
-                Open actions
-            </span>
-        
-        <svg wire:loading.remove.delay="" wire:target="" class="filament-icon-button-icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-</svg>
-        
-            </button>
-    </div>
+                                                <div x-on:click="toggle"
+                                                    class="filament-dropdown-trigger cursor-pointer">
+                                                    <button title="Open actions" type="button"
+                                                        class="filament-icon-button flex items-center justify-center rounded-full relative hover:bg-gray-500/5 focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none text-primary-500 focus:bg-primary-500/10 dark:hover:bg-gray-300/5 w-10 h-10 filament-tables-bulk-actions-trigger">
+                                                        <span class="sr-only">
+                                                            Open actions
+                                                        </span>
 
-    <div x-ref="panel" x-float.placement.bottom-start.flip.offset="{ offset: 8 }" x-transition:enter-start="opacity-0 scale-95" x-transition:leave-end="opacity-0 scale-95" class="filament-dropdown-panel absolute z-10 w-full divide-y divide-gray-100 rounded-lg bg-white shadow-lg ring-1 ring-black/5 transition dark:divide-gray-700 dark:bg-gray-800 dark:ring-white/10 max-w-[14rem]" style="display: none;">
-        <div class="filament-dropdown-list p-1" dark-mode="dark-mode">
-    
-</div>
-    </div>
-</div>
+                                                        <svg wire:loading.remove.delay="" wire:target=""
+                                                            class="filament-icon-button-icon w-5 h-5"
+                                                            xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                            aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                            </path>
+                                                        </svg>
+
+                                                    </button>
+                                                </div>
+
+                                                <div x-ref="panel"
+                                                    x-float.placement.bottom-start.flip.offset="{ offset: 8 }"
+                                                    x-transition:enter-start="opacity-0 scale-95"
+                                                    x-transition:leave-end="opacity-0 scale-95"
+                                                    class="filament-dropdown-panel absolute z-10 w-full divide-y divide-gray-100 rounded-lg bg-white shadow-lg ring-1 ring-black/5 transition dark:divide-gray-700 dark:bg-gray-800 dark:ring-white/10 max-w-[14rem]"
+                                                    style="display: none;">
+                                                    <div class="filament-dropdown-list p-1" dark-mode="dark-mode">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
+                                </div>
 
-                            </div>
-        </div>
 
-        
-        
-        <div class="filament-tables-table-container overflow-x-auto relative dark:border-gray-700 rounded-t-xl" x-bind:class="{
+
+                                <div style="width: 100%;"
+                                    class="filament-tables-table-container overflow-x-auto relative dark:border-gray-700 rounded-t-xl"
+                                    x-bind:class="{
                 &#39;rounded-t-xl&#39;: ! hasHeader,
                 &#39;border-t&#39;: hasHeader,
             }">
-                            <table class="filament-tables-table w-full text-start divide-y table-auto dark:divide-gray-700">
-            <thead>
-            <tr class="bg-gray-500/5">
-                <th class="filament-tables-header-cell p-0">
-    <button type="button" class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-        <span>
-            Amount
-        </span>
+                                    <table style="width: 100%;"
+                                        class="filament-tables-table w-full text-start divide-y table-auto dark:divide-gray-700">
+                                        <thead>
+                                            <tr class="bg-gray-500/5">
+                                                <th class="filament-tables-header-cell p-0">
+                                                    <button type="button"
+                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                        <span>
+                                                            Amount
+                                                        </span>
 
-            </button>
-</th>
-                                                    <th class="filament-tables-header-cell p-0">
-    <button type="button" class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-        <span>
-            Value
-        </span>
+                                                    </button>
+                                                </th>
+                                                <th class="filament-tables-header-cell p-0">
+                                                    <button type="button"
+                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                        <span>
+                                                            Value
+                                                        </span>
 
-            </button>
-</th>
-                                                    <th class="filament-tables-header-cell p-0">
-    <button type="button" class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-        <span>
-            Coin
-        </span>
+                                                    </button>
+                                                </th>
+                                                <th class="filament-tables-header-cell p-0">
+                                                    <button type="button"
+                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                        <span>
+                                                            Coin
+                                                        </span>
 
-            </button>
-</th>
-                                                    <th class="filament-tables-header-cell p-0">
-    <button type="button" class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-        <span>
-            Status
-        </span>
+                                                    </button>
+                                                </th>
+                                                <th class="filament-tables-header-cell p-0">
+                                                    <button type="button"
+                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                        <span>
+                                                            Status
+                                                        </span>
 
-            </button>
-</th>
-                                                    <th class="filament-tables-header-cell p-0">
-    <button type="button" class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-        <span>
-            Date
-        </span>
+                                                    </button>
+                                                </th>
+                                                <th class="filament-tables-header-cell p-0">
+                                                    <button type="button"
+                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                        <span>
+                                                            Date
+                                                        </span>
 
-            </button>
-</th>
-            </tr>
-        </thead>
-    
-    <tbody wire:sortable="" wire:end.stop="reorderTable($event.target.sortable.toArray())" wire:sortable.options="{ animation: 100 }" class="divide-y whitespace-nowrap dark:divide-gray-700">
-        <tr class="filament-tables-row transition" wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33631" x-bind:class="{
+                                                    </button>
+                                                </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody wire:sortable=""
+                                            wire:end.stop="reorderTable($event.target.sortable.toArray())"
+                                            wire:sortable.options="{ animation: 100 }"
+                                            class="divide-y whitespace-nowrap dark:divide-gray-700">
+                                            <tr class="filament-tables-row transition"
+                                                wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33631" x-bind:class="{
                                     &#39;bg-gray-50 dark:bg-gray-500/10&#39;: isRecordSelected(&#39;33631&#39;),
                                 }">
-    <td class="filament-tables-reorder-cell w-4 px-4 whitespace-nowrap hidden">
-    
-</td>
+                                                <td
+                                                    class="filament-tables-reorder-cell w-4 px-4 whitespace-nowrap hidden">
 
-                                
-                                
-                                
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.amount" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-text-column px-4 py-3">
-    
-    <div class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        
-        <span class="">
-            $ 0.00
-        </span>
+                                                </td>
 
-            </div>
 
-    </div>
 
-    </div>
-</td>
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.btc" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-text-column px-4 py-3">
-    
-    <div class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        
-        <span class="">
-            0.00000000 BTC
-        </span>
 
-            </div>
 
-    </div>
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.amount"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-text-column px-4 py-3">
 
-    </div>
-</td>
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.ticker" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-text-column px-4 py-3">
-    
-    <div class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        
-        <span class="">
-            BTC
-        </span>
+                                                            <div
+                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
 
-            </div>
+                                                                <span class="">
+                                                                    $ 0.00
+                                                                </span>
 
-    </div>
+                                                            </div>
 
-    </div>
-</td>
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.status" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-badge-column flex px-4 py-3">
-            <div class="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse min-h-6 px-2 py-0.5 text-sm font-medium tracking-tight rounded-xl whitespace-nowrap text-danger-700 bg-danger-500/10 dark:text-danger-500">
-            
-            <span>
-                Unconfirmed
-            </span>
+                                                        </div>
 
-                    </div>
-    </div>
+                                                    </div>
+                                                </td>
 
-    </div>
-</td>
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.created_at" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-text-column px-4 py-3">
-    
-    <div class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        
-        <span class="">
-            Sep 27, 2024
-        </span>
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.btc"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-text-column px-4 py-3">
 
-            </div>
+                                                            <div
+                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
 
-    </div>
+                                                                <span class="">
+                                                                    0.00000000 BTC
+                                                                </span>
 
-    </div>
-</td>
-                                
-                                
-                                <td class="w-full px-4 py-4 animate-pulse hidden" colspan="5" wire:loading.class.remove.delay="hidden" wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33631.loading-cell" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="h-4 bg-gray-300 rounded-md dark:bg-gray-600"></div>
-</td>
-</tr>
-                                                    
-                            <tr class="filament-tables-row transition" wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33630" x-bind:class="{
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.ticker"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-text-column px-4 py-3">
+
+                                                            <div
+                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+
+                                                                <span class="">
+                                                                    BTC
+                                                                </span>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.status"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-badge-column flex px-4 py-3">
+                                                            <div
+                                                                class="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse min-h-6 px-2 py-0.5 text-sm font-medium tracking-tight rounded-xl whitespace-nowrap text-danger-700 bg-danger-500/10 dark:text-danger-500">
+
+                                                                <span>
+                                                                    Unconfirmed
+                                                                </span>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33631.column.created_at"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-text-column px-4 py-3">
+
+                                                            <div
+                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+
+                                                                <span class="">
+                                                                    Sep 27, 2024
+                                                                </span>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+
+
+                                                <td class="w-full px-4 py-4 animate-pulse hidden" colspan="5"
+                                                    wire:loading.class.remove.delay="hidden"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33631.loading-cell"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="h-4 bg-gray-300 rounded-md dark:bg-gray-600"></div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="filament-tables-row transition"
+                                                wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33630" x-bind:class="{
                                     &#39;bg-gray-50 dark:bg-gray-500/10&#39;: isRecordSelected(&#39;33630&#39;),
                                 }">
-    <td class="filament-tables-reorder-cell w-4 px-4 whitespace-nowrap hidden">
-    
-</td>
+                                                <td
+                                                    class="filament-tables-reorder-cell w-4 px-4 whitespace-nowrap hidden">
 
-                                
-                                
-                                
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.amount" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-text-column px-4 py-3">
-    
-    <div class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        
-        <span class="">
-            $ 0.00
-        </span>
+                                                </td>
 
-            </div>
 
-    </div>
 
-    </div>
-</td>
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.btc" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-text-column px-4 py-3">
-    
-    <div class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        
-        <span class="">
-            0.00000000 BTC
-        </span>
 
-            </div>
 
-    </div>
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.amount"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-text-column px-4 py-3">
 
-    </div>
-</td>
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.ticker" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-text-column px-4 py-3">
-    
-    <div class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        
-        <span class="">
-            BTC
-        </span>
+                                                            <div
+                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
 
-            </div>
+                                                                <span class="">
+                                                                    $ 0.00
+                                                                </span>
 
-    </div>
+                                                            </div>
 
-    </div>
-</td>
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.status" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-badge-column flex px-4 py-3">
-            <div class="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse min-h-6 px-2 py-0.5 text-sm font-medium tracking-tight rounded-xl whitespace-nowrap text-danger-700 bg-danger-500/10 dark:text-danger-500">
-            
-            <span>
-                Unconfirmed
-            </span>
+                                                        </div>
 
-                    </div>
-    </div>
+                                                    </div>
+                                                </td>
 
-    </div>
-</td>
-                                                                    
-                                    <td class="filament-tables-cell dark:text-white" wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.created_at" wire:loading.remove.delay="wire:loading.remove.delay" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="filament-tables-column-wrapper">
-            <div class="filament-tables-text-column px-4 py-3">
-    
-    <div class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-        
-        <span class="">
-            Sep 27, 2024
-        </span>
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.btc"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-text-column px-4 py-3">
 
-            </div>
+                                                            <div
+                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
 
-    </div>
+                                                                <span class="">
+                                                                    0.00000000 BTC
+                                                                </span>
 
-    </div>
-</td>
-                                
-                                
-                                <td class="w-full px-4 py-4 animate-pulse hidden" colspan="5" wire:loading.class.remove.delay="hidden" wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33630.loading-cell" wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-    <div class="h-4 bg-gray-300 rounded-md dark:bg-gray-600"></div>
-</td>
-</tr>
-    </tbody>
+                                                            </div>
 
-    </table>
-                    </div>
+                                                        </div>
 
-                    <div class="filament-tables-pagination-container p-2 border-t dark:border-gray-700">
-                <nav role="navigation" aria-label="Pagination Navigation" class="filament-tables-pagination flex items-center justify-between">
-    <div class="flex justify-between items-center flex-1 lg:hidden">
-        <div class="w-10">
-                    </div>
+                                                    </div>
+                                                </td>
 
-                    <div class="flex items-center space-x-2 filament-tables-pagination-records-per-page-selector rtl:space-x-reverse">
-    <select wire:model="tableRecordsPerPage" id="tableRecordsPerPageSelect" class="h-8 text-sm pr-8 leading-none transition duration-75 border-gray-300 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 dark:text-white dark:bg-gray-700 dark:border-gray-600 dark:focus:border-primary-500">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="-1">All</option>
-            </select>
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.ticker"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-text-column px-4 py-3">
 
-    <label for="tableRecordsPerPageSelect" class="text-sm font-medium dark:text-white">
-        per page
-    </label>
-</div>
-        
-        <div class="w-10">
-                    </div>
-    </div>
+                                                            <div
+                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
 
-    <div class="hidden flex-1 items-center lg:grid grid-cols-3">
-        <div class="flex items-center">
-                            <div class="pl-2 text-sm font-medium dark:text-white">
-                                            Showing 1 to 2 of 2 results
-                                    </div>
-                    </div>
+                                                                <span class="">
+                                                                    BTC
+                                                                </span>
 
-        <div class="flex items-center justify-center">
-                            <div class="flex items-center space-x-2 filament-tables-pagination-records-per-page-selector rtl:space-x-reverse">
-    <select wire:model="tableRecordsPerPage" id="tableRecordsPerPageSelect" class="h-8 text-sm pr-8 leading-none transition duration-75 border-gray-300 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 dark:text-white dark:bg-gray-700 dark:border-gray-600 dark:focus:border-primary-500">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="-1">All</option>
-            </select>
+                                                            </div>
 
-    <label for="tableRecordsPerPageSelect" class="text-sm font-medium dark:text-white">
-        per page
-    </label>
-</div>
-                    </div>
+                                                        </div>
 
-        <div class="flex items-center justify-end">
+                                                    </div>
+                                                </td>
+
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.status"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-badge-column flex px-4 py-3">
+                                                            <div
+                                                                class="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse min-h-6 px-2 py-0.5 text-sm font-medium tracking-tight rounded-xl whitespace-nowrap text-danger-700 bg-danger-500/10 dark:text-danger-500">
+
+                                                                <span>
+                                                                    Unconfirmed
+                                                                </span>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+
+                                                <td class="filament-tables-cell dark:text-white"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.created_at"
+                                                    wire:loading.remove.delay="wire:loading.remove.delay"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="filament-tables-column-wrapper">
+                                                        <div class="filament-tables-text-column px-4 py-3">
+
+                                                            <div
+                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+
+                                                                <span class="">
+                                                                    Sep 27, 2024
+                                                                </span>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+
+
+                                                <td class="w-full px-4 py-4 animate-pulse hidden" colspan="5"
+                                                    wire:loading.class.remove.delay="hidden"
+                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33630.loading-cell"
+                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                    <div class="h-4 bg-gray-300 rounded-md dark:bg-gray-600"></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                                <div class="filament-tables-pagination-container p-2 border-t dark:border-gray-700">
+                                    <nav role="navigation" aria-label="Pagination Navigation"
+                                        class="filament-tables-pagination flex items-center justify-between">
+                                        <div class="flex justify-between items-center flex-1 lg:hidden">
+                                            <div class="w-10">
+                                            </div>
+
+                                            <div
+                                                class="flex items-center space-x-2 filament-tables-pagination-records-per-page-selector rtl:space-x-reverse">
+                                                <select wire:model="tableRecordsPerPage" id="tableRecordsPerPageSelect"
+                                                    class="h-8 text-sm pr-8 leading-none transition duration-75 border-gray-300 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 dark:text-white dark:bg-gray-700 dark:border-gray-600 dark:focus:border-primary-500">
+                                                    <option value="5">5</option>
+                                                    <option value="10">10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">50</option>
+                                                    <option value="-1">All</option>
+                                                </select>
+
+                                                <label for="tableRecordsPerPageSelect"
+                                                    class="text-sm font-medium dark:text-white">
+                                                    per page
+                                                </label>
+                                            </div>
+
+                                            <div class="w-10">
+                                            </div>
+                                        </div>
+
+                                        <div class="hidden flex-1 items-center lg:grid grid-cols-3">
+                                            <div class="flex items-center">
+                                                <div class="pl-2 text-sm font-medium dark:text-white">
+                                                    Showing 1 to 2 of 2 results
                                                 </div>
-    </div>
-</nav>
-            </div>
-</div>
+                                            </div>
 
-    <form wire:submit.prevent="callMountedTableAction">
-        
-        <div x-data="{
+                                            <div class="flex items-center justify-center">
+                                                <div
+                                                    class="flex items-center space-x-2 filament-tables-pagination-records-per-page-selector rtl:space-x-reverse">
+                                                    <select wire:model="tableRecordsPerPage"
+                                                        id="tableRecordsPerPageSelect"
+                                                        class="h-8 text-sm pr-8 leading-none transition duration-75 border-gray-300 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 dark:text-white dark:bg-gray-700 dark:border-gray-600 dark:focus:border-primary-500">
+                                                        <option value="5">5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="-1">All</option>
+                                                    </select>
+
+                                                    <label for="tableRecordsPerPageSelect"
+                                                        class="text-sm font-medium dark:text-white">
+                                                        per page
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex items-center justify-end">
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <form wire:submit.prevent="callMountedTableAction">
+
+                                <div x-data="{
 
         isOpen: false,
 
@@ -1187,53 +813,81 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
             this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39; }))
         },
 
-    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39;) close()" x-on:open-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39;) open()" role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
-    
+    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39;) close()"
+                                    x-on:open-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39;) open()"
+                                    role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
 
-    <div x-show="isOpen" x-transition:enter="ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center" style="display: none;">
-        <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39; })" aria-hidden="true" class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer"></div>
 
-        <div x-show="isOpen" x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39; })" x-transition:enter="ease duration-300" x-transition:leave="ease duration-300" x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0" x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8" x-ref="modalContainer" class="relative w-full cursor-pointer pointer-events-none my-auto p-4" x-init="this.livewire = $wire.__instance" x-on:modal-closed.stop="if (&#39;mountedTableAction&#39; in this.livewire?.serverMemo.data) {
+                                    <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                        x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                        x-transition:leave-end="opacity-0"
+                                        class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                        style="display: none;">
+                                        <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39; })"
+                                            aria-hidden="true"
+                                            class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                        </div>
+
+                                        <div x-show="isOpen"
+                                            x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39; })"
+                                            x-transition:enter="ease duration-300"
+                                            x-transition:leave="ease duration-300"
+                                            x-transition:enter-start="translate-y-8"
+                                            x-transition:enter-end="translate-y-0"
+                                            x-transition:leave-start="translate-y-0"
+                                            x-transition:leave-end="translate-y-8" x-ref="modalContainer"
+                                            class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                            x-init="this.livewire = $wire.__instance" x-on:modal-closed.stop="if (&#39;mountedTableAction&#39; in this.livewire?.serverMemo.data) {
                     this.livewire.set(&#39;mountedTableAction&#39;, null)
                 }
 
                 if (&#39;mountedTableActionRecord&#39; in this.livewire?.serverMemo.data) {
                     this.livewire.set(&#39;mountedTableActionRecord&#39;, null)
                 }" style="display: none;">
-            <div class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
-                                    <button tabindex="-1" type="button" class="absolute top-2 right-2 rtl:right-auto rtl:left-2" x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39; })">
-                        <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)" tabindex="-1" class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-</svg>
-                        <span class="sr-only">
-                            Close
-                        </span>
-                    </button>
-                
-                <div class="">
-                    <div class="space-y-2">
-                        
+                                            <div
+                                                class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                                <button tabindex="-1" type="button"
+                                                    class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                                    x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-action&#39; })">
+                                                    <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                        tabindex="-1"
+                                                        class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                        fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                    <span class="sr-only">
+                                                        Close
+                                                    </span>
+                                                </button>
+
+                                                <div class="">
+                                                    <div class="space-y-2">
+
+                                                    </div>
+
+                                                    <div class="filament-modal-content space-y-2 p-2">
+
+
+
+                                                    </div>
+
+                                                    <div class="space-y-2">
+
+                                                    </div>
+                                                </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
 
-                    <div class="filament-modal-content space-y-2 p-2">
-                        
-                        
-                        
-                    </div>
+                            <form wire:submit.prevent="callMountedTableBulkAction">
 
-                    <div class="space-y-2">
-                        
-                                            </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    </form>
-
-    <form wire:submit.prevent="callMountedTableBulkAction">
-        
-        <div x-data="{
+                                <div x-data="{
 
         isOpen: false,
 
@@ -1251,56 +905,86 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
             this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39; }))
         },
 
-    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39;) close()" x-on:open-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39;) open()" role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
-    
+    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39;) close()"
+                                    x-on:open-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39;) open()"
+                                    role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
 
-    <div x-show="isOpen" x-transition:enter="ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center" style="display: none;">
-        <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39; })" aria-hidden="true" class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer"></div>
 
-        <div x-show="isOpen" x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39; })" x-transition:enter="ease duration-300" x-transition:leave="ease duration-300" x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0" x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8" x-ref="modalContainer" class="relative w-full cursor-pointer pointer-events-none my-auto p-4" x-init="this.livewire = $wire.__instance" x-on:modal-closed.stop="if (&#39;mountedTableBulkAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedTableBulkAction&#39;, null)" style="display: none;">
-            <div class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
-                                    <button tabindex="-1" type="button" class="absolute top-2 right-2 rtl:right-auto rtl:left-2" x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39; })">
-                        <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)" tabindex="-1" class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-</svg>
-                        <span class="sr-only">
-                            Close
-                        </span>
-                    </button>
-                
-                <div class="">
-                    <div class="space-y-2">
-                        
+                                    <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                        x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                        x-transition:leave-end="opacity-0"
+                                        class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                        style="display: none;">
+                                        <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39; })"
+                                            aria-hidden="true"
+                                            class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                        </div>
+
+                                        <div x-show="isOpen"
+                                            x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39; })"
+                                            x-transition:enter="ease duration-300"
+                                            x-transition:leave="ease duration-300"
+                                            x-transition:enter-start="translate-y-8"
+                                            x-transition:enter-end="translate-y-0"
+                                            x-transition:leave-start="translate-y-0"
+                                            x-transition:leave-end="translate-y-8" x-ref="modalContainer"
+                                            class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                            x-init="this.livewire = $wire.__instance"
+                                            x-on:modal-closed.stop="if (&#39;mountedTableBulkAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedTableBulkAction&#39;, null)"
+                                            style="display: none;">
+                                            <div
+                                                class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                                <button tabindex="-1" type="button"
+                                                    class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                                    x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-table-bulk-action&#39; })">
+                                                    <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                        tabindex="-1"
+                                                        class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                        fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                    <span class="sr-only">
+                                                        Close
+                                                    </span>
+                                                </button>
+
+                                                <div class="">
+                                                    <div class="space-y-2">
+
+                                                    </div>
+
+                                                    <div class="filament-modal-content space-y-2 p-2">
+
+
+
+                                                    </div>
+
+                                                    <div class="space-y-2">
+
+                                                    </div>
+                                                </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
 
-                    <div class="filament-modal-content space-y-2 p-2">
-                        
-                        
-                        
+                        </div>
+
+
+
+
+
+
                     </div>
 
-                    <div class="space-y-2">
-                        
-                                            </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    </form>
+                    <form wire:submit.prevent="callMountedAction">
 
-    </div>
-
-        
-
-        
-        
-
-            </div>
-
-    <form wire:submit.prevent="callMountedAction">
-        
-        <div x-data="{
+                        <div x-data="{
 
         isOpen: false,
 
@@ -1318,46 +1002,74 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
             this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;page-action&#39; }))
         },
 
-    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;page-action&#39;) close()" x-on:open-modal.window="if ($event.detail.id === &#39;page-action&#39;) open()" role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
-    
+    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;page-action&#39;) close()"
+                            x-on:open-modal.window="if ($event.detail.id === &#39;page-action&#39;) open()"
+                            role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
 
-    <div x-show="isOpen" x-transition:enter="ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center" style="display: none;">
-        <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })" aria-hidden="true" class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer"></div>
 
-        <div x-show="isOpen" x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })" x-transition:enter="ease duration-300" x-transition:leave="ease duration-300" x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0" x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8" x-ref="modalContainer" class="relative w-full cursor-pointer pointer-events-none my-auto p-4" x-init="this.livewire = $wire.__instance" x-on:modal-closed.stop="if (&#39;mountedAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedAction&#39;, null)" style="display: none;">
-            <div class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
-                                    <button tabindex="-1" type="button" class="absolute top-2 right-2 rtl:right-auto rtl:left-2" x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })">
-                        <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)" tabindex="-1" class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-</svg>
-                        <span class="sr-only">
-                            Close
-                        </span>
-                    </button>
-                
-                <div class="">
-                    <div class="space-y-2">
-                        
+                            <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                style="display: none;">
+                                <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })"
+                                    aria-hidden="true"
+                                    class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                </div>
+
+                                <div x-show="isOpen"
+                                    x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })"
+                                    x-transition:enter="ease duration-300" x-transition:leave="ease duration-300"
+                                    x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0"
+                                    x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8"
+                                    x-ref="modalContainer"
+                                    class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                    x-init="this.livewire = $wire.__instance"
+                                    x-on:modal-closed.stop="if (&#39;mountedAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedAction&#39;, null)"
+                                    style="display: none;">
+                                    <div
+                                        class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                        <button tabindex="-1" type="button"
+                                            class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                            x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })">
+                                            <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                tabindex="-1"
+                                                class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="sr-only">
+                                                Close
+                                            </span>
+                                        </button>
+
+                                        <div class="">
+                                            <div class="space-y-2">
+
                                             </div>
 
-                    <div class="filament-modal-content space-y-2 p-2">
-                        
-                        
-                        
-                    </div>
+                                            <div class="filament-modal-content space-y-2 p-2">
 
-                    <div class="space-y-2">
-                        
+
+
                                             </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    </form>
 
-    <form wire:submit.prevent="callMountedFormComponentAction">
-    <div x-data="{
+                                            <div class="space-y-2">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form wire:submit.prevent="callMountedFormComponentAction">
+                        <div x-data="{
 
         isOpen: false,
 
@@ -1375,83 +1087,117 @@ trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
             this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39; }))
         },
 
-    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39;) close()" x-on:open-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39;) open()" role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
-    
+    }" x-trap.noscroll="isOpen"
+                            x-on:close-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39;) close()"
+                            x-on:open-modal.window="if ($event.detail.id === &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39;) open()"
+                            role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
 
-    <div x-show="isOpen" x-transition:enter="ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center" style="display: none;">
-        <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39; })" aria-hidden="true" class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer"></div>
 
-        <div x-show="isOpen" x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39; })" x-transition:enter="ease duration-300" x-transition:leave="ease duration-300" x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0" x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8" x-ref="modalContainer" class="relative w-full cursor-pointer pointer-events-none my-auto p-4" x-init="this.livewire = $wire.__instance" x-on:modal-closed.stop="if (&#39;mountedFormComponentAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedFormComponentAction&#39;, null)" style="display: none;">
-            <div class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
-                                    <button tabindex="-1" type="button" class="absolute top-2 right-2 rtl:right-auto rtl:left-2" x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39; })">
-                        <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)" tabindex="-1" class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-</svg>
-                        <span class="sr-only">
-                            Close
-                        </span>
-                    </button>
-                
-                <div class="">
-                    <div class="space-y-2">
-                        
+                            <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                style="display: none;">
+                                <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39; })"
+                                    aria-hidden="true"
+                                    class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                </div>
+
+                                <div x-show="isOpen"
+                                    x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39; })"
+                                    x-transition:enter="ease duration-300" x-transition:leave="ease duration-300"
+                                    x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0"
+                                    x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8"
+                                    x-ref="modalContainer"
+                                    class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                    x-init="this.livewire = $wire.__instance"
+                                    x-on:modal-closed.stop="if (&#39;mountedFormComponentAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedFormComponentAction&#39;, null)"
+                                    style="display: none;">
+                                    <div
+                                        class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                        <button tabindex="-1" type="button"
+                                            class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                            x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;QudXG1OyVbZhjpqhMrnC-form-component-action&#39; })">
+                                            <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                tabindex="-1"
+                                                class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="sr-only">
+                                                Close
+                                            </span>
+                                        </button>
+
+                                        <div class="">
+                                            <div class="space-y-2">
+
                                             </div>
 
-                    <div class="filament-modal-content space-y-2 p-2">
-                        
-                        
-                        
-                    </div>
+                                            <div class="filament-modal-content space-y-2 p-2">
 
-                    <div class="space-y-2">
-                        
+
+
                                             </div>
+
+                                            <div class="space-y-2">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</form>
+
+                <!-- Livewire Component wire-end:QudXG1OyVbZhjpqhMrnC -->
 
 
-    </div>
-
-<!-- Livewire Component wire-end:QudXG1OyVbZhjpqhMrnC -->
-
-                
             </div>
 
             <div class="filament-main-footer py-4 shrink-0">
                 <div class="filament-footer flex items-center justify-center">
-    
 
-    
-    
-</div>
+
+
+
+                </div>
 
 
             </div>
         </div>
     </div>
 
-        
 
-        <script src="./Dynamic Topups - ElonMoney Shop_files/livewire.js" data-turbo-eval="false" data-turbolinks-eval="false"></script><script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
 
-        <script>
-            window.filamentData = [];
-        </script>
+    <script src="{% static './Dynamic Topups - ElonMoney Shop_files/livewire.js' %}" data-turbo-eval="false"
+        data-turbolinks-eval="false"></script>
+    <script data-turbo-eval="false"
+        data-turbolinks-eval="false">window.livewire = new Livewire(); window.Livewire = window.livewire; window.livewire_app_url = ''; window.livewire_token = 'hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR'; window.deferLoadingAlpine = function (callback) { window.addEventListener('livewire:load', function () { callback(); }); }; let started = false; window.addEventListener('alpine:initializing', function () { if (!started) { window.livewire.start(); started = true; } }); document.addEventListener("DOMContentLoaded", function () { if (!started) { window.livewire.start(); started = true; } });</script>
 
-        
-        
-        <script defer="" src="./Dynamic Topups - ElonMoney Shop_files/app.js"></script>
+    <script>
+        window.filamentData = [];
+    </script>
 
-        
-        
-        
-        
 
-        
-    
 
-</body></html>
+    <script defer="" src="{% static './Dynamic Topups - ElonMoney Shop_files/app.js' %}"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

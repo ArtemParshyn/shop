@@ -89,7 +89,8 @@
         <div x-on:click="toggle" class="filament-dropdown-trigger cursor-pointer ml-4">
             <button class="block" aria-label="User menu">
                 <div class="w-10 h-10 rounded-full bg-gray-200 bg-cover bg-center dark:bg-gray-900"
-                    style="background-image: url(&#39;https://ui-avatars.com/api/?name=g&amp;color=FFFFFF&amp;background=111827&#39;)">
+                    style="background-image: url(https://ui-avatars.com/api/?name={{ user }}&color=FFFFFF&background=111827
+)">
                 </div>
             </button>
         </div>
@@ -106,7 +107,7 @@
                         clip-rule="evenodd"></path>
                 </svg>
                 <span class="filament-dropdown-header-label">
-                    geniy228
+                    {{user}}
                 </span>
             </div>
 
@@ -155,7 +156,7 @@
             },
         }">
                 <div>
-                    <button type="button" wire:loading.attr="disabled"
+                    <button type="button" wire:loading.attr="disabled" 
                         class="filament-dropdown-list-item filament-dropdown-item group flex w-full items-center whitespace-nowrap rounded-md p-2 text-sm focus:outline-none hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500"
                         x-show="theme === &#39;dark&#39;"
                         x-on:click="close(); mode = &#39;manual&#39;; theme = &#39;light&#39;">
@@ -194,7 +195,7 @@
                 </div>
 
 
-                <form action="https://elonmoney.cx/filament/logout" method="post">
+                <form action="{%url 'logout'%}">
                     <input type="hidden" name="_token" value="hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR">
                     <button type="submit"
                         class="filament-dropdown-list-item filament-dropdown-item group flex w-full items-center whitespace-nowrap rounded-md p-2 text-sm focus:outline-none hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500">

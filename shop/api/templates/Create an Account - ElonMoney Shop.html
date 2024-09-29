@@ -174,9 +174,7 @@
 
 </head>
 
-<body style="background-image: url(); background-size: cover;" class="filament-body bg-gray-100 text-gray-900">
-
-
+<body class="filament-body bg-gray-100 text-gray-900">
   <div class="filament-login-page flex items-center justify-center min-h-screen bg-gray-100 text-gray-900 py-12">
     <div class="w-screen px-6 -mt-16 space-y-8 md:mt-0 md:px-2 max-w-md">
       <div class="p-8 space-y-4 bg-white/50 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-2xl relative">
@@ -190,180 +188,107 @@
           Create an Account
         </h2>
 
-        <div>
-          <form wire:id="LUNVOcijDWqKRYLiM7Oi" wire:submit.prevent="authenticate" class="space-y-8">
-            <div class="grid grid-cols-1      filament-forms-component-container gap-6">
-              <div class="col-span-1" wire:key="LUNVOcijDWqKRYLiM7Oi.username.Filament\Forms\Components\TextInput">
-                <div class="filament-forms-field-wrapper">
+        <form method="post">
+          {% csrf_token %}
 
-                  <div class="space-y-2">
-                    <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
-                      <label
-                        class="filament-forms-field-wrapper-label inline-flex items-center space-x-3 rtl:space-x-reverse"
-                        for="username">
+          <!-- Общие ошибки формы (например, если есть неполадки на уровне всей формы) -->
+          {% if form.non_field_errors %}
+            <div class="text-red-600">
+              <ul>
+                {% for error in form.non_field_errors %}
+                  <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
 
+          <div class="space-y-8">
+            <div class="grid grid-cols-1 gap-6">
+              <div class="col-span-1">
+                <label for="{{ form.username.id_for_label }}" class="text-sm font-medium leading-4 text-gray-700">
+                  Username
+                  <sup class="font-medium text-danger-700">*</sup>
+                </label>
+                
+                <!-- Поле для ввода username -->
+                {{ form.username }}
 
-                        <span class="text-sm font-medium leading-4 text-gray-700">
-                          Username
-
-                          <sup class="font-medium text-danger-700">*</sup>
-                        </span>
-
-
-                      </label>
-
-                    </div>
-
-                    <div
-                      class="filament-forms-text-input-component flex items-center space-x-2 rtl:space-x-reverse group">
-
-
-
-                      <div class="flex-1">
-                        <input x-data="{}" wire:model.defer="username" type="text" dusk="filament.forms.username"
-                          id="username" minlength="3" required=""
-                          class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 border-gray-300"
-                          x-bind:class="{
-                    &#39;border-gray-300&#39;: ! (&#39;username&#39; in $wire.__instance.serverMemo.errors),
-                    &#39;dark:border-gray-600&#39;: ! (&#39;username&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; false,
-                    &#39;border-danger-600 ring-danger-600&#39;: (&#39;username&#39; in $wire.__instance.serverMemo.errors),
-                    &#39;dark:border-danger-400 dark:ring-danger-400&#39;: (&#39;username&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; false,
-                }">
-                      </div>
-
-
-
-                    </div>
-
-
+                <!-- Ошибки, связанные с username -->
+                {% if form.username.errors %}
+                  <div class="text-red-600">
+                    <ul>
+                      {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                      {% endfor %}
+                    </ul>
                   </div>
-                </div>
+                {% endif %}
               </div>
 
-              <div class="col-span-1" wire:key="LUNVOcijDWqKRYLiM7Oi.password.Filament\Forms\Components\TextInput">
-                <div class="filament-forms-field-wrapper">
+              <div class="col-span-1">
+                <label for="{{ form.password1.id_for_label }}" class="text-sm font-medium leading-4 text-gray-700">
+                  Password
+                  <sup class="font-medium text-danger-700">*</sup>
+                </label>
 
-                  <div class="space-y-2">
-                    <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
-                      <label
-                        class="filament-forms-field-wrapper-label inline-flex items-center space-x-3 rtl:space-x-reverse"
-                        for="password">
+                <!-- Поле для ввода password1 -->
+                {{ form.password1 }}
 
-
-                        <span class="text-sm font-medium leading-4 text-gray-700">
-                          Password
-
-                          <sup class="font-medium text-danger-700">*</sup>
-                        </span>
-
-
-                      </label>
-
-                    </div>
-
-                    <div
-                      class="filament-forms-text-input-component flex items-center space-x-2 rtl:space-x-reverse group">
-
-
-
-                      <div class="flex-1">
-                        <input x-data="{}" wire:model.defer="password" type="password" dusk="filament.forms.password"
-                          id="password" minlength="8" required=""
-                          class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 border-gray-300"
-                          x-bind:class="{
-                    &#39;border-gray-300&#39;: ! (&#39;password&#39; in $wire.__instance.serverMemo.errors),
-                    &#39;dark:border-gray-600&#39;: ! (&#39;password&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; false,
-                    &#39;border-danger-600 ring-danger-600&#39;: (&#39;password&#39; in $wire.__instance.serverMemo.errors),
-                    &#39;dark:border-danger-400 dark:ring-danger-400&#39;: (&#39;password&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; false,
-                }">
-                      </div>
-
-
-
-                    </div>
-
-
+                <!-- Ошибки, связанные с password1 -->
+                {% if form.password1.errors %}
+                  <div class="text-red-600">
+                    <ul>
+                      {% for error in form.password1.errors %}
+                        <li>{{ error }}</li>
+                      {% endfor %}
+                    </ul>
                   </div>
-                </div>
+                {% endif %}
+              </div>
+
+              <div class="col-span-1">
+                <label for="{{ form.password2.id_for_label }}" class="text-sm font-medium leading-4 text-gray-700">
+                  Confirm Password
+                  <sup class="font-medium text-danger-700">*</sup>
+                </label>
+
+                <!-- Поле для ввода password2 -->
+                {{ form.password2 }}
+
+                <!-- Ошибки, связанные с password2 -->
+                {% if form.password2.errors %}
+                  <div class="text-red-600">
+                    <ul>
+                      {% for error in form.password2.errors %}
+                        <li>{{ error }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
               </div>
             </div>
 
-
-            <button type="submit" wire:loading.attr="disabled" x-data="{
-            form: null,
-            isUploadingFile: false,
-        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
-              x-init="
-            form = $el.closest(&#39;form&#39;)
-
-            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
-                isUploadingFile = true
-            })
-
-            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
-                isUploadingFile = false
-            })
-        " class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 w-full"
-              wire:loading.class="opacity-70 cursor-wait">
-
-
-              <span class="flex items-center gap-1">
-                <span class="">
-                  <svg wire:loading="" wire:target="submit"
-                    class="filament-button-icon w-6 h-6 mr-1 -ml-2 rtl:ml-1 rtl:-mr-2 animate-spin"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z"></path>
-                  </svg>
-                  <span>Register</span>
-                </span>
-              </span>
-
+            <button type="submit" class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 w-full">
+              Register
             </button>
+          </div>
+        </form>
 
-            <a class="cursor-pointer text-primary-600 mt-2 block" href="https://elonmoney.cx/dashboard/login">Already
-              have an account?</a>
-          </form>
-
-          <!-- Livewire Component wire-end:LUNVOcijDWqKRYLiM7Oi -->
-        </div>
+        <a class="cursor-pointer text-primary-600 mt-2 block" href="{%url 'login'%}">
+          Already have an account?
+        </a>
       </div>
     </div>
   </div>
-
-  <div wire:id="BWU6eEv5poE2wRakDeZx">
-    <div
-      class="filament-notifications pointer-events-none fixed inset-4 z-50 mx-auto flex justify-end gap-3 items-end flex-col-reverse"
-      role="status">
-    </div>
-
-
-  </div>
-
-  <!-- Livewire Component wire-end:BWU6eEv5poE2wRakDeZx -->
-
-
-
-  <script src="{% static './Create an Account - ElonMoney Shop_files/livewire.js' %}" data-turbo-eval="false"
-    data-turbolinks-eval="false"></script>
-  <script data-turbo-eval="false"
-    data-turbolinks-eval="false">window.livewire = new Livewire(); window.Livewire = window.livewire; window.livewire_app_url = ''; window.livewire_token = 'TsHZMG9hDmz3Cun8GVYO38xSwZUfoQGku69CZ4b1'; window.deferLoadingAlpine = function (callback) { window.addEventListener('livewire:load', function () { callback(); }); }; let started = false; window.addEventListener('alpine:initializing', function () { if (!started) { window.livewire.start(); started = true; } }); document.addEventListener("DOMContentLoaded", function () { if (!started) { window.livewire.start(); started = true; } });</script>
-
-  <script>
-    window.filamentData = [];
-  </script>
-
-
-
-  <script defer="" src="{% static './Create an Account - ElonMoney Shop_files/app.js' %}"></script>
-
-
-
-
-
-
-
-
-
 </body>
+<style>
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+</style>
 
 </html>

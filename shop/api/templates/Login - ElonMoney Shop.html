@@ -174,9 +174,7 @@
 
 </head>
 
-<body style="background-image: url(); background-size: cover;" class="filament-body bg-gray-100 text-gray-900">
-
-
+<body class="filament-body bg-gray-100 text-gray-900">
   <div class="filament-login-page flex items-center justify-center min-h-screen bg-gray-100 text-gray-900 py-12">
     <div class="w-screen px-6 -mt-16 space-y-8 md:mt-0 md:px-2 max-w-md">
       <div class="p-8 space-y-4 bg-white/50 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-2xl relative">
@@ -192,55 +190,80 @@
 
         <form method="post">
           {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit"
-            class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 w-full">
-            Login
-          </button>
+
+          <!-- Общие ошибки формы -->
+          {% if form.non_field_errors %}
+          <div class="text-red-600">
+            <ul>
+              {% for error in form.non_field_errors %}
+              <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          <div class="space-y-8">
+            <div class="grid grid-cols-1 gap-6">
+              <div class="col-span-1">
+                <label for="{{ form.username.id_for_label }}" class="text-sm font-medium leading-4 text-gray-700">
+                  Username
+                  <sup class="font-medium text-danger-700">*</sup>
+                </label>
+
+                <!-- Поле для ввода username -->
+                {{ form.username }}
+
+                <!-- Ошибки, связанные с username -->
+                {% if form.username.errors %}
+                <div class="text-red-600">
+                  <ul>
+                    {% for error in form.username.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+              </div>
+
+              <div class="col-span-1">
+                <label for="{{ form.password.id_for_label }}" class="text-sm font-medium leading-4 text-gray-700">
+                  Password
+                  <sup class="font-medium text-danger-700">*</sup>
+                </label>
+
+                <!-- Поле для ввода password -->
+                {{ form.password }}
+
+                <!-- Ошибки, связанные с password -->
+                {% if form.password.errors %}
+                <div class="text-red-600">
+                  <ul>
+                    {% for error in form.password.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endif %}
+              </div>
+
+              
+            </div>
+
+            <button type="submit"
+              class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 w-full">
+              Login
+            </button>
+          </div>
         </form>
 
-        <a class="cursor-pointer text-primary-600 mt-2 block" href="">
-          Don't have an account?
+
+        <a class="cursor-pointer text-primary-600 mt-2 block" href="{% url 'register' %}">
+          Don't have an account? Register
         </a>
       </div>
     </div>
   </div>
-
-
-  <div wire:id="5506y7Sq2ozbfWPZfNVH">
-    <div
-      class="filament-notifications pointer-events-none fixed inset-4 z-50 mx-auto flex justify-end gap-3 items-end flex-col-reverse"
-      role="status">
-    </div>
-
-
-  </div>
-
-  <!-- Livewire Component wire-end:5506y7Sq2ozbfWPZfNVH -->
-
-
-
-  <script src="{% static './Login - ElonMoney Shop_files/livewire.js' %}" data-turbo-eval="false"
-    data-turbolinks-eval="false"></script>
-  <script data-turbo-eval="false"
-    data-turbolinks-eval="false">window.livewire = new Livewire(); window.Livewire = window.livewire; window.livewire_app_url = ''; window.livewire_token = 'TsHZMG9hDmz3Cun8GVYO38xSwZUfoQGku69CZ4b1'; window.deferLoadingAlpine = function (callback) { window.addEventListener('livewire:load', function () { callback(); }); }; let started = false; window.addEventListener('alpine:initializing', function () { if (!started) { window.livewire.start(); started = true; } }); document.addEventListener("DOMContentLoaded", function () { if (!started) { window.livewire.start(); started = true; } });</script>
-
-  <script>
-    window.filamentData = [];
-  </script>
-
-
-
-  <script defer="" src="{% static './Login - ElonMoney Shop_files/app.js' %}"></script>
-
-
-
-
-
-
-
-
-
 </body>
+
 
 </html>

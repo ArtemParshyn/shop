@@ -7,7 +7,7 @@ from django.urls import reverse, reverse_lazy
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from .forms import CustomUserCreationForm, CustomLoginForm
-from api import forms
+from .models import Card
 
 
 # Create your views here.
@@ -28,7 +28,7 @@ def topup(request):
 
 @login_required(login_url="/login")
 def cardstore(request):
-    return render(request, 'Purchase Cards - ElonMoney Shop.html')
+    return render(request, 'Purchase Cards - ElonMoney Shop.html', context={"cards": Card.objects.all()[0:50]})
 
 
 @login_required(login_url="/login")
@@ -69,8 +69,7 @@ class CustomLoginView(LoginView):
         return self.render_to_response(self.get_context_data(form=form))
 
     def get_success_url(self):
-        # Здесь можно задать URL, куда редиректить после успешного входа
-        return reverse_lazy('index')  # Или другой URL, куда хотите редиректить
+        return reverse_lazy('index')
 
 
 def logout(request):

@@ -296,9 +296,10 @@
 
 
                                                             <div class="flex-1">
-                                                                <input x-data="{}" wire:model.defer="filters.bin"
-                                                                    type="text" dusk="filament.forms.filters.bin"
-                                                                    id="filters.bin" placeholder="Comma Separated"
+                                                                <input id="BINs" x-data="{}"
+                                                                    wire:model.defer="filters.bin" type="text"
+                                                                    dusk="filament.forms.filters.bin" id="filters.bin"
+                                                                    placeholder="Comma Separated"
                                                                     class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
                                                                     x-bind:class="{
                     &#39;border-gray-300&#39;: ! (&#39;filters.bin&#39; in $wire.__instance.serverMemo.errors),
@@ -348,27 +349,17 @@
 
 
                                                             <div class="flex-1 min-w-0">
-                                                                <select id="filters.company"
+                                                                <select id="filters.base"
                                                                     wire:model.defer="filters.company"
                                                                     dusk="filament.forms.filters.company" required=""
                                                                     class="text-gray-900 block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600">
                                                                     <option value="">Select an option</option>
 
-                                                                    <option value="all">
-                                                                        All
+                                                                    {% for base in bases %}
+                                                                    <option value="{{base.name}}">
+                                                                        {{base.name}}
                                                                     </option>
-                                                                    <option value="visa">
-                                                                        Visa
-                                                                    </option>
-                                                                    <option value="mastercard">
-                                                                        MasterCard
-                                                                    </option>
-                                                                    <option value="amex">
-                                                                        AMEX (American Express)
-                                                                    </option>
-                                                                    <option value="discover">
-                                                                        Discover
-                                                                    </option>
+                                                                    {% endfor %}
                                                                 </select>
                                                             </div>
 
@@ -410,9 +401,10 @@
 
 
                                                             <div class="flex-1">
-                                                                <input x-data="{}" wire:model.defer="filters.exp"
-                                                                    type="text" dusk="filament.forms.filters.exp"
-                                                                    id="filters.exp" placeholder="MM/YYYY"
+                                                                <input id="expired" x-data="{}"
+                                                                    wire:model.defer="filters.exp" type="text"
+                                                                    dusk="filament.forms.filters.exp" id="filters.exp"
+                                                                    placeholder="MM/YYYY"
                                                                     class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
                                                                     x-bind:class="{
                     &#39;border-gray-300&#39;: ! (&#39;filters.exp&#39; in $wire.__instance.serverMemo.errors),
@@ -460,9 +452,9 @@
 
 
                                                             <div class="flex-1">
-                                                                <input x-data="{}" wire:model.defer="filters.city"
-                                                                    type="text" dusk="filament.forms.filters.city"
-                                                                    id="filters.city"
+                                                                <input id="city" x-data="{}"
+                                                                    wire:model.defer="filters.city" type="text"
+                                                                    dusk="filament.forms.filters.city" id="filters.city"
                                                                     class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
                                                                     x-bind:class="{
                     &#39;border-gray-300&#39;: ! (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors),
@@ -510,8 +502,9 @@
 
 
                                                             <div class="flex-1">
-                                                                <input x-data="{}" wire:model.defer="filters.state"
-                                                                    type="text" dusk="filament.forms.filters.state"
+                                                                <input id="state" x-data="{}"
+                                                                    wire:model.defer="filters.state" type="text"
+                                                                    dusk="filament.forms.filters.state"
                                                                     id="filters.state"
                                                                     class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
                                                                     x-bind:class="{
@@ -560,9 +553,9 @@
 
 
                                                             <div class="flex-1">
-                                                                <input x-data="{}" wire:model.defer="filters.zip"
-                                                                    type="text" dusk="filament.forms.filters.zip"
-                                                                    id="filters.zip"
+                                                                <input id="ZIP" x-data="{}"
+                                                                    wire:model.defer="filters.zip" type="text"
+                                                                    dusk="filament.forms.filters.zip" id="filters.zip"
                                                                     class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
                                                                     x-bind:class="{
                     &#39;border-gray-300&#39;: ! (&#39;filters.zip&#39; in $wire.__instance.serverMemo.errors),
@@ -612,27 +605,17 @@
 
 
                                                             <div class="flex-1 min-w-0">
-                                                                <select id="filters.company"
+                                                                <select id="filters.country"
                                                                     wire:model.defer="filters.company"
                                                                     dusk="filament.forms.filters.company" required=""
                                                                     class="text-gray-900 block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600">
                                                                     <option value="">Select an option</option>
+                                                                    {% for country in countries %}
+                                                                    <option value="{{country.name}}">
+                                                                        {{country.name}}
+                                                                    </option>
+                                                                    {% endfor %}
 
-                                                                    <option value="all">
-                                                                        All
-                                                                    </option>
-                                                                    <option value="visa">
-                                                                        Visa
-                                                                    </option>
-                                                                    <option value="mastercard">
-                                                                        MasterCard
-                                                                    </option>
-                                                                    <option value="amex">
-                                                                        AMEX (American Express)
-                                                                    </option>
-                                                                    <option value="discover">
-                                                                        Discover
-                                                                    </option>
                                                                 </select>
                                                             </div>
 
@@ -682,21 +665,11 @@
                                                                     class="text-gray-900 block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600">
                                                                     <option value="">Select an option</option>
 
-                                                                    <option value="all">
-                                                                        All
+                                                                    {% for company in companies %}
+                                                                    <option value="{{company.name}}">
+                                                                        {{company.name}}
                                                                     </option>
-                                                                    <option value="visa">
-                                                                        Visa
-                                                                    </option>
-                                                                    <option value="mastercard">
-                                                                        MasterCard
-                                                                    </option>
-                                                                    <option value="amex">
-                                                                        AMEX (American Express)
-                                                                    </option>
-                                                                    <option value="discover">
-                                                                        Discover
-                                                                    </option>
+                                                                    {% endfor %}
                                                                 </select>
                                                             </div>
 
@@ -741,24 +714,9 @@
                                         </div>
 
 
-                                        <button type="submit" wire:loading.attr="disabled" x-data="{
-            form: null,
-            isUploadingFile: false,
-        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
-                                            x-init="
-            form = $el.closest(&#39;form&#39;)
-
-            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
-                isUploadingFile = true
-            })
-
-            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
-                isUploadingFile = false
-            })
-        " class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700"
+                                        <button id="submit" type="button" wire:loading.attr="disabled"
+                                            class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700"
                                             wire:loading.class="opacity-70 cursor-wait">
-
-
                                             <span class="flex items-center gap-1">
                                                 <span class="">
                                                     <svg wire:loading="" wire:target="submit"
@@ -772,7 +730,6 @@
                                                     <span>Search</span>
                                                 </span>
                                             </span>
-
                                         </button>
                                     </form>
                                 </div>
@@ -780,6 +737,58 @@
 
 
                         </div>
+                        <script>
+                            document.getElementById('submit').addEventListener('click', function (event) {
+                                event.preventDefault();  // Останавливаем перезагрузку страницы
+
+                                const bin = document.getElementById("BINs").value;
+                                const base = document.getElementById("filters.base").value;
+                                const expired = document.getElementById("expired").value;
+                                const city = document.getElementById("city").value;
+                                const state = document.getElementById("state").value;
+                                const zip = document.getElementById("ZIP").value;
+                                const country = document.getElementById("filters.country").value;
+                                const company = document.getElementById("filters.company").value;
+
+                                // Собираем параметры для GET-запроса
+                                const params = new URLSearchParams({
+                                    "bin": bin,
+                                    "base": base,
+                                    "expired": expired,
+                                    "city": city,
+                                    "state": state,
+                                    "zip": zip,
+                                    "country": country,
+                                    "company": company
+                                });
+
+                                // Отправка GET-запроса на Django с параметрами в URL
+                                fetch(`/search-card/?${params.toString()}`, {
+                                    method: 'GET',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    }
+                                })
+                                    .then(response => {
+                                        if (!response.ok) {
+                                            throw new Error('Network response was not ok');
+                                        }
+                                        return response.json();
+                                    })
+                                    .then(data => {
+                                        // Обработка успешного ответа
+                                        console.log('Success:', data);
+                                        alert('Request successful!');
+                                    })
+                                    .catch((error) => {
+                                        // Обработка ошибок
+                                        console.error('Error:', error);
+                                        alert('There was a problem with the request.');
+                                    });
+                            });
+
+
+                        </script>
 
                         <div x-data="{
 
@@ -1130,7 +1139,7 @@
                                                                 <span class="">
 
                                                                     {% for word in card.Company.name|split:" " %}
-                                                                        {{ word }}<br>
+                                                                    {{ word }}<br>
                                                                     {% endfor %}
                                                                 </span>
 

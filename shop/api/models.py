@@ -29,19 +29,22 @@ class Country(models.Model):
         return self.name
 
 
+
 class Card(models.Model):
-    BIN = models.IntegerField(default=8.00)
+    BIN = models.IntegerField(default=8)  # Исправлено значение по умолчанию
     Base = models.ForeignKey(Base, on_delete=models.CASCADE, related_name='cards')
-    expired = models.DateField()
+    expired = models.DateField()  # Поле для хранения даты
     city = models.CharField(max_length=64)
     state = models.CharField(max_length=64)
     ZIP_code = models.CharField(max_length=64)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='cards')
     Company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='cards')
-    price = models.IntegerField(default=8.00)
+    price = models.IntegerField(default=8)  # Исправлено значение по умолчанию
     bank = models.CharField(max_length=64, default="")
 
     def formatted_date(self):
-        return self.date.strftime('%m/%Y')
+        """Метод для отображения даты в формате MM/YYYY"""
+        return self.expired.strftime('%m/%Y')
+
     def __str__(self):
         return str(self.BIN)

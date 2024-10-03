@@ -13,6 +13,9 @@ urlpatterns = [
         path('login', views.CustomLoginView.as_view(), name='login'),
         path('logout', views.logout, name='logout'),
         path('search-card/', views.search_card, name='search_card'),
+        path('search_card_page/', views.search_card_page, name='search_card_page'),
+
+
         #path('login', views.login, name="login"),
         #path('reg', views.reg, name="reg"),
 ]

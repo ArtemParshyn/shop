@@ -87,10 +87,6 @@ def remove_accents(input_str):
     return ''.join(c for c in unicodedata.normalize('NFKD', input_str) if unicodedata.category(c) != 'Mn')
 
 
-from django.http import JsonResponse
-
-
-
 def search_card(request):
     # Извлечение параметров из GET-запроса
     bin_value = remove_accents(request.GET.get('bin', ''))
@@ -108,8 +104,13 @@ def search_card(request):
             month, year = map(int, expired.split('/'))
         except ValueError:
             return JsonResponse({'error': 'Invalid date format. Use MM/YYYY.'}, status=400)
-
+    services_per_page = 2
+    start = 0
+    end = start + services_per_page
+    print(start, end)
     # Фильтрация карт
+    exist = False
+
     try:
         cards = Card.objects.filter(
             city__icontains=city,
@@ -122,16 +123,103 @@ def search_card(request):
             expired__year=year,
             expired__month=month
         )
+
     except Company.DoesNotExist:
         return JsonResponse({'error': 'Company not found.'}, status=404)
     except Country.DoesNotExist:
         return JsonResponse({'error': 'Country not found.'}, status=404)
     except Base.DoesNotExist:
         return JsonResponse({'error': 'Base not found.'}, status=404)
+    exist = len(cards) > end
+    a = []
+    for i in cards[0:2]:
+        a.append({"BIN": i.BIN,
+                  "Base": i.Base.name,
+                  "expired": i.expired,
+                  'city': i.city,
+                  'state': i.state,
+                  "ZIP_code": i.ZIP_code,
+                  "country": i.country.name,
+                  "Company": i.Company.name,
+                  "price": i.price,
+                  "bank": i.bank,
+                  "exists_next": exist})
 
     # Логирование данных
     print(cards)
     print(bin_value, base_name, city, state, zip_code, country_name, company_name)
 
     # Возвращаем JSON-ответ с данными
-    return JsonResponse(list(cards.values()), safe=False)
+    return JsonResponse(a, safe=False)
+
+
+def search_card_page(request):
+    # Извлечение параметров из GET-запроса
+    page = request.GET.get('page', '')
+    bin_value = remove_accents(request.GET.get('bin', ''))
+    base_name = request.GET.get('base', '')
+    expired = request.GET.get('expired', '')
+    city = remove_accents(request.GET.get('city', ''))
+    state = remove_accents(request.GET.get('state', ''))
+    zip_code = remove_accents(request.GET.get('zip', ''))
+    country_name = request.GET.get('country', '')
+    company_name = request.GET.get('company', '')
+
+    # Парсинг даты, если поле expired передано
+    if expired:
+        try:
+            month, year = map(int, expired.split('/'))
+        except ValueError:
+            return JsonResponse({'error': 'Invalid date format. Use MM/YYYY.'}, status=400)
+
+    # Фильтрация карт
+    print(page)
+    services_per_page = 2
+    start = (int(page) - 1) * services_per_page
+    end = start + services_per_page
+    print(start, end)
+    exist = False
+
+    try:
+        exist = False
+        cards = Card.objects.filter(
+            city__icontains=city,
+            BIN__icontains=bin_value,
+            state__icontains=state,
+            ZIP_code__icontains=zip_code,
+            Company__name=company_name,
+            country__name=country_name,
+            Base__name=base_name,
+            expired__year=year,
+            expired__month=month
+        )
+        exist = len(cards) > end
+
+    except Company.DoesNotExist:
+        exist = False
+        return JsonResponse({'error': 'Company not found.'}, status=404)
+    except Country.DoesNotExist:
+        exist = False
+        return JsonResponse({'error': 'Country not found.'}, status=404)
+    except Base.DoesNotExist:
+        exist = False
+        return JsonResponse({'error': 'Base not found.'}, status=404)
+    a = []
+    for i in cards[start:end]:
+        a.append({"BIN": i.BIN,
+                  "Base": i.Base.name,
+                  "expired": i.expired,
+                  'city': i.city,
+                  'state': i.state,
+                  "ZIP_code": i.ZIP_code,
+                  "country": i.country.name,
+                  "Company": i.Company.name,
+                  "price": i.price,
+                  "bank": i.bank,
+                  "exists_next": exist})
+    # Логирование данных
+    print(a)
+    print(bin_value, base_name, expired, city, state, zip_code, country_name, company_name)
+
+    # Возвращаем JSON-ответ с данными
+    return JsonResponse(a, safe=False)

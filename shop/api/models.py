@@ -29,7 +29,6 @@ class Country(models.Model):
         return self.name
 
 
-
 class Card(models.Model):
     BIN = models.IntegerField(default=8)  # Исправлено значение по умолчанию
     Base = models.ForeignKey(Base, on_delete=models.CASCADE, related_name='cards')

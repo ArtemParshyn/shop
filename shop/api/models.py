@@ -22,13 +22,6 @@ class Company(models.Model):
         return self.name
 
 
-class Country(models.Model):
-    name = models.CharField(max_length=64)
-
-    def __str__(self):
-        return self.name
-
-
 class Card(models.Model):
     BIN = models.IntegerField(default=8)  # Исправлено значение по умолчанию
     Base = models.ForeignKey(Base, on_delete=models.CASCADE, related_name='cards')
@@ -36,7 +29,7 @@ class Card(models.Model):
     city = models.CharField(max_length=64)
     state = models.CharField(max_length=64)
     ZIP_code = models.CharField(max_length=64)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='cards')
+    country = models.CharField(max_length=64)
     Company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='cards')
     price = models.IntegerField(default=8)  # Исправлено значение по умолчанию
     bank = models.CharField(max_length=64, default="")

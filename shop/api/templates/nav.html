@@ -224,7 +224,6 @@
                 </li>
                 <li class="filament-sidebar-item overflow-hidden">
                     <a href="/dyn_top"
-                        x-bind:class="{ 'text-white': isActive('/topup'), 'text-gray-600 dark:text-gray-300': !isActive('/topup') }"
                         x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
                         x-data="{ tooltip: {} }" x-init="
                 Alpine.effect(() =&gt; {

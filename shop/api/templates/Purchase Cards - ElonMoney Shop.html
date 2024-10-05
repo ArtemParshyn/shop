@@ -7,6 +7,8 @@
     {% load custom_filters %}
 
     {% load static %}
+    <meta name="csrf-token" content="{{ csrf_token }}">
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style type="text/css" data-tag-name="trix-editor">
         trix-editor {
@@ -605,7 +607,8 @@
                                                             <div class="flex-1">
                                                                 <input id="country" x-data="{}"
                                                                     wire:model.defer="filters.country" type="text"
-                                                                    dusk="filament.forms.filters.country" id="filters.cpuntry"
+                                                                    dusk="filament.forms.filters.country"
+                                                                    id="filters.cpuntry"
                                                                     class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
                                                                     x-bind:class="{
                     &#39;border-gray-300&#39;: ! (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors),
@@ -678,7 +681,7 @@
                                                 </div>
                                             </div>
 
-                                            
+
 
                                         </div>
 
@@ -966,277 +969,7 @@
                                             wire:end.stop="reorderTable($event.target.sortable.toArray())"
                                             wire:sortable.options="{ animation: 100 }" id="TABLE"
                                             class="divide-y whitespace-nowrap dark:divide-gray-700">
-                                            {% for card in cards%}
-                                            <tr class="filament-tables-row transition"
-                                                wire:key="RyB7DCamlYJ2PR8h2U0k.table.records.815564" x-bind:class="{
-                                    &#39;bg-gray-50 dark:bg-gray-500/10&#39;: isRecordSelected(&#39;815564&#39;),
-                                }">
-                                                <td
-                                                    class="filament-tables-reorder-cell w-4 px-4 whitespace-nowrap hidden">
 
-                                                </td>
-
-
-
-
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.base"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div class="filament-tables-text-column px-4 py-3">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    {{card.Base}}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.bin"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div class="filament-tables-text-column px-4 py-3">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    {{card.BIN}}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.exp"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div class="filament-tables-text-column px-4 py-3">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    {{card.expired|date:"m/Y"}}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.company"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div
-                                                            class="filament-tables-text-column px-4 py-3     whitespace-normal">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-
-                                                                    {% for word in card.Company.name|split:" " %}
-                                                                    {{ word }}<br>
-                                                                    {% endfor %}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.city"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div
-                                                            class="filament-tables-text-column px-4 py-3     whitespace-normal">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    {{card.city}}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.state"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div
-                                                            class="filament-tables-text-column px-4 py-3     whitespace-normal">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    {{card.state}}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.zip"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div
-                                                            class="filament-tables-text-column px-4 py-3     whitespace-normal">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    {{card.ZIP_code}}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.country"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div
-                                                            class="filament-tables-text-column px-4 py-3     whitespace-normal">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    {{card.country}}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.binInfo.bank"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div
-                                                            class="filament-tables-text-column px-4 py-3     whitespace-normal">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    {{card.bank}}
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td wire:loading.remove.delay=""
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set"
-                                                    class="filament-tables-actions-cell px-4 py-3 whitespace-nowrap">
-                                                    <div
-                                                        class="filament-tables-actions-container flex items-center gap-4 justify-end">
-                                                        <button type="button" wire:loading.attr="disabled"
-                                                            wire:loading.class.delay="opacity-70 cursor-wait"
-                                                            wire:target="mountTableAction(&#39;purchase&#39;, &#39;815564&#39;)"
-                                                            x-data="{
-            form: null,
-            isUploadingFile: false,
-        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
-                                                            x-init="
-            form = $el.closest(&#39;form&#39;)
-
-            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
-                isUploadingFile = true
-            })
-
-            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
-                isUploadingFile = false
-            })
-        " class="filament-button filament-button-size-sm inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2rem] px-3 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 filament-tables-button-action"
-                                                            wire:click="mountTableAction(&#39;purchase&#39;, &#39;815564&#39;)"
-                                                            dusk="filament.tables.action.purchase">
-
-                                                            <svg viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                class="animate-spin filament-button-icon w-4 h-4 mr-1 -ml-1.5 rtl:ml-1 rtl:-mr-1.5"
-                                                                wire:loading.delay="wire:loading.delay"
-                                                                wire:target="mountTableAction(&#39;purchase&#39;, &#39;815564&#39;)">
-                                                                <path opacity="0.2" fill-rule="evenodd"
-                                                                    clip-rule="evenodd"
-                                                                    d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                                                                    fill="currentColor"></path>
-                                                                <path
-                                                                    d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z"
-                                                                    fill="currentColor"></path>
-                                                            </svg>
-
-                                                            <span class="flex items-center gap-1">
-                                                                <span class="">
-                                                                    Buy {{card.price}}.00$
-                                                                </span>
-                                                            </span>
-
-                                                        </button>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="w-full px-4 py-4 animate-pulse hidden" colspan="10"
-                                                    wire:loading.class.remove.delay="hidden"
-                                                    wire:key="RyB7DCamlYJ2PR8h2U0k.table.records.815564.loading-cell"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="h-4 bg-gray-300 rounded-md dark:bg-gray-600"></div>
-                                                </td>
-                                            </tr>
-                                            {% endfor %}
 
                                         </tbody>
 
@@ -1321,7 +1054,6 @@
                                             </div>
                                             <script>
                                                 let currentPage = 1; // Начальная страница
-
                                                 // Функция для обновления таблицы с данными
                                                 function updateTable(page = 1, ifis = false) {
                                                     const params = new URLSearchParams({
@@ -1575,7 +1307,7 @@
                                                                         class="filament-tables-actions-cell px-4 py-3 whitespace-nowrap">
                                                                         <div
                                                                             class="filament-tables-actions-container flex items-center gap-4 justify-end">
-                                                                            <button type="button" wire:loading.attr="disabled"
+                                                                            <button type="button" name = "butt_" wire:loading.attr="disabled" value="${card.id}"
                                                                                 wire:loading.class.delay="opacity-70 cursor-wait"
                                                                                 wire:target="mountTableAction(&#39;purchase&#39;, &#39;815564&#39;)"
                                                                                 x-data="{
@@ -1592,7 +1324,7 @@
                                 form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
                                     isUploadingFile = false
                                 })
-                            " class="filament-button filament-button-size-sm inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2rem] px-3 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 filament-tables-button-action"
+                            " class="butt_ filament-button filament-button-size-sm inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2rem] px-3 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 filament-tables-button-action" 
                                                                                 wire:click="mountTableAction(&#39;purchase&#39;, &#39;815564&#39;)"
                                                                                 dusk="filament.tables.action.purchase">
                     
@@ -1633,17 +1365,72 @@
 
                                                                 document.getElementById('prevPage').disabled = currentPage === 1;
                                                                 document.getElementById('nextPage').disabled = !data[0].exists_next; // Предполагается, что сервер возвращает, есть ли следующая страница
+                                                                function func2(button) {
+                                                                    console.log('Button Value:', button.value);
+                                                                }
 
-                                                            });
+                                                                function handleClick(event) {
+                                                                    event.stopPropagation(); // Останавливаем дальнейшее распространение события
+                                                                    const buttonValue = event.currentTarget.value; // Получаем value кнопки
 
-                                                            // Обновляем текущую страницу
+                                                                    // Логируем значение для проверки
+                                                                    console.log('Selected Button Value:', buttonValue);
 
-                                                            // Установка состояния кнопок пагинации
-                                                        })
-                                                        .catch((error) => {
-                                                            console.error('Ошибка:', error);
-                                                            alert('Произошла ошибка при выполнении запроса.');
+                                                                    // Получаем CSRF-токен из мета-тега
+                                                                    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+                                                                    // Отправляем запрос на сервер
+                                                                    fetch('/purchase_item', {
+                                                                        method: 'POST', // Используем POST для отправки данных
+                                                                        headers: {
+                                                                            'Content-Type': 'application/json', // Указываем тип контента
+                                                                            'X-CSRFToken': csrfToken // Добавляем CSRF-токен в заголовок
+                                                                        },
+                                                                        body: JSON.stringify({ id: buttonValue }) // Отправляем id как JSON
+                                                                    })
+                                                                        .then(response => {
+                                                                            if (!response.ok) {
+                                                                                // Если ответ не успешен, выбрасываем ошибку
+                                                                                return response.json().then(errorData => {
+                                                                                    console.log(errorData)
+                                                                                    throw new Error(`${errorData.error}`);
+                                                                                });
+                                                                            }
+                                                                            return response.json();
+                                                                        })
+                                                                        .then(data => {
+                                                                            alert('Успешно куплено!'); // Успешное сообщение
+                                                                            window.location.href = window.location.href;
+
+                                                                        })
+                                                                        .catch(error => {
+                                                                            alert(`${error.message}`); // Показать ошибку
+                                                                        });
+                                                                }
+                                                            
+
+                                                                for (let el of document.getElementsByClassName('butt_')) {
+                                                                el.replaceWith(el.cloneNode(true)); // Клонируем кнопки, чтобы убрать старые обработчики
+                                                            }
+
+                                                            // Добавляем обработчики событий только один раз
+                                                            for (let el of document.getElementsByClassName('butt_')) {
+                                                                el.addEventListener('click', handleClick);
+                                                            }
+
+                                                            // Функция для обработки кликов по кнопкам
+
+
                                                         });
+
+                                                    // Обновляем текущую страницу
+
+                                                    // Установка состояния кнопок пагинации
+                                                })
+                                                        .catch ((error) => {
+                                                    console.error('Ошибка:', error);
+                                                    alert('Произошла ошибка при выполнении запроса.');
+                                                });
                                                 }
 
                                                 // Обработчик для кнопки "Назад"
@@ -1664,8 +1451,10 @@
                                                     updateTable(1);
                                                 });
 
-                                                updateTable(1, False);
+                                                updateTable(1, false);
                                                 // Начальная загрузка данных
+
+
                                             </script>
 
                                         </div>

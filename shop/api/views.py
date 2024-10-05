@@ -1,4 +1,5 @@
 import datetime
+import json
 
 import unicodedata
 from django.contrib import auth
@@ -9,6 +10,8 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
+from django.views.decorators.csrf import csrf_exempt
+
 from .forms import CustomUserCreationForm, CustomLoginForm
 from .models import Card, Base, Company
 
@@ -21,7 +24,7 @@ def nav(request):
 
 @login_required(login_url="/login")
 def orders(request):
-    return render(request, 'Orders - ElonMoney Shop.html')
+    return render(request, 'Orders - ElonMoney Shop.html', context={"orders": Card.objects.all().filter(purchased_user=request.user)})
 
 
 @login_required(login_url="/login")
@@ -43,7 +46,7 @@ def dynamic_topics(request):
 
 @login_required(login_url="/login")
 def head(request):
-    return render(request, 'header.html')
+    return render(request, 'header.html', context={"balance": request.user.balance})
 
 
 @login_required(login_url="/login")
@@ -117,7 +120,7 @@ def search_card_page(request):
 
     try:
         if ifis:
-            cards = Card.objects.all()
+            cards = Card.objects.all().filter(purchased = False)
         else:
             cards = Card.objects.filter(
                 city__icontains=city,
@@ -128,7 +131,8 @@ def search_card_page(request):
                 country__name=country_name,
                 Base__name=base_name,
                 expired__year=year,
-                expired__month=month
+                expired__month=month,
+                purchased = False,
             )
         exist = len(cards) > end
 
@@ -148,10 +152,43 @@ def search_card_page(request):
                   "Company": i.Company.name,
                   "price": i.price,
                   "bank": i.bank,
-                  "exists_next": exist})
+                  "exists_next": exist,
+                  "id": i.id})
     # Логирование данных
     print(a)
     print(bin_value, base_name, expired, city, state, zip_code, country_name, company_name)
 
     # Возвращаем JSON-ответ с данными
     return JsonResponse(a, safe=False)
+
+
+@csrf_exempt  # Используйте это только для тестирования! На продакшене лучше оставить CSRF защиту.
+def purchase(request):
+    if request.method == "POST":
+        try:
+            # Извлекаем JSON-данные из тела запроса
+            data = json.loads(request.body)
+            id = data.get('id')  # Получаем id из переданных данных
+
+            # Пытаемся получить объект Card
+            card = Card.objects.get(id=id)
+            user = request.user
+            print(card)  # Здесь вы можете добавить свою логику обработки покупки
+            if card.price <= request.user.balance:
+                user.balance -= card.price
+                card.purchased = True
+                card.purchased_user = request.user
+                card.save()
+                user.save()
+            else:
+                return JsonResponse({"error": "Balance is not enough"}, status=404)
+            # Возвращаем успешный ответ
+            return JsonResponse({"success": "purchased"}, safe=False)
+        except Card.DoesNotExist:
+            return JsonResponse({"error": "Card not found"}, status=404)
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)

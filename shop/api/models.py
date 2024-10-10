@@ -41,6 +41,7 @@ class Card(models.Model):
 
 
 
+
     def formatted_date(self):
         """Метод для отображения даты в формате MM/YYYY"""
         return self.expired.strftime('%m/%Y')

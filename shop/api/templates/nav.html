@@ -193,7 +193,6 @@
                 x-collapse.duration.200ms="" class="text-sm space-y-1 -mx-3 mt-2">
                 <li class="filament-sidebar-item overflow-hidden">
                     <a href="/topup"
-                        x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
                         x-data="{ tooltip: {} }" x-init="
                 Alpine.effect(() =&gt; {
                     if (Alpine.store(&#39;sidebar&#39;).isOpen) {

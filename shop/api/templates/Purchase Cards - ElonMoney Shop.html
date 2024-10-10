@@ -1086,10 +1086,8 @@
                                                             const tableBody = document.getElementById('TABLE');
                                                             let companyHTML = '';
                                                             if (data.Company) {
-                                                                const companyWords = data.Company.split(" ");
+                                                                const companyWords = 
                                                                 companyHTML = companyWords.map(word => `${word}<br>`).join('');
-                                                            } else {
-                                                                companyHTML = 'N/A'; // Выводим значение по умолчанию, если Company не определено
                                                             }
                                                             tableBody.innerHTML = ''; // Очищаем таблицу
                                                             console.log(data);
@@ -1182,7 +1180,7 @@
                     
                                                                                     <span class="">
                     
-                                                                                        ${companyHTML}
+                                                                                        ${card.Company.split(" ").map(word => `${word}<br>`).join('')}
                                                                                     </span>
                     
                                                                                 </div>

@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://elonmoney.cx/dashboard/topup -->
+<html lang="en" dir="ltr" class="antialiased bg-gray-100 filament js-focus-visible dark">
+<div id="in-page-channel-node-id" data-channel-name="in_page_channel_i7SNXQ"></div>
+
+<head>
+    {% load static %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css" data-tag-name="trix-editor">
+        trix-editor {
+            display: block;
+        }
+
+        trix-editor:empty:not(:focus)::before {
+            content: attr(placeholder);
+            color: graytext;
+            cursor: text;
+            pointer-events: none;
+        }
+
+        trix-editor a[contenteditable=false] {
+            cursor: text;
+        }
+
+        trix-editor img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        trix-editor [data-trix-attachment] figcaption textarea {
+            resize: none;
+        }
+
+        trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+            position: absolute;
+            left: -9999px;
+            max-height: 0px;
+        }
+
+        trix-editor [data-trix-attachment] figcaption[data-trix-placeholder]:empty::before {
+            content: attr(data-trix-placeholder);
+            color: graytext;
+        }
+
+        trix-editor [data-trix-cursor-target] {
+            display: inline-block !important;
+            width: 1px !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+        }
+
+        trix-editor [data-trix-cursor-target=left] {
+            vertical-align: top !important;
+            margin-left: -1px !important;
+        }
+
+        trix-editor [data-trix-cursor-target=right] {
+            vertical-align: bottom !important;
+            margin-right: -1px !important;
+        }
+    </style>
+    <style type="text/css" data-tag-name="trix-toolbar">
+        trix-toolbar {
+            display: block;
+        }
+
+        trix-toolbar {
+            white-space: nowrap;
+        }
+
+        trix-toolbar [data-trix-dialog] {
+            display: none;
+        }
+
+        trix-toolbar [data-trix-dialog][data-trix-active] {
+            display: block;
+        }
+
+        trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
+            background-color: #ffdddd;
+        }
+    </style>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR">
+
+
+
+    <title>Topup - ElonMoney Shop</title>
+
+
+
+    <style>
+        [x-cloak=""],
+        [x-cloak="x-cloak"],
+        [x-cloak="1"] {
+            display: none !important;
+        }
+
+        @media (max-width: 1023px) {
+            [x-cloak="-lg"] {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            [x-cloak="lg"] {
+                display: none !important;
+            }
+        }
+
+        :root {
+            --sidebar-width: 250px;
+            --collapsed-sidebar-width: 65px;
+        }
+    </style>
+
+    <style>
+        [wire\:loading],
+        [wire\:loading\.delay],
+        [wire\:loading\.inline-block],
+        [wire\:loading\.inline],
+        [wire\:loading\.block],
+        [wire\:loading\.flex],
+        [wire\:loading\.table],
+        [wire\:loading\.grid],
+        [wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        input:-webkit-autofill,
+        select:-webkit-autofill,
+        textarea:-webkit-autofill {
+            animation-duration: 50000s;
+            animation-name: livewireautofill;
+        }
+
+        @keyframes livewireautofill {
+            from {}
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="{% static './Topup - ElonMoney Shop_files/css2.css' %}" rel="stylesheet">
+
+
+    <link rel="preload" as="style" href="{% static './Topup - ElonMoney Shop_files/filament.58c4a07b.css' %}">
+    <link rel="stylesheet" href="{% static './Topup - ElonMoney Shop_files/filament.58c4a07b.css' %}">
+
+
+
+    <script>
+        const theme = localStorage.getItem('theme')
+
+        if ((theme === 'dark') || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        }
+    </script>
+
+
+</head>
+
+<body style="background-image: url(); background-size: cover;"
+    class="filament-body bg-gray-100 text-gray-900 dark:text-gray-100 dark:bg-gray-900">
+
+
+    <div id="div_nav" class="filament-app-layout flex w-full min-h-screen overflow-x-clip">
+        <div x-data="{}" x-show="$store.sidebar.isOpen" x-transition.opacity.500ms=""
+            x-on:click="$store.sidebar.close()"
+            class="filament-sidebar-close-overlay fixed inset-0 z-20 w-full h-full bg-gray-900/50 lg:hidden"
+            style="display: none;"></div>
+
+        <aside id="aside1" x-data="{}"
+            x-bind:class="$store.sidebar.isOpen ? &#39;filament-sidebar-open translate-x-0 max-w-[20em] lg:max-w-[var(--sidebar-width)]&#39; : &#39;-translate-x-full lg:translate-x-0 lg:max-w-[var(--collapsed-sidebar-width)] rtl:lg:-translate-x-0 rtl:translate-x-full&#39;"
+            class="filament-sidebar fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-20 flex flex-col h-screen overflow-hidden shadow-2xl transition-all bg-white lg:border-r rtl:lg:border-r-0 rtl:lg:border-l w-[var(--sidebar-width)] lg:z-0 dark:bg-gray-800 dark:border-gray-700 -translate-x-full lg:translate-x-0 lg:max-w-[var(--collapsed-sidebar-width)] rtl:lg:-translate-x-0 rtl:translate-x-full">
+        </aside>
+        <script>
+            fetch('nav')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('aside1').innerHTML = html;
+
+                    let currentPath = window.location.pathname;
+
+                    let navItems = document.querySelectorAll('.filament-sidebar-item a');
+
+                    navItems.forEach(item => {
+                        if (item.getAttribute("href") === currentPath) {
+                            item.classList.add("bg-primary-500", "text-white");
+                        } else {
+                            item.classList.remove("bg-primary-500", "text-white");
+                        }
+                    });
+                });
+        </script>
+
+        <div x-data="{}" x-bind:class="{
+                    &#39;lg:pl-[var(--collapsed-sidebar-width)] rtl:lg:pr-[var(--collapsed-sidebar-width)]&#39;: ! $store.sidebar.isOpen,
+                    &#39;filament-main-sidebar-open lg:pl-[var(--sidebar-width)] rtl:lg:pr-[var(--sidebar-width)]&#39;: $store.sidebar.isOpen,
+                }" x-bind:style="&#39;display: flex&#39;"
+            class="filament-main flex-col gap-y-6 w-screen flex-1 rtl:lg:pl-0 hidden h-full transition-all lg:pl-[var(--collapsed-sidebar-width)] rtl:lg:pr-[var(--collapsed-sidebar-width)]"
+            style="display: flex">
+            <header id="header1"
+                class="filament-main-topbar sticky top-0 z-10 flex h-16 w-full shrink-0 items-center border-b bg-white dark:bg-gray-800 dark:border-gray-700">
+            </header>
+            <script>
+                fetch('head')
+                    .then(response => response.text())
+                    .then(html => document.getElementById('header1').innerHTML = html);
+            </script>
+
+            <div class="filament-main-content flex-1 w-full px-4 mx-auto md:px-6 lg:px-8 max-w-full">
+
+
+                <div wire:id="7qWM6T3Um3koPN7mhtEL" class="filament-page" x-data="{ showGiftCard: false }">
+                    <div class="space-y-6">
+                        <header
+                            class="filament-header space-y-2 items-start justify-between sm:flex sm:space-y-0 sm:space-x-4  sm:rtl:space-x-reverse sm:py-4">
+                            <div>
+                                <h1 class="filament-header-heading text-2xl font-bold tracking-tight">
+                                    Topup
+                                </h1>
+
+                            </div>
+
+
+                        </header>
+
+
+
+
+
+
+                        <style>
+                            .loyalty h3 {
+                                font-size: 26px;
+                                font-weight: bold;
+                                color: #fff1a4;
+                            }
+
+                            .loyalty p {
+                                margin-top: 2px;
+                                border-radius: 6px;
+                                color: rgb(187, 187, 187);
+                                font-size: 12px;
+                            }
+
+                            .levels {
+                                display: grid;
+                                grid-template-columns: repeat(4, 1fr);
+                                gap: 3px;
+                                justify-content: center;
+                                align-items: center;
+                                margin-top: 10px;
+                            }
+
+                            .levels .level {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 2px;
+                            }
+
+                            .level img {
+                                height: 60px;
+                            }
+
+                            .progress {
+                                display: grid;
+                                grid-template-columns: repeat(4, 1fr);
+                                gap: 3px;
+                                justify-content: center;
+                                align-items: center;
+                                margin-top: 10px;
+                            }
+
+                            .progress .cell:first-child {
+                                border-radius: 50px 0px 0px 50px;
+                            }
+
+                            .progress .cell:last-child {
+                                border-radius: 0px 50px 50px 0;
+                            }
+
+                            .progress .cell {
+                                height: 72px;
+                                background-color: #12171e;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            .progress .cell.active {
+                                background-color: rgb(59, 130, 246);
+                            }
+
+                            .cell.active p {
+                                color: rgb(231, 231, 231);
+                            }
+
+                            .loyalty .helperText {
+                                margin-top: 10px;
+                                text-align: center;
+                                color: rgb(216, 216, 216);
+                            }
+                        </style>
+
+                        <div class="p-2 space-y-2 bg-white rounded-xl shadow dark:border-gray-600 dark:bg-gray-800">
+
+
+                            <div class="space-y-2">
+                                <div class="px-4 py-2 space-y-4">
+                                    <form x-data="{ isUploadingFile: false }"
+                                        x-on:submit="if (isUploadingFile) $event.preventDefault()"
+                                        x-on:file-upload-started="isUploadingFile = true"
+                                        x-on:file-upload-finished="isUploadingFile = false"
+                                        class="filament-form space-y-6" wire:submit.prevent="submit">
+                                        Topup Account Balance
+                                        <div class="mt-3">
+                                            <div
+                                                class="grid grid-cols-1   lg:grid-cols-2   filament-forms-component-container gap-6">
+                                                <div class="col-span-1"
+                                                    wire:key="7qWM6T3Um3koPN7mhtEL.data.ticker.Filament\Forms\Components\Radio">
+                                                    <div class="filament-forms-field-wrapper">
+
+                                                        <div class="space-y-2">
+
+                                                            <div
+                                                                class="columns-1      filament-forms-radio-component gap-2">
+                                                                <div class="flex items-start gap-3">
+                                                                    <div class="flex items-center h-5">
+                                                                        <input name="data.ticker" id="data.ticker-btc"
+                                                                            type="radio" value="btc"
+                                                                            dusk="filament.forms.data.ticker"
+                                                                            wire:model.defer="data.ticker"
+                                                                            class="focus:ring-primary-500 h-4 w-4 text-primary-600 disabled:opacity-70 dark:bg-gray-700 dark:checked:bg-primary-500 border-gray-300 dark:border-gray-500"
+                                                                            wire:loading.attr="disabled">
+                                                                    </div>
+
+                                                                    <div class="text-sm">
+                                                                        <label for="data.ticker-btc"
+                                                                            class="font-medium text-gray-700 dark:text-gray-200">
+                                                                            Bitcoin (BTC)
+                                                                        </label>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex items-start gap-3">
+                                                                    <div class="flex items-center h-5">
+                                                                        <input name="data.ticker" id="data.ticker-ltc"
+                                                                            type="radio" value="ltc"
+                                                                            dusk="filament.forms.data.ticker"
+                                                                            wire:model.defer="data.ticker"
+                                                                            class="focus:ring-primary-500 h-4 w-4 text-primary-600 disabled:opacity-70 dark:bg-gray-700 dark:checked:bg-primary-500 border-gray-300 dark:border-gray-500"
+                                                                            wire:loading.attr="disabled">
+                                                                    </div>
+
+                                                                    <div class="text-sm">
+                                                                        <label for="data.ticker-ltc"
+                                                                            class="font-medium text-gray-700 dark:text-gray-200">
+                                                                            Litecoin (LTC)
+                                                                        </label>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex items-start gap-3">
+                                                                    <div class="flex items-center h-5">
+                                                                        <input name="data.ticker" id="data.ticker-eth"
+                                                                            type="radio" value="eth"
+                                                                            dusk="filament.forms.data.ticker"
+                                                                            wire:model.defer="data.ticker"
+                                                                            class="focus:ring-primary-500 h-4 w-4 text-primary-600 disabled:opacity-70 dark:bg-gray-700 dark:checked:bg-primary-500 border-gray-300 dark:border-gray-500"
+                                                                            wire:loading.attr="disabled">
+                                                                    </div>
+
+                                                                    <div class="text-sm">
+                                                                        <label for="data.ticker-eth"
+                                                                            class="font-medium text-gray-700 dark:text-gray-200">
+                                                                            Ethereum (ERC-20)
+                                                                        </label>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex items-start gap-3">
+                                                                    <div class="flex items-center h-5">
+                                                                        <input name="data.ticker"
+                                                                            id="data.ticker-trc20/usdt" type="radio"
+                                                                            value="trc20/usdt"
+                                                                            dusk="filament.forms.data.ticker"
+                                                                            wire:model.defer="data.ticker"
+                                                                            class="focus:ring-primary-500 h-4 w-4 text-primary-600 disabled:opacity-70 dark:bg-gray-700 dark:checked:bg-primary-500 border-gray-300 dark:border-gray-500"
+                                                                            wire:loading.attr="disabled">
+                                                                    </div>
+
+                                                                    <div class="text-sm">
+                                                                        <label for="data.ticker-trc20/usdt"
+                                                                            class="font-medium text-gray-700 dark:text-gray-200">
+                                                                            USDT (TRC-20)
+                                                                        </label>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <button type="submit" wire:loading.attr="disabled" x-data="{
+            form: null,
+            isUploadingFile: false,
+        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
+                                            x-init="
+            form = $el.closest(&#39;form&#39;)
+
+            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
+                isUploadingFile = true
+            })
+
+            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
+                isUploadingFile = false
+            })
+        " class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700"
+                                            wire:loading.class="opacity-70 cursor-wait">
+
+
+                                            <span class="flex items-center gap-1">
+                                                <span class="">
+                                                    <svg wire:loading="" wire:target="submit"
+                                                        class="filament-button-icon w-6 h-6 mr-1 -ml-2 rtl:ml-1 rtl:-mr-2 animate-spin"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor">
+                                                        <path
+                                                            d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z">
+                                                        </path>
+                                                    </svg>
+                                                    <span>Create New Topup</span>
+                                                </span>
+                                            </span>
+
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="p-2 space-y-2 bg-white rounded-xl shadow dark:border-gray-600 dark:bg-gray-800">
+
+
+                            <div class="space-y-2">
+                                <div class="px-4 py-2 space-y-4">
+                                    <form x-data="{ isUploadingFile: false }"
+                                        x-on:submit="if (isUploadingFile) $event.preventDefault()"
+                                        x-on:file-upload-started="isUploadingFile = true"
+                                        x-on:file-upload-finished="isUploadingFile = false"
+                                        class="filament-form space-y-6" wire:submit.prevent="submit">
+                                        <div class="loyalty">
+                                            <h3>Loyalty Rewards</h3>
+                                            <p>Get addtional bonus balance automatically depending upon your account
+                                                deposit history!</p>
+
+                                            <div class="levels">
+                                                <div class="level">
+
+                                                </div>
+
+                                                <div class="level">
+                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="level">
+                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
+                                                        alt="">
+                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
+                                                        alt="">
+                                                </div>
+
+                                                <div class="level">
+                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
+                                                        alt="">
+                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
+                                                        alt="">
+                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
+                                                        alt="">
+                                                </div>
+                                            </div>
+
+                                            <div class="progress">
+                                                <div class="cell active">
+                                                    No Bonus
+                                                    <p>Total deposit &lt; 200$</p>
+                                                </div>
+                                                <div class="cell ">
+                                                    5% Extra
+                                                    <p>Total deposit &gt;= 200$</p>
+                                                </div>
+                                                <div class="cell ">
+                                                    10% Extra
+                                                    <p>Total deposit &gt;= 500$</p>
+                                                </div>
+                                                <div class="cell ">
+                                                    15% Extra
+                                                    <p>Total deposit &gt;= 1000$</p>
+                                                </div>
+                                            </div>
+
+                                            <p class="helperText">You will get <strong>0%</strong> extra with your next
+                                                deposit. Amount remaining until next level: <strong>$200</strong>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <button type="button" wire:loading.attr="disabled" x-data="{
+            form: null,
+            isUploadingFile: false,
+        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
+                            x-init="
+            form = $el.closest(&#39;form&#39;)
+
+            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
+                isUploadingFile = true
+            })
+
+            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
+                isUploadingFile = false
+            })
+        " class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 float-right"
+                            wire:loading.class="opacity-70 cursor-wait" x-on:click.preventdefault="showGiftCard = true">
+
+
+                            <span class="flex items-center gap-1">
+                                <span class="">
+                                    <svg wire:loading="" wire:target="submit"
+                                        class="filament-button-icon w-6 h-6 mr-1 -ml-2 rtl:ml-1 rtl:-mr-2 animate-spin"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z"></path>
+                                    </svg>
+                                    <span>Have a voucher code?</span>
+                                </span>
+                            </span>
+
+                        </button>
+
+                        <div x-show="showGiftCard" class="pt-16" style="display: none;">
+                            <div class="p-2 space-y-2 bg-white rounded-xl shadow dark:border-gray-600 dark:bg-gray-800">
+
+
+                                <div class="space-y-2">
+                                    <div class="px-4 py-2 space-y-4">
+                                        <form x-data="{ isUploadingFile: false }"
+                                            x-on:submit="if (isUploadingFile) $event.preventDefault()"
+                                            x-on:file-upload-started="isUploadingFile = true"
+                                            x-on:file-upload-finished="isUploadingFile = false"
+                                            class="filament-form space-y-6" wire:submit.prevent="submitRedeem">
+                                            <div
+                                                class="grid grid-cols-1   lg:grid-cols-1   filament-forms-component-container gap-6">
+                                                <div class="col-span-1"
+                                                    wire:key="7qWM6T3Um3koPN7mhtEL.redeemData.code.Filament\Forms\Components\TextInput">
+                                                    <div class="filament-forms-field-wrapper">
+
+                                                        <div class="space-y-2">
+                                                            <div
+                                                                class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
+                                                                <label
+                                                                    class="filament-forms-field-wrapper-label inline-flex items-center space-x-3 rtl:space-x-reverse"
+                                                                    for="redeemData.code">
+
+
+                                                                    <span
+                                                                        class="text-sm font-medium leading-4 text-gray-700 dark:text-gray-300">
+                                                                        Code
+
+                                                                        <sup
+                                                                            class="font-medium text-danger-700 dark:text-danger-400">*</sup>
+                                                                    </span>
+
+
+                                                                </label>
+
+                                                            </div>
+
+                                                            <div
+                                                                class="filament-forms-text-input-component flex items-center space-x-2 rtl:space-x-reverse group">
+
+
+
+                                                                <div class="flex-1">
+                                                                    <input x-data="{}"
+                                                                        wire:model.defer="redeemData.code" type="text"
+                                                                        dusk="filament.forms.redeemData.code"
+                                                                        id="redeemData.code"
+                                                                        placeholder="Your Voucher Code here."
+                                                                        required=""
+                                                                        class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
+                                                                        x-bind:class="{
+                    &#39;border-gray-300&#39;: ! (&#39;redeemData.code&#39; in $wire.__instance.serverMemo.errors),
+                    &#39;dark:border-gray-600&#39;: ! (&#39;redeemData.code&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; true,
+                    &#39;border-danger-600 ring-danger-600&#39;: (&#39;redeemData.code&#39; in $wire.__instance.serverMemo.errors),
+                    &#39;dark:border-danger-400 dark:ring-danger-400&#39;: (&#39;redeemData.code&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; true,
+                }">
+                                                                </div>
+
+
+
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <button type="submit" wire:loading.attr="disabled" x-data="{
+            form: null,
+            isUploadingFile: false,
+        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
+                                                x-init="
+            form = $el.closest(&#39;form&#39;)
+
+            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
+                isUploadingFile = true
+            })
+
+            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
+                isUploadingFile = false
+            })
+        " class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700"
+                                                wire:loading.class="opacity-70 cursor-wait">
+
+
+                                                <span class="flex items-center gap-1">
+                                                    <span class="">
+                                                        <svg wire:loading="" wire:target="submit"
+                                                            class="filament-button-icon w-6 h-6 mr-1 -ml-2 rtl:ml-1 rtl:-mr-2 animate-spin"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            fill="currentColor">
+                                                            <path
+                                                                d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z">
+                                                            </path>
+                                                        </svg>
+                                                        <span>Redeem Voucher Code</span>
+                                                    </span>
+                                                </span>
+
+                                            </button>
+
+                                            <button type="submit" wire:loading.attr="disabled" x-data="{
+            form: null,
+            isUploadingFile: false,
+        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
+                                                x-init="
+            form = $el.closest(&#39;form&#39;)
+
+            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
+                isUploadingFile = true
+            })
+
+            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
+                isUploadingFile = false
+            })
+        " class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-gray-800 bg-white border-gray-300 hover:bg-gray-50 focus:ring-primary-600 focus:text-primary-600 focus:bg-primary-50 focus:border-primary-600 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500 dark:text-gray-200 dark:focus:text-primary-400 dark:focus:border-primary-400 dark:focus:bg-gray-800"
+                                                wire:loading.class="opacity-70 cursor-wait"
+                                                x-on:click="showGiftCard = false">
+
+
+                                                <span class="flex items-center gap-1">
+                                                    <span class="">
+                                                        <span>Back</span>
+                                                    </span>
+                                                </span>
+
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                    <form wire:submit.prevent="callMountedAction">
+
+                        <div x-data="{
+
+        isOpen: false,
+
+        livewire: null,
+
+        close: function () {
+            this.isOpen = false
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-closed&#39;, { id: &#39;page-action&#39; }))
+        },
+
+        open: function () {
+            this.isOpen = true
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;page-action&#39; }))
+        },
+
+    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;page-action&#39;) close()"
+                            x-on:open-modal.window="if ($event.detail.id === &#39;page-action&#39;) open()"
+                            role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
+
+
+                            <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                style="display: none;">
+                                <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })"
+                                    aria-hidden="true"
+                                    class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                </div>
+
+                                <div x-show="isOpen"
+                                    x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })"
+                                    x-transition:enter="ease duration-300" x-transition:leave="ease duration-300"
+                                    x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0"
+                                    x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8"
+                                    x-ref="modalContainer"
+                                    class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                    x-init="this.livewire = $wire.__instance"
+                                    x-on:modal-closed.stop="if (&#39;mountedAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedAction&#39;, null)"
+                                    style="display: none;">
+                                    <div
+                                        class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                        <button tabindex="-1" type="button"
+                                            class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                            x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })">
+                                            <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                tabindex="-1"
+                                                class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="sr-only">
+                                                Close
+                                            </span>
+                                        </button>
+
+                                        <div class="">
+                                            <div class="space-y-2">
+
+                                            </div>
+
+                                            <div class="filament-modal-content space-y-2 p-2">
+
+
+
+                                            </div>
+
+                                            <div class="space-y-2">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form wire:submit.prevent="callMountedFormComponentAction">
+                        <div x-data="{
+
+        isOpen: false,
+
+        livewire: null,
+
+        close: function () {
+            this.isOpen = false
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-closed&#39;, { id: &#39;7qWM6T3Um3koPN7mhtEL-form-component-action&#39; }))
+        },
+
+        open: function () {
+            this.isOpen = true
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;7qWM6T3Um3koPN7mhtEL-form-component-action&#39; }))
+        },
+
+    }" x-trap.noscroll="isOpen"
+                            x-on:close-modal.window="if ($event.detail.id === &#39;7qWM6T3Um3koPN7mhtEL-form-component-action&#39;) close()"
+                            x-on:open-modal.window="if ($event.detail.id === &#39;7qWM6T3Um3koPN7mhtEL-form-component-action&#39;) open()"
+                            role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
+
+
+                            <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                style="display: none;">
+                                <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;7qWM6T3Um3koPN7mhtEL-form-component-action&#39; })"
+                                    aria-hidden="true"
+                                    class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                </div>
+
+                                <div x-show="isOpen"
+                                    x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;7qWM6T3Um3koPN7mhtEL-form-component-action&#39; })"
+                                    x-transition:enter="ease duration-300" x-transition:leave="ease duration-300"
+                                    x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0"
+                                    x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8"
+                                    x-ref="modalContainer"
+                                    class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                    x-init="this.livewire = $wire.__instance"
+                                    x-on:modal-closed.stop="if (&#39;mountedFormComponentAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedFormComponentAction&#39;, null)"
+                                    style="display: none;">
+                                    <div
+                                        class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                        <button tabindex="-1" type="button"
+                                            class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                            x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;7qWM6T3Um3koPN7mhtEL-form-component-action&#39; })">
+                                            <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                tabindex="-1"
+                                                class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="sr-only">
+                                                Close
+                                            </span>
+                                        </button>
+
+                                        <div class="">
+                                            <div class="space-y-2">
+
+                                            </div>
+
+                                            <div class="filament-modal-content space-y-2 p-2">
+
+
+
+                                            </div>
+
+                                            <div class="space-y-2">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <!-- Livewire Component wire-end:7qWM6T3Um3koPN7mhtEL -->
+
+
+            </div>
+
+            <div class="filament-main-footer py-4 shrink-0">
+                <div class="filament-footer flex items-center justify-center">
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="{% static './Topup - ElonMoney Shop_files/livewire.js' %}" data-turbo-eval="false"
+        data-turbolinks-eval="false"></script>
+    <script data-turbo-eval="false"
+        data-turbolinks-eval="false">window.livewire = new Livewire(); window.Livewire = window.livewire; window.livewire_app_url = ''; window.livewire_token = 'hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR'; window.deferLoadingAlpine = function (callback) { window.addEventListener('livewire:load', function () { callback(); }); }; let started = false; window.addEventListener('alpine:initializing', function () { if (!started) { window.livewire.start(); started = true; } }); document.addEventListener("DOMContentLoaded", function () { if (!started) { window.livewire.start(); started = true; } });</script>
+
+    <script>
+        window.filamentData = [];
+    </script>
+
+
+
+    <script defer="" src="{% static './Topup - ElonMoney Shop_files/app.js' %}"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

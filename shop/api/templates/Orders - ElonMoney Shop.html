@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://elonmoney.cx/dashboard/orders -->
+<html lang="en" dir="ltr" class="antialiased bg-gray-100 filament js-focus-visible dark">
+<div id="in-page-channel-node-id" data-channel-name="in_page_channel_PJBsKG"></div>
+
+<head>
+    {% load static %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css" data-tag-name="trix-editor">
+        trix-editor {
+            display: block;
+        }
+
+        trix-editor:empty:not(:focus)::before {
+            content: attr(placeholder);
+            color: graytext;
+            cursor: text;
+            pointer-events: none;
+        }
+
+        trix-editor a[contenteditable=false] {
+            cursor: text;
+        }
+
+        trix-editor img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        trix-editor [data-trix-attachment] figcaption textarea {
+            resize: none;
+        }
+
+        trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+            position: absolute;
+            left: -9999px;
+            max-height: 0px;
+        }
+
+        trix-editor [data-trix-attachment] figcaption[data-trix-placeholder]:empty::before {
+            content: attr(data-trix-placeholder);
+            color: graytext;
+        }
+
+        trix-editor [data-trix-cursor-target] {
+            display: inline-block !important;
+            width: 1px !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+        }
+
+        trix-editor [data-trix-cursor-target=left] {
+            vertical-align: top !important;
+            margin-left: -1px !important;
+        }
+
+        trix-editor [data-trix-cursor-target=right] {
+            vertical-align: bottom !important;
+            margin-right: -1px !important;
+        }
+    </style>
+    <style type="text/css" data-tag-name="trix-toolbar">
+        trix-toolbar {
+            display: block;
+        }
+
+        trix-toolbar {
+            white-space: nowrap;
+        }
+
+        trix-toolbar [data-trix-dialog] {
+            display: none;
+        }
+
+        trix-toolbar [data-trix-dialog][data-trix-active] {
+            display: block;
+        }
+
+        trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
+            background-color: #ffdddd;
+        }
+    </style>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR">
+
+
+
+    <title>Orders - ElonMoney Shop</title>
+
+
+
+    <style>
+        [x-cloak=""],
+        [x-cloak="x-cloak"],
+        [x-cloak="1"] {
+            display: none !important;
+        }
+
+        @media (max-width: 1023px) {
+            [x-cloak="-lg"] {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            [x-cloak="lg"] {
+                display: none !important;
+            }
+        }
+
+        :root {
+            --sidebar-width: 250px;
+            --collapsed-sidebar-width: 65px;
+        }
+    </style>
+
+    <style>
+        [wire\:loading],
+        [wire\:loading\.delay],
+        [wire\:loading\.inline-block],
+        [wire\:loading\.inline],
+        [wire\:loading\.block],
+        [wire\:loading\.flex],
+        [wire\:loading\.table],
+        [wire\:loading\.grid],
+        [wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        input:-webkit-autofill,
+        select:-webkit-autofill,
+        textarea:-webkit-autofill {
+            animation-duration: 50000s;
+            animation-name: livewireautofill;
+        }
+
+        @keyframes livewireautofill {
+            from {}
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="{% static './Orders - ElonMoney Shop_files/css2.css' %}" rel="stylesheet">
+
+
+    <link rel="preload" as="style" href="{% static './Orders - ElonMoney Shop_files/filament.58c4a07b.css' %}">
+    <link rel="stylesheet" href="{% static './Orders - ElonMoney Shop_files/filament.58c4a07b.css' %}">
+
+
+
+    <script>
+        const theme = localStorage.getItem('theme')
+
+        if ((theme === 'dark') || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        }
+    </script>
+
+
+</head>
+
+<body style="background-image: url(); background-size: cover;"
+    class="filament-body bg-gray-100 text-gray-900 dark:text-gray-100 dark:bg-gray-900">
+
+
+    <div id="div_nav" class="filament-app-layout flex w-full min-h-screen overflow-x-clip">
+        <div x-data="{}" x-show="$store.sidebar.isOpen" x-transition.opacity.500ms=""
+            x-on:click="$store.sidebar.close()"
+            class="filament-sidebar-close-overlay fixed inset-0 z-20 w-full h-full bg-gray-900/50 lg:hidden"
+            style="display: none;"></div>
+
+        <aside id="aside1" x-data="{}"
+            x-bind:class="$store.sidebar.isOpen ? &#39;filament-sidebar-open translate-x-0 max-w-[20em] lg:max-w-[var(--sidebar-width)]&#39; : &#39;-translate-x-full lg:translate-x-0 lg:max-w-[var(--collapsed-sidebar-width)] rtl:lg:-translate-x-0 rtl:translate-x-full&#39;"
+            class="filament-sidebar fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-20 flex flex-col h-screen overflow-hidden shadow-2xl transition-all bg-white lg:border-r rtl:lg:border-r-0 rtl:lg:border-l w-[var(--sidebar-width)] lg:z-0 dark:bg-gray-800 dark:border-gray-700 -translate-x-full lg:translate-x-0 lg:max-w-[var(--collapsed-sidebar-width)] rtl:lg:-translate-x-0 rtl:translate-x-full">
+        </aside>
+        <script>
+            fetch('nav')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('aside1').innerHTML = html;
+
+                    let currentPath = window.location.pathname;
+
+                    let navItems = document.querySelectorAll('.filament-sidebar-item a');
+
+                    navItems.forEach(item => {
+                        if (item.getAttribute("href") === currentPath) {
+                            item.classList.add("bg-primary-500", "text-white");
+                        } else {
+                            item.classList.remove("bg-primary-500", "text-white");
+                        }
+                    });
+                });
+        </script>
+
+        <div x-data="{}" x-bind:class="{
+                    &#39;lg:pl-[var(--collapsed-sidebar-width)] rtl:lg:pr-[var(--collapsed-sidebar-width)]&#39;: ! $store.sidebar.isOpen,
+                    &#39;filament-main-sidebar-open lg:pl-[var(--sidebar-width)] rtl:lg:pr-[var(--sidebar-width)]&#39;: $store.sidebar.isOpen,
+                }" x-bind:style="&#39;display: flex&#39;"
+            class="filament-main flex-col gap-y-6 w-screen flex-1 rtl:lg:pl-0 hidden h-full transition-all lg:pl-[var(--collapsed-sidebar-width)] rtl:lg:pr-[var(--collapsed-sidebar-width)]"
+            style="display: flex">
+            <header id="header1"
+                class="filament-main-topbar sticky top-0 z-10 flex h-16 w-full shrink-0 items-center border-b bg-white dark:bg-gray-800 dark:border-gray-700">
+            </header>
+
+            <script>
+                fetch('head')
+                    .then(response => response.text())
+                    .then(html => document.getElementById('header1').innerHTML = html);
+            </script>
+
+            <div class="filament-main-content flex-1 w-full px-4 mx-auto md:px-6 lg:px-8 max-w-full">
+
+
+                <div wire:id="qZQTEyfj53BCIUIK7DyV">
+                    <div class="filament-page">
+                        <div class="space-y-6">
+                            <header
+                                class="filament-header space-y-2 items-start justify-between sm:flex sm:space-y-0 sm:space-x-4  sm:rtl:space-x-reverse sm:py-4">
+                                <div>
+                                    <h1 class="filament-header-heading text-2xl font-bold tracking-tight">
+                                        Orders
+                                    </h1>
+
+                                </div>
+
+
+                            </header>
+
+
+
+
+
+
+
+
+                            <div x-data="{
+
+        hasHeader: true,
+
+        isLoading: false,
+
+        selectedRecords: [],
+
+        shouldCheckUniqueSelection: true,
+
+        init: function () {
+            $wire.on(&#39;deselectAllTableRecords&#39;, () =&gt; this.deselectAllRecords())
+
+            $watch(&#39;selectedRecords&#39;, () =&gt; {
+                if (! this.shouldCheckUniqueSelection) {
+                    this.shouldCheckUniqueSelection = true
+
+                    return
+                }
+
+                this.selectedRecords = [...new Set(this.selectedRecords)]
+
+                this.shouldCheckUniqueSelection = false
+            })
+        },
+
+        mountBulkAction: function (name) {
+            $wire.mountTableBulkAction(name, this.selectedRecords)
+        },
+
+        toggleSelectRecordsOnPage: function () {
+            let keys = this.getRecordsOnPage()
+
+            if (this.areRecordsSelected(keys)) {
+                this.deselectRecords(keys)
+
+                return
+            }
+
+            this.selectRecords(keys)
+        },
+
+        getRecordsOnPage: function () {
+            let keys = []
+
+            for (checkbox of $el.getElementsByClassName(&#39;filament-tables-record-checkbox&#39;)) {
+                keys.push(checkbox.value)
+            }
+
+            return keys
+        },
+
+        selectRecords: function (keys) {
+            for (key of keys) {
+                if (this.isRecordSelected(key)) {
+                    continue
+                }
+
+                this.selectedRecords.push(key)
+            }
+        },
+
+        deselectRecords: function (keys) {
+            for (key of keys) {
+                let index = this.selectedRecords.indexOf(key)
+
+                if (index === -1) {
+                    continue
+                }
+
+                this.selectedRecords.splice(index, 1)
+            }
+        },
+
+        selectAllRecords: async function () {
+            this.isLoading = true
+
+            this.selectedRecords = await $wire.getAllTableRecordKeys()
+
+            this.isLoading = false
+        },
+
+        deselectAllRecords: function () {
+            this.selectedRecords = []
+        },
+
+        isRecordSelected: function (key) {
+            return this.selectedRecords.includes(key)
+        },
+
+        areRecordsSelected: function (keys) {
+            return keys.every(key =&gt; this.isRecordSelected(key))
+        },
+
+    }" class="filament-tables-component">
+                                <div
+                                    class="border border-gray-300 shadow-sm bg-white rounded-xl filament-tables-container dark:bg-gray-800 dark:border-gray-700">
+                                    <div class="filament-tables-header-container"
+                                        x-show="hasHeader = (false || selectedRecords.length)" style="display: none;">
+
+
+                                        <div x-show="false || selectedRecords.length"
+                                            class="filament-tables-header-toolbar flex items-center justify-between p-2 h-14"
+                                            x-bind:class="{
+                    &#39;gap-2&#39;: false || selectedRecords.length,
+                }" style="display: none;">
+                                            <div class="flex items-center gap-2">
+
+                                                <div class="filament-dropdown filament-tables-bulk-actions"
+                                                    x-show="selectedRecords.length" x-data="{
+        toggle: function (event) {
+            $refs.panel.toggle(event)
+        },
+        open: function (event) {
+            $refs.panel.open(event)
+        },
+        close: function (event) {
+            $refs.panel.close(event)
+        },
+    }" style="display: none;">
+                                                    <div x-on:click="toggle"
+                                                        class="filament-dropdown-trigger cursor-pointer">
+                                                        <button title="Open actions" type="button"
+                                                            class="filament-icon-button flex items-center justify-center rounded-full relative hover:bg-gray-500/5 focus:outline-none disabled:opacity-70 disabled:cursor-not-allowed disabled:pointer-events-none text-primary-500 focus:bg-primary-500/10 dark:hover:bg-gray-300/5 w-10 h-10 filament-tables-bulk-actions-trigger">
+                                                            <span class="sr-only">
+                                                                Open actions
+                                                            </span>
+
+                                                            <svg wire:loading.remove.delay="" wire:target=""
+                                                                class="filament-icon-button-icon w-5 h-5"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="2"
+                                                                stroke="currentColor" aria-hidden="true">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z">
+                                                                </path>
+                                                            </svg>
+
+                                                        </button>
+                                                    </div>
+
+                                                    <div x-ref="panel"
+                                                        x-float.placement.bottom-start.flip.offset="{ offset: 8 }"
+                                                        x-transition:enter-start="opacity-0 scale-95"
+                                                        x-transition:leave-end="opacity-0 scale-95"
+                                                        class="filament-dropdown-panel absolute z-10 w-full divide-y divide-gray-100 rounded-lg bg-white shadow-lg ring-1 ring-black/5 transition dark:divide-gray-700 dark:bg-gray-800 dark:ring-white/10 max-w-[14rem]"
+                                                        style="display: none;">
+                                                        <div class="filament-dropdown-list p-1" dark-mode="dark-mode">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="filament-tables-table-container overflow-x-auto relative dark:border-gray-700 rounded-t-xl"
+                                        x-bind:class="{
+                &#39;rounded-t-xl&#39;: ! hasHeader,
+                &#39;border-t&#39;: hasHeader,
+            }">
+
+                                        <table
+                                            class="filament-tables-table w-full text-start divide-y table-auto dark:divide-gray-700">
+                                            <thead>
+                                                <tr class="bg-gray-500/5">
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Number
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Number
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Price
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Company
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Expire date
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+                                                  
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                CVV
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody wire:sortable=""
+                                                wire:end.stop="reorderTable($event.target.sortable.toArray())"
+                                                wire:sortable.options="{ animation: 100 }" id="TABLE"
+                                                class="divide-y whitespace-nowrap dark:divide-gray-700">
+
+                                                {% if orders %}
+                                                {% for order in orders %}
+                                                <tr>
+                                                    <td
+                                                        class="filament-tables-reorder-cell w-4 px-4 whitespace-nowrap hidden">
+                                                    </td>
+
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.base"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div class="filament-tables-text-column px-4 py-3">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.id }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.bin"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div class="filament-tables-text-column px-4 py-3">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.card_number }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.exp"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div class="filament-tables-text-column px-4 py-3">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>${{ order.price }}.00</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.company"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div class="filament-tables-text-column px-4 py-3">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.Company }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.company"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div
+                                                                class="filament-tables-text-column px-4 py-3 whitespace-normal">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.expired|date:"m/Y" }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    
+
+                                                    
+
+                                                    
+
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.country"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div
+                                                                class="filament-tables-text-column px-4 py-3 whitespace-normal">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.CVV }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    
+
+                                                    
+                                                    
+                                                </tr>
+                                                {% endfor %}
+
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    {% else %}
+                                    <tbody wire:sortable=""
+                                        wire:end.stop="reorderTable($event.target.sortable.toArray())"
+                                        wire:sortable.options="{ animation: 100 }"
+                                        class="divide-y whitespace-nowrap dark:divide-gray-700">
+                                        <center>
+                                            <tr>
+                                                <td colspan="8" class="text-center">
+                                                    <div class="flex items-center justify-center w-full p-4">
+                                                        <div
+                                                            class="filament-tables-empty-state flex flex-1 flex-col items-center justify-center p-6 mx-auto space-y-6 text-center bg-white dark:bg-gray-800">
+                                                            <div
+                                                                class="flex items-center justify-center w-16 h-16 text-primary-500 rounded-full bg-primary-50 dark:bg-gray-700">
+                                                                <svg wire:loading.remove.delay="1"
+                                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set"
+                                                                    class="w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                                                    stroke="currentColor" aria-hidden="true">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M6 18L18 6M6 6l12 12"></path>
+                                                                </svg>
+                                                                <svg viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    class="animate-spin w-6 h-6"
+                                                                    wire:loading.delay="wire:loading.delay"
+                                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                                    <path opacity="0.2" fill-rule="evenodd"
+                                                                        clip-rule="evenodd"
+                                                                        d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                                        fill="currentColor"></path>
+                                                                    <path
+                                                                        d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z"
+                                                                        fill="currentColor"></path>
+                                                                </svg>
+                                                            </div>
+
+                                                            <div class="max-w-md space-y-1">
+                                                                <h2
+                                                                    class="filament-tables-empty-state-heading text-xl font-bold tracking-tight dark:text-white">
+                                                                    No records found
+                                                                </h2>
+
+                                                                <p
+                                                                    class="filament-tables-empty-state-description whitespace-normal text-sm font-medium text-gray-500 dark:text-gray-400">
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </center>
+                                    </tbody>
+                                    {% endif %}
+
+                                    </table>
+                                </div>
+                            </div>
+
+                            <form wire:submit.prevent="callMountedTableAction">
+
+                                <div x-data="{
+
+        isOpen: false,
+
+        livewire: null,
+
+        close: function () {
+            this.isOpen = false
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-closed&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-action&#39; }))
+        },
+
+        open: function () {
+            this.isOpen = true
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-action&#39; }))
+        },
+
+    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;qZQTEyfj53BCIUIK7DyV-table-action&#39;) close()"
+                                    x-on:open-modal.window="if ($event.detail.id === &#39;qZQTEyfj53BCIUIK7DyV-table-action&#39;) open()"
+                                    role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
+
+
+                                    <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                        x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                        x-transition:leave-end="opacity-0"
+                                        class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                        style="display: none;">
+                                        <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-action&#39; })"
+                                            aria-hidden="true"
+                                            class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                        </div>
+
+                                        <div x-show="isOpen"
+                                            x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-action&#39; })"
+                                            x-transition:enter="ease duration-300"
+                                            x-transition:leave="ease duration-300"
+                                            x-transition:enter-start="translate-y-8"
+                                            x-transition:enter-end="translate-y-0"
+                                            x-transition:leave-start="translate-y-0"
+                                            x-transition:leave-end="translate-y-8" x-ref="modalContainer"
+                                            class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                            x-init="this.livewire = $wire.__instance" x-on:modal-closed.stop="if (&#39;mountedTableAction&#39; in this.livewire?.serverMemo.data) {
+                    this.livewire.set(&#39;mountedTableAction&#39;, null)
+                }
+
+                if (&#39;mountedTableActionRecord&#39; in this.livewire?.serverMemo.data) {
+                    this.livewire.set(&#39;mountedTableActionRecord&#39;, null)
+                }" style="display: none;">
+                                            <div
+                                                class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                                <button tabindex="-1" type="button"
+                                                    class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                                    x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-action&#39; })">
+                                                    <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                        tabindex="-1"
+                                                        class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                        fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                    <span class="sr-only">
+                                                        Close
+                                                    </span>
+                                                </button>
+
+                                                <div class="">
+                                                    <div class="space-y-2">
+
+                                                    </div>
+
+                                                    <div class="filament-modal-content space-y-2 p-2">
+
+
+
+                                                    </div>
+
+                                                    <div class="space-y-2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form wire:submit.prevent="callMountedTableBulkAction">
+
+                                <div x-data="{
+
+        isOpen: false,
+
+        livewire: null,
+
+        close: function () {
+            this.isOpen = false
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-closed&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-bulk-action&#39; }))
+        },
+
+        open: function () {
+            this.isOpen = true
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-bulk-action&#39; }))
+        },
+
+    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;qZQTEyfj53BCIUIK7DyV-table-bulk-action&#39;) close()"
+                                    x-on:open-modal.window="if ($event.detail.id === &#39;qZQTEyfj53BCIUIK7DyV-table-bulk-action&#39;) open()"
+                                    role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
+
+
+                                    <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                        x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                        x-transition:leave-end="opacity-0"
+                                        class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                        style="display: none;">
+                                        <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-bulk-action&#39; })"
+                                            aria-hidden="true"
+                                            class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                        </div>
+
+                                        <div x-show="isOpen"
+                                            x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-bulk-action&#39; })"
+                                            x-transition:enter="ease duration-300"
+                                            x-transition:leave="ease duration-300"
+                                            x-transition:enter-start="translate-y-8"
+                                            x-transition:enter-end="translate-y-0"
+                                            x-transition:leave-start="translate-y-0"
+                                            x-transition:leave-end="translate-y-8" x-ref="modalContainer"
+                                            class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                            x-init="this.livewire = $wire.__instance"
+                                            x-on:modal-closed.stop="if (&#39;mountedTableBulkAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedTableBulkAction&#39;, null)"
+                                            style="display: none;">
+                                            <div
+                                                class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                                <button tabindex="-1" type="button"
+                                                    class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                                    x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-table-bulk-action&#39; })">
+                                                    <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                        tabindex="-1"
+                                                        class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                        fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                    <span class="sr-only">
+                                                        Close
+                                                    </span>
+                                                </button>
+
+                                                <div class="">
+                                                    <div class="space-y-2">
+
+                                                    </div>
+
+                                                    <div class="filament-modal-content space-y-2 p-2">
+
+
+
+                                                    </div>
+
+                                                    <div class="space-y-2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                    <form wire:submit.prevent="callMountedAction">
+
+                        <div x-data="{
+
+        isOpen: false,
+
+        livewire: null,
+
+        close: function () {
+            this.isOpen = false
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-closed&#39;, { id: &#39;page-action&#39; }))
+        },
+
+        open: function () {
+            this.isOpen = true
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;page-action&#39; }))
+        },
+
+    }" x-trap.noscroll="isOpen" x-on:close-modal.window="if ($event.detail.id === &#39;page-action&#39;) close()"
+                            x-on:open-modal.window="if ($event.detail.id === &#39;page-action&#39;) open()"
+                            role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
+
+
+                            <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                style="display: none;">
+                                <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })"
+                                    aria-hidden="true"
+                                    class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                </div>
+
+                                <div x-show="isOpen"
+                                    x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })"
+                                    x-transition:enter="ease duration-300" x-transition:leave="ease duration-300"
+                                    x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0"
+                                    x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8"
+                                    x-ref="modalContainer"
+                                    class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                    x-init="this.livewire = $wire.__instance"
+                                    x-on:modal-closed.stop="if (&#39;mountedAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedAction&#39;, null)"
+                                    style="display: none;">
+                                    <div
+                                        class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                        <button tabindex="-1" type="button"
+                                            class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                            x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;page-action&#39; })">
+                                            <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                tabindex="-1"
+                                                class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="sr-only">
+                                                Close
+                                            </span>
+                                        </button>
+
+                                        <div class="">
+                                            <div class="space-y-2">
+
+                                            </div>
+
+                                            <div class="filament-modal-content space-y-2 p-2">
+
+
+
+                                            </div>
+
+                                            <div class="space-y-2">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form wire:submit.prevent="callMountedFormComponentAction">
+                        <div x-data="{
+
+        isOpen: false,
+
+        livewire: null,
+
+        close: function () {
+            this.isOpen = false
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-closed&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-form-component-action&#39; }))
+        },
+
+        open: function () {
+            this.isOpen = true
+
+            this.$refs.modalContainer.dispatchEvent(new CustomEvent(&#39;modal-opened&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-form-component-action&#39; }))
+        },
+
+    }" x-trap.noscroll="isOpen"
+                            x-on:close-modal.window="if ($event.detail.id === &#39;qZQTEyfj53BCIUIK7DyV-form-component-action&#39;) close()"
+                            x-on:open-modal.window="if ($event.detail.id === &#39;qZQTEyfj53BCIUIK7DyV-form-component-action&#39;) open()"
+                            role="dialog" aria-modal="true" class="filament-modal block" wire:ignore.self="">
+
+
+                            <div x-show="isOpen" x-transition:enter="ease duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                x-transition:leave="ease duration-300" x-transition:leave-start="opacity-100"
+                                x-transition:leave-end="opacity-0"
+                                class="fixed inset-0 z-40 min-h-screen overflow-y-auto overflow-x-hidden transition flex items-center"
+                                style="display: none;">
+                                <div x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-form-component-action&#39; })"
+                                    aria-hidden="true"
+                                    class="filament-modal-close-overlay fixed inset-0 w-full h-full bg-black/50 cursor-pointer">
+                                </div>
+
+                                <div x-show="isOpen"
+                                    x-on:keydown.window.escape="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-form-component-action&#39; })"
+                                    x-transition:enter="ease duration-300" x-transition:leave="ease duration-300"
+                                    x-transition:enter-start="translate-y-8" x-transition:enter-end="translate-y-0"
+                                    x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-8"
+                                    x-ref="modalContainer"
+                                    class="relative w-full cursor-pointer pointer-events-none my-auto p-4"
+                                    x-init="this.livewire = $wire.__instance"
+                                    x-on:modal-closed.stop="if (&#39;mountedFormComponentAction&#39; in this.livewire?.serverMemo.data) this.livewire.set(&#39;mountedFormComponentAction&#39;, null)"
+                                    style="display: none;">
+                                    <div
+                                        class="filament-modal-window w-full py-2 bg-white cursor-default pointer-events-auto dark:bg-gray-800 relative rounded-xl mx-auto hidden max-w-sm">
+                                        <button tabindex="-1" type="button"
+                                            class="absolute top-2 right-2 rtl:right-auto rtl:left-2"
+                                            x-on:click="$dispatch(&#39;close-modal&#39;, { id: &#39;qZQTEyfj53BCIUIK7DyV-form-component-action&#39; })">
+                                            <svg title="__(&#39;filament-support::components/modal.actions.close.label&#39;)"
+                                                tabindex="-1"
+                                                class="filament-modal-close-button h-4 w-4 cursor-pointer text-gray-400"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="sr-only">
+                                                Close
+                                            </span>
+                                        </button>
+
+                                        <div class="">
+                                            <div class="space-y-2">
+
+                                            </div>
+
+                                            <div class="filament-modal-content space-y-2 p-2">
+
+
+
+                                            </div>
+
+                                            <div class="space-y-2">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+            <!-- Livewire Component wire-end:qZQTEyfj53BCIUIK7DyV -->
+
+
+        </div>
+
+        <div class="filament-main-footer py-4 shrink-0">
+            <div class="filament-footer flex items-center justify-center">
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+
+
+    <script src="{% static './Orders - ElonMoney Shop_files/livewire.js' %}" data-turbo-eval="false"
+        data-turbolinks-eval="false"></script>
+    <script data-turbo-eval="false"
+        data-turbolinks-eval="false">window.livewire = new Livewire(); window.Livewire = window.livewire; window.livewire_app_url = ''; window.livewire_token = 'hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR'; window.deferLoadingAlpine = function (callback) { window.addEventListener('livewire:load', function () { callback(); }); }; let started = false; window.addEventListener('alpine:initializing', function () { if (!started) { window.livewire.start(); started = true; } }); document.addEventListener("DOMContentLoaded", function () { if (!started) { window.livewire.start(); started = true; } });</script>
+
+    <script>
+        window.filamentData = [];
+    </script>
+
+
+
+    <script defer="" src="{% static './Orders - ElonMoney Shop_files/app.js' %}"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

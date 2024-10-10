@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://elonmoney.cx/dashboard/register -->
+<html lang="en" dir="ltr" class="antialiased bg-gray-100 filament js-focus-visible ">
+<div id="in-page-channel-node-id" data-channel-name="in_page_channel_xCYAtO"></div>
+
+<head>
+  {% load static %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css" data-tag-name="trix-editor">
+    trix-editor {
+      display: block;
+    }
+
+    trix-editor:empty:not(:focus)::before {
+      content: attr(placeholder);
+      color: graytext;
+      cursor: text;
+      pointer-events: none;
+    }
+
+    trix-editor a[contenteditable=false] {
+      cursor: text;
+    }
+
+    trix-editor img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    trix-editor [data-trix-attachment] figcaption textarea {
+      resize: none;
+    }
+
+    trix-editor [data-trix-attachment] figcaption textarea.trix-autoresize-clone {
+      position: absolute;
+      left: -9999px;
+      max-height: 0px;
+    }
+
+    trix-editor [data-trix-attachment] figcaption[data-trix-placeholder]:empty::before {
+      content: attr(data-trix-placeholder);
+      color: graytext;
+    }
+
+    trix-editor [data-trix-cursor-target] {
+      display: inline-block !important;
+      width: 1px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+    }
+
+    trix-editor [data-trix-cursor-target=left] {
+      vertical-align: top !important;
+      margin-left: -1px !important;
+    }
+
+    trix-editor [data-trix-cursor-target=right] {
+      vertical-align: bottom !important;
+      margin-right: -1px !important;
+    }
+  </style>
+  <style type="text/css" data-tag-name="trix-toolbar">
+    trix-toolbar {
+      display: block;
+    }
+
+    trix-toolbar {
+      white-space: nowrap;
+    }
+
+    trix-toolbar [data-trix-dialog] {
+      display: none;
+    }
+
+    trix-toolbar [data-trix-dialog][data-trix-active] {
+      display: block;
+    }
+
+    trix-toolbar [data-trix-dialog] [data-trix-validate]:invalid {
+      background-color: #ffdddd;
+    }
+  </style>
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="TsHZMG9hDmz3Cun8GVYO38xSwZUfoQGku69CZ4b1">
+
+
+
+  <title>Create an Account - ElonMoney Shop</title>
+
+
+
+  <style>
+    [x-cloak=""],
+    [x-cloak="x-cloak"],
+    [x-cloak="1"] {
+      display: none !important;
+    }
+
+    @media (max-width: 1023px) {
+      [x-cloak="-lg"] {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      [x-cloak="lg"] {
+        display: none !important;
+      }
+    }
+
+    :root {
+      --sidebar-width: 250px;
+      --collapsed-sidebar-width: 65px;
+    }
+  </style>
+
+  <style>
+    [wire\:loading],
+    [wire\:loading\.delay],
+    [wire\:loading\.inline-block],
+    [wire\:loading\.inline],
+    [wire\:loading\.block],
+    [wire\:loading\.flex],
+    [wire\:loading\.table],
+    [wire\:loading\.grid],
+    [wire\:loading\.inline-flex] {
+      display: none;
+    }
+
+    [wire\:loading\.delay\.shortest],
+    [wire\:loading\.delay\.shorter],
+    [wire\:loading\.delay\.short],
+    [wire\:loading\.delay\.long],
+    [wire\:loading\.delay\.longer],
+    [wire\:loading\.delay\.longest] {
+      display: none;
+    }
+
+    [wire\:offline] {
+      display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+      display: none;
+    }
+
+    input:-webkit-autofill,
+    select:-webkit-autofill,
+    textarea:-webkit-autofill {
+      animation-duration: 50000s;
+      animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill {
+      from {}
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="{% static './Create an Account - ElonMoney Shop_files/css2.css' %}" rel="stylesheet">
+
+
+  <link rel="preload" as="style" href="{% static './Create an Account - ElonMoney Shop_files/filament.58c4a07b.css' %}">
+  <link rel="stylesheet" href="{% static './Create an Account - ElonMoney Shop_files/filament.58c4a07b.css' %}">
+
+
+
+
+
+</head>
+
+<body class="filament-body bg-gray-100 text-gray-900">
+  <div class="filament-login-page flex items-center justify-center min-h-screen bg-gray-100 text-gray-900 py-12">
+    <div class="w-screen px-6 -mt-16 space-y-8 md:mt-0 md:px-2 max-w-md">
+      <div class="p-8 space-y-4 bg-white/50 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-2xl relative">
+        <div class="flex justify-center w-full">
+          <div class="filament-brand text-xl font-bold tracking-tight">
+            ElonMoney Shop
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold tracking-tight text-center">
+          Create an Account
+        </h2>
+
+        <form method="post">
+          {% csrf_token %}
+
+          <!-- Общие ошибки формы (например, если есть неполадки на уровне всей формы) -->
+          {% if form.non_field_errors %}
+            <div class="text-red-600">
+              <ul>
+                {% for error in form.non_field_errors %}
+                  <li>{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          <div class="space-y-8">
+            <div class="grid grid-cols-1 gap-6">
+              <div class="col-span-1">
+                <label for="{{ form.username.id_for_label }}" class="text-sm font-medium leading-4 text-gray-700">
+                  Username
+                  <sup class="font-medium text-danger-700">*</sup>
+                </label>
+                
+                <!-- Поле для ввода username -->
+                {{ form.username }}
+
+                <!-- Ошибки, связанные с username -->
+                {% if form.username.errors %}
+                  <div class="text-red-600">
+                    <ul>
+                      {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="col-span-1">
+                <label for="{{ form.password1.id_for_label }}" class="text-sm font-medium leading-4 text-gray-700">
+                  Password
+                  <sup class="font-medium text-danger-700">*</sup>
+                </label>
+
+                <!-- Поле для ввода password1 -->
+                {{ form.password1 }}
+
+                <!-- Ошибки, связанные с password1 -->
+                {% if form.password1.errors %}
+                  <div class="text-red-600">
+                    <ul>
+                      {% for error in form.password1.errors %}
+                        <li>{{ error }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="col-span-1">
+                <label for="{{ form.password2.id_for_label }}" class="text-sm font-medium leading-4 text-gray-700">
+                  Confirm Password
+                  <sup class="font-medium text-danger-700">*</sup>
+                </label>
+
+                <!-- Поле для ввода password2 -->
+                {{ form.password2 }}
+
+                <!-- Ошибки, связанные с password2 -->
+                {% if form.password2.errors %}
+                  <div class="text-red-600">
+                    <ul>
+                      {% for error in form.password2.errors %}
+                        <li>{{ error }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <button type="submit" class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 w-full">
+              Register
+            </button>
+          </div>
+        </form>
+
+        <a class="cursor-pointer text-primary-600 mt-2 block" href="{%url 'login'%}">
+          Already have an account?
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+<style>
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+</html>

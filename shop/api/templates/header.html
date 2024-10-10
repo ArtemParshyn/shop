@@ -1,0 +1,220 @@
+<button x-data="{}" x-bind:aria-label="$store.sidebar.isOpen ? &#39;Collapse sidebar&#39; : &#39;Expand sidebar&#39;"
+    x-on:click="$store.sidebar.isOpen ? $store.sidebar.close() : $store.sidebar.open()"
+    class="filament-sidebar-open-button shrink-0 flex items-center justify-center w-10 h-10 text-primary-500 rounded-full hover:bg-gray-500/5 focus:bg-primary-500/10 focus:outline-none lg:mr-4 rtl:lg:mr-0 rtl:lg:ml-4 lg:hidden"
+    aria-label="Expand sidebar">
+    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
+        </path>
+    </svg>
+</button>
+<style>
+    .fir {
+        margin-right: 20px;
+    }
+</style>
+<div id="1" class="fir flex items-center justify-between flex-1">
+    <div class="filament-breadcrumbs flex-1">
+        <ul class="hidden gap-4 items-center font-medium text-sm lg:flex dark:text-white">
+        </ul>
+    </div>
+
+    <div wire:id="lKczfCTjNUnb6ZLLsj4n" class="filament-global-search flex items-center ml-4">
+
+
+
+
+    </div>
+
+    <!-- Livewire Component wire-end:lKczfCTjNUnb6ZLLsj4n -->
+    <div wire:id="aqwCBrdmQtCrMHGsf8WH">
+        <div class="filament-notifications pointer-events-none fixed inset-4 z-50 mx-auto flex justify-end gap-3 items-end flex-col-reverse"
+            role="status">
+        </div>
+
+
+        <div x-data="{}" x-init="
+        window.addEventListener(&#39;EchoLoaded&#39;, () =&gt; {
+            window.Echo.private(&#39;App.Models.User.32376&#39;)
+                .notification((notification) =&gt; {
+                    setTimeout(() =&gt; $wire.handleBroadcastNotification(notification), 500)
+                })
+                .listen(&#39;.database-notifications.sent&#39;, () =&gt; {
+                    setTimeout(() =&gt; $wire.call(&#39;$refresh&#39;), 500)
+                })
+        })
+
+        if (window.Echo) {
+            window.dispatchEvent(new CustomEvent(&#39;EchoLoaded&#39;))
+        }
+    "></div>
+    </div>
+
+    <!-- Livewire Component wire-end:aqwCBrdmQtCrMHGsf8WH -->
+    <style>
+        .gift-alert {
+            background: #4ade80;
+            color: black;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+    </style>
+
+
+
+    <a href="/topup">
+        <div class="group transition-colors flex font-semibold py-1 px-1 bg-gray-900 rounded-full pl-3">
+            <span class="text-green-400">$ {{balance}}</span>
+            <button
+                class="group-hover:bg-green-400 group-hover:text-green-400 w-6 h-6 text-primary bg-gray-800 inline-flex justify-center items-center rounded-full ml-2 text-xs">
+                <svg class="m-0 p-0 group-hover:text-green-900 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4">
+                    </path>
+                </svg> </button>
+        </div>
+    </a>
+
+    <div class="filament-dropdown" x-data="{
+        toggle: function (event) {
+            $refs.panel.toggle(event)
+        },
+        open: function (event) {
+            $refs.panel.open(event)
+        },
+        close: function (event) {
+            $refs.panel.close(event)
+        },
+    }">
+        <div x-on:click="toggle" class="filament-dropdown-trigger cursor-pointer ml-4">
+            <button class="block" aria-label="User menu">
+                <div class="w-10 h-10 rounded-full bg-gray-200 bg-cover bg-center dark:bg-gray-900" style="background-image: url(https://ui-avatars.com/api/?name={{ user }}&color=FFFFFF&background=111827
+)">
+                </div>
+            </button>
+        </div>
+
+        <div x-ref="panel" x-float.placement.bottom-end.flip.offset="{ offset: 8 }"
+            x-transition:enter-start="opacity-0 scale-95" x-transition:leave-end="opacity-0 scale-95"
+            class="filament-dropdown-panel absolute z-10 w-full divide-y divide-gray-100 rounded-lg bg-white shadow-lg ring-1 ring-black/5 transition dark:divide-gray-700 dark:bg-gray-800 dark:ring-white/10 max-w-[14rem]"
+            style="display: none;">
+            <div class="filament-dropdown-header flex w-full p-3 text-sm">
+                <svg class="filament-dropdown-header-icon mr-2 h-5 w-5 rtl:ml-2 rtl:mr-0 text-gray-500"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="filament-dropdown-header-label">
+                    {{user}}
+                </span>
+            </div>
+
+
+
+            <div class="filament-dropdown-list p-1" dark-mode="dark-mode" x-data="{
+            mode: null,
+
+            theme: null,
+
+            init: function () {
+                this.theme = localStorage.getItem(&#39;theme&#39;) || (this.isSystemDark() ? &#39;dark&#39; : &#39;light&#39;)
+                this.mode = localStorage.getItem(&#39;theme&#39;) ? &#39;manual&#39; : &#39;auto&#39;
+
+                window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).addEventListener(&#39;change&#39;, (event) =&gt; {
+                    if (this.mode === &#39;manual&#39;) return
+
+                    if (event.matches &amp;&amp; (! document.documentElement.classList.contains(&#39;dark&#39;))) {
+                        this.theme = &#39;dark&#39;
+
+                        document.documentElement.classList.add(&#39;dark&#39;)
+                    } else if ((! event.matches) &amp;&amp; document.documentElement.classList.contains(&#39;dark&#39;)) {
+                        this.theme = &#39;light&#39;
+
+                        document.documentElement.classList.remove(&#39;dark&#39;)
+                    }
+                })
+
+                $watch(&#39;theme&#39;, () =&gt; {
+                    if (this.mode === &#39;auto&#39;) return
+
+                    localStorage.setItem(&#39;theme&#39;, this.theme)
+
+                    if (this.theme === &#39;dark&#39; &amp;&amp; (! document.documentElement.classList.contains(&#39;dark&#39;))) {
+                        document.documentElement.classList.add(&#39;dark&#39;)
+                    } else if (this.theme === &#39;light&#39; &amp;&amp; document.documentElement.classList.contains(&#39;dark&#39;)) {
+                        document.documentElement.classList.remove(&#39;dark&#39;)
+                    }
+
+                    $dispatch(&#39;dark-mode-toggled&#39;, this.theme)
+                })
+            },
+
+            isSystemDark: function () {
+                return window.matchMedia(&#39;(prefers-color-scheme: dark)&#39;).matches
+            },
+        }">
+                <div>
+                    <button type="button" wire:loading.attr="disabled"
+                        class="filament-dropdown-list-item filament-dropdown-item group flex w-full items-center whitespace-nowrap rounded-md p-2 text-sm focus:outline-none hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500"
+                        x-show="theme === &#39;dark&#39;"
+                        x-on:click="close(); mode = &#39;manual&#39;; theme = &#39;light&#39;">
+                        <svg wire:loading.remove.delay="" wire:target=""
+                            class="filament-dropdown-list-item-icon mr-2 h-5 w-5 rtl:ml-2 rtl:mr-0 group-hover:text-white group-focus:text-white text-primary-500"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                            </path>
+                        </svg>
+
+                        <span class="filament-dropdown-list-item-label truncate w-full text-start">
+                            Toggle light mode
+                        </span>
+
+                    </button>
+
+                    <button type="button" wire:loading.attr="disabled"
+                        class="filament-dropdown-list-item filament-dropdown-item group flex w-full items-center whitespace-nowrap rounded-md p-2 text-sm focus:outline-none hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500"
+                        x-show="theme === &#39;light&#39;"
+                        x-on:click="close(); mode = &#39;manual&#39;; theme = &#39;dark&#39;" style="display: none;">
+                        <svg wire:loading.remove.delay="" wire:target=""
+                            class="filament-dropdown-list-item-icon mr-2 h-5 w-5 rtl:ml-2 rtl:mr-0 group-hover:text-white group-focus:text-white text-primary-500"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+
+                        <span class="filament-dropdown-list-item-label truncate w-full text-start">
+                            Toggle dark mode
+                        </span>
+
+                    </button>
+                </div>
+
+
+                <form action="{%url 'logout'%}">
+                    <input type="hidden" name="_token" value="hmUoXRO36AkMYrSQhpRJEa78DmROfE8mMm8mK3WR">
+                    <button type="submit"
+                        class="filament-dropdown-list-item filament-dropdown-item group flex w-full items-center whitespace-nowrap rounded-md p-2 text-sm focus:outline-none hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500">
+                        <svg class="filament-dropdown-list-item-icon mr-2 h-5 w-5 rtl:ml-2 rtl:mr-0 group-hover:text-white group-focus:text-white text-gray-500"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="filament-dropdown-list-item-label truncate w-full text-start">
+                            Sign out
+                        </span>
+
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>

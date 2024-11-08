@@ -2,6 +2,7 @@ from django.urls import path
 from api import views
 
 urlpatterns = [
+        path('check-card', views.check_card, name='check_card'),
         path('nav', views.nav, name="nav"),
         path('head', views.head, name="head"),
         path('orders', views.orders, name="order"),

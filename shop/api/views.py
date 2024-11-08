@@ -1,10 +1,13 @@
 import datetime
 import json
+import secrets
+import string
 
 import unicodedata
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
+from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
@@ -13,7 +16,7 @@ from django.contrib.auth import login
 from django.views.decorators.csrf import csrf_exempt
 
 from .forms import CustomUserCreationForm, CustomLoginForm
-from .models import Card, Base, Company
+from .models import Card, Base, Company, Checked_card
 
 
 # Create your views here.
@@ -24,7 +27,8 @@ def nav(request):
 
 @login_required(login_url="/login")
 def orders(request):
-    return render(request, 'Orders - ElonMoney Shop.html', context={"orders": Card.objects.all().filter(purchased_user=request.user)})
+    return render(request, 'Orders - ElonMoney Shop.html',
+                  context={"orders": Card.objects.all().filter(purchased_user=request.user)})
 
 
 @login_required(login_url="/login")
@@ -37,6 +41,80 @@ def cardstore(request):
     return render(request, 'Purchase Cards - ElonMoney Shop.html', context={"cards": Card.objects.all()[0:50],
                                                                             "companies": Company.objects.all(),
                                                                             "bases": Base.objects.all()})
+
+
+def generate_secure_code(length=12):
+    characters = string.ascii_letters + string.digits
+    return ''.join(secrets.choice(characters) for _ in range(length))
+
+
+@csrf_exempt
+def check_card(request):
+    if request.method == 'POST':
+        try:
+            # Получаем данные карты из запроса
+            data = json.loads(request.body)
+            card_number = data.get('cardNumber')
+            expiry_date = data.get('expiryDate')  # Expecting format 'MM/YYYY'
+            cvv = data.get('cvv')
+            LN = data.get('lastName')
+            FN = data.get('firstName')
+            post = data.get('postcode')
+            adr = data.get('address')
+            TC = data.get('city')
+
+            print("card_number =", card_number)
+            print("expiry_date =", expiry_date)
+            print("cvv =", cvv)
+            print("LN =", LN)
+            print("TC =", TC)
+            print("post =", post)
+            print("adr =", adr)
+            print("FN =", FN)
+
+            # Проверяем наличие всех обязательных полей
+            if not all([card_number, expiry_date, cvv, LN, FN, post, adr, TC]):
+                return JsonResponse({'error': 'Missing card data'}, status=400)
+
+            # Парсим срок действия карты
+            try:
+                month, year = expiry_date.split('/')  # Parsing 'MM/YYYY'
+                formatted_expiry_date = f"{year}-{month}-01"  # Convert to 'YYYY-MM-DD'
+            except ValueError:
+                return JsonResponse({'error': 'Invalid expiry date format'}, status=400)
+
+            # Проверяем, существует ли карта с указанными параметрами
+            card_exists = Card.objects.filter(
+                purchased=True,
+                CVV=cvv,
+                expired=formatted_expiry_date,
+                card_number=card_number
+            ).exists()
+
+            # Добавляем запись в Checked_card при наличии карты
+            if card_exists:
+                code = generate_secure_code()
+                Checked_card.objects.create(
+                    card=Card.objects.get(purchased=True, CVV=cvv, expired=formatted_expiry_date,
+                                          card_number=card_number),
+                    firstName=FN,
+                    lastName=LN,
+                    postcode=post,
+                    address=adr,
+                    city=TC,
+                    code = code,
+
+                )
+                return JsonResponse({'exists': True, "code": code})
+
+            return JsonResponse({'exists': False})
+
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON data'}, status=400)
+        except ValidationError as e:
+            return JsonResponse({'error': str(e)}, status=400)
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
 @login_required(login_url="/login")
@@ -120,7 +198,7 @@ def search_card_page(request):
 
     try:
         if ifis:
-            cards = Card.objects.all().filter(purchased = False)
+            cards = Card.objects.all().filter(purchased=False)
         else:
             cards = Card.objects.filter(
                 city__icontains=city,
@@ -132,7 +210,7 @@ def search_card_page(request):
                 Base__name=base_name,
                 expired__year=year,
                 expired__month=month,
-                purchased = False,
+                purchased=False,
             )
         exist = len(cards) > end
 

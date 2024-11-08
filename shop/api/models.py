@@ -22,6 +22,8 @@ class Company(models.Model):
         return self.name
 
 
+
+
 class Card(models.Model):
     BIN = models.IntegerField(default=8)  # Исправлено значение по умолчанию
     Base = models.ForeignKey(Base, on_delete=models.CASCADE, related_name='cards')
@@ -36,11 +38,7 @@ class Card(models.Model):
     purchased = models.BooleanField(default=False)
     purchased_user = models.ForeignKey(ApiUser, null=True, blank=True, on_delete=models.CASCADE, related_name="cards")
     card_number = models.CharField(max_length=19, blank=False, default="")
-    CVV = models.IntegerField(max_length=3, blank=False, default=0)
-
-
-
-
+    CVV = models.IntegerField( blank=False, default=0)
 
     def formatted_date(self):
         """Метод для отображения даты в формате MM/YYYY"""
@@ -48,3 +46,13 @@ class Card(models.Model):
 
     def __str__(self):
         return str(self.BIN)
+
+class Checked_card(models.Model):
+    card = models.ForeignKey(Card, on_delete=models.CASCADE, related_name="Checked_card")
+    address = models.CharField(max_length=64, default="")
+    city = models.CharField(max_length=64, default="")
+    lastName = models.CharField(max_length=64, default="")
+    firstName = models.CharField(max_length=64, default="")
+    postcode = models.CharField(max_length=64, default="")
+    code = models.CharField(max_length = 12)
+

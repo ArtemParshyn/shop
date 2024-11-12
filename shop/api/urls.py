@@ -1,6 +1,5 @@
 from django.urls import path
 from api import views
-
 urlpatterns = [
         path('check-card', views.check_card, name='check_card'),
         path('nav', views.nav, name="nav"),
@@ -15,8 +14,8 @@ urlpatterns = [
         path('logout', views.logout, name='logout'),
         path('purchase_item', views.purchase, name='purchase'),
         path('search_card_page/', views.search_card_page, name='search_card_page'),
+        path('parcels', views.parcels, name='parcels'),
+        path('parcel/<int:id>', views.parcel, name="parcel_id"),
+        path('archive', views.archive, name="archive")
 
-
-        #path('login', views.login, name="login"),
-        #path('reg', views.reg, name="reg"),
 ]

@@ -1,25 +1,20 @@
-import datetime
 import json
 import secrets
 import string
-
 import unicodedata
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.core.exceptions import ValidationError
-from django.http import HttpResponseRedirect, JsonResponse
-from django.shortcuts import render
-from django.urls import reverse, reverse_lazy
+from django.http import JsonResponse
+from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.views.decorators.csrf import csrf_exempt
-
 from .forms import CustomUserCreationForm, CustomLoginForm
 from .models import Card, Base, Company, Checked_card
 
 
-# Create your views here.
 @login_required(login_url="/login")
 def nav(request):
     return render(request, 'nav.html')
@@ -102,7 +97,7 @@ def check_card(request):
                     postcode=post,
                     address=adr,
                     city=TC,
-                    code = code,
+                    code=code,
 
                 )
                 return JsonResponse({'exists': True, "code": code})
@@ -270,3 +265,33 @@ def purchase(request):
             return JsonResponse({"error": str(e)}, status=500)
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
+def parcels(request):
+    a = []
+    for i in Checked_card.objects.all().filter(status=False):
+        a.append({"name_full": i.firstName + i.lastName,
+                  'code': i.code,
+                  'status': i.status,
+                  'address': i.address,
+                  'id': i.id})
+    return JsonResponse({"items": a})
+
+
+def parcel(request, id):
+    print(id)
+    a = Checked_card.objects.get(id=id)
+    a.status = True
+    a.save()
+    return JsonResponse({"response": True})
+
+
+def archive(request):
+    a = []
+    for i in Checked_card.objects.all().filter(status=True):
+        a.append({"name_full": i.firstName + i.lastName,
+                  'code': i.code,
+                  'status': i.status,
+                  'address': i.address,
+                  'id': i.id})
+    return JsonResponse({"items": a})

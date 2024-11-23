@@ -55,3 +55,6 @@ class Checked_card(models.Model):
     postcode = models.CharField(max_length=64, default="")
     code = models.CharField(max_length=12)
     status = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.code

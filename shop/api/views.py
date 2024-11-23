@@ -277,21 +277,3 @@ def parcels(request):
                   'id': i.id})
     return JsonResponse({"items": a})
 
-
-def parcel(request, id):
-    print(id)
-    a = Checked_card.objects.get(id=id)
-    a.status = True
-    a.save()
-    return JsonResponse({"response": True})
-
-
-def archive(request):
-    a = []
-    for i in Checked_card.objects.all().filter(status=True):
-        a.append({"name_full": i.firstName + i.lastName,
-                  'code': i.code,
-                  'status': i.status,
-                  'address': i.address,
-                  'id': i.id})
-    return JsonResponse({"items": a})

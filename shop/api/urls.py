@@ -14,8 +14,5 @@ urlpatterns = [
         path('logout', views.logout, name='logout'),
         path('purchase_item', views.purchase, name='purchase'),
         path('search_card_page/', views.search_card_page, name='search_card_page'),
-        path('parcels', views.parcels, name='parcels'),
-        path('parcel/<int:id>', views.parcel, name="parcel_id"),
-        path('archive', views.archive, name="archive")
 
 ]

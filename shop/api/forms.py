@@ -51,3 +51,10 @@ class CustomLoginForm(AuthenticationForm):
     class Meta:
         model = get_user_model()  # Подключаем вашу кастомную модель
         fields = ('username', 'password')
+
+
+from django import forms
+
+
+class JSONUploadForm(forms.Form):
+    json_file = forms.FileField(label="Загрузить JSON файл")

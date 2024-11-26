@@ -22,8 +22,21 @@ def nav(request):
 
 @login_required(login_url="/login")
 def orders(request):
+    cards = []
+    for i in Card.objects.all().filter(purchased_user=request.user):
+        print(i)
+        num = i.card_number
+        cards.append({
+            "id": i.id,
+            "card_number": " ".join(num[i:i+4] for i in range(0, len(num), 4)),
+            "price": i.price,
+            "Company": i.Company,
+            "expired": i.expired,
+            "CVV": i.CVV
+
+        })
     return render(request, 'Orders - ElonMoney Shop.html',
-                  context={"orders": Card.objects.all().filter(purchased_user=request.user)})
+                  context={"orders": cards})
 
 
 @login_required(login_url="/login")
@@ -276,4 +289,3 @@ def parcels(request):
                   'address': i.address,
                   'id': i.id})
     return JsonResponse({"items": a})
-

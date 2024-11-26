@@ -35,7 +35,7 @@ class Card(models.Model):
     bank = models.CharField(max_length=64, default="")
     purchased = models.BooleanField(default=False)
     purchased_user = models.ForeignKey(ApiUser, null=True, blank=True, on_delete=models.CASCADE, related_name="cards")
-    card_number = models.CharField(max_length=19, blank=False, default="")
+    card_number = models.CharField(max_length=16, blank=False, default="")
     CVV = models.IntegerField(blank=False, default=0)
 
     def formatted_date(self):

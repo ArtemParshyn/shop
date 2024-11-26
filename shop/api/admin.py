@@ -1,6 +1,4 @@
-from api.models import ApiUser, Checked_card
-from api.models import Base
-from api.models import Company
+from api.models import ApiUser
 import json
 from django.contrib import admin
 from django.urls import path
@@ -9,13 +7,8 @@ from django.contrib import messages
 from .models import Card
 from .forms import JSONUploadForm
 
-
 # Register your models here.
 admin.site.register(ApiUser)
-admin.site.register(Company)
-admin.site.register(Base)
-admin.site.register(Checked_card)
-
 
 
 @admin.register(Card)
@@ -37,7 +30,16 @@ class YourModelAdmin(admin.ModelAdmin):
                 try:
                     data = json.load(json_file)
                     for item in data:
-                        Card.objects.create(**item)
+                        print(item)
+                        Card.objects.create(issuingnetwork=item['IssuingNetwork'],
+                                            expired=item['Expiry'].replace(' ', ''),
+                                            card_number=item['CardNumber'],
+                                            bank=item['Bank'],
+                                            name=item['Name'],
+                                            address=item['Address'],
+                                            country=item['Country'],
+                                            price=item['MoneyRange'][1:2],
+                                            CVV=item["CVV"])
                     self.message_user(request, "Данные успешно загружены", level=messages.SUCCESS)
                     return redirect("..")
                 except Exception as e:

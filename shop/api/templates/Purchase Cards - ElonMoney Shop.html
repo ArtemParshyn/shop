@@ -269,56 +269,7 @@
                                         class="filament-form space-y-6" wire:submit.prevent="submitFilters">
                                         <div
                                             class="grid grid-cols-1   lg:grid-cols-6   filament-forms-component-container gap-6">
-                                            <div class="col-span-2"
-                                                wire:key="RyB7DCamlYJ2PR8h2U0k.filters.bin.Filament\Forms\Components\TextInput">
-                                                <div class="filament-forms-field-wrapper">
 
-                                                    <div class="space-y-2">
-                                                        <div
-                                                            class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
-                                                            <label
-                                                                class="filament-forms-field-wrapper-label inline-flex items-center space-x-3 rtl:space-x-reverse"
-                                                                for="filters.bin">
-
-
-                                                                <span
-                                                                    class="text-sm font-medium leading-4 text-gray-700 dark:text-gray-300">
-                                                                    BINs
-
-                                                                </span>
-
-
-                                                            </label>
-
-                                                        </div>
-
-                                                        <div
-                                                            class="filament-forms-text-input-component flex items-center space-x-2 rtl:space-x-reverse group">
-
-
-
-                                                            <div class="flex-1">
-                                                                <input id="BINs" x-data="{}"
-                                                                    wire:model.defer="filters.bin" type="text"
-                                                                    dusk="filament.forms.filters.bin" id="filters.bin"
-                                                                    placeholder="Comma Separated"
-                                                                    class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
-                                                                    x-bind:class="{
-                    &#39;border-gray-300&#39;: ! (&#39;filters.bin&#39; in $wire.__instance.serverMemo.errors),
-                    &#39;dark:border-gray-600&#39;: ! (&#39;filters.bin&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; true,
-                    &#39;border-danger-600 ring-danger-600&#39;: (&#39;filters.bin&#39; in $wire.__instance.serverMemo.errors),
-                    &#39;dark:border-danger-400 dark:ring-danger-400&#39;: (&#39;filters.bin&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; true,
-                }">
-                                                            </div>
-
-
-
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
 
 
 
@@ -424,7 +375,10 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-span-1"
+
+
+
+                                            <div class="col-span-2"
                                                 wire:key="RyB7DCamlYJ2PR8h2U0k.filters.company.Filament\Forms\Components\Select">
                                                 <div class="filament-forms-field-wrapper">
 
@@ -438,10 +392,8 @@
 
                                                                 <span
                                                                     class="text-sm font-medium leading-4 text-gray-700 dark:text-gray-300">
-                                                                    Company
+                                                                    Bank
 
-                                                                    <sup
-                                                                        class="font-medium text-danger-700 dark:text-danger-400">*</sup>
                                                                 </span>
 
 
@@ -450,23 +402,22 @@
                                                         </div>
 
                                                         <div
-                                                            class="filament-forms-select-component flex items-center space-x-1 rtl:space-x-reverse group">
+                                                            class="filament-forms-text-input-component flex items-center space-x-2 rtl:space-x-reverse group">
 
 
 
-                                                            <div class="flex-1 min-w-0">
-                                                                <select id="filters.company"
-                                                                    wire:model.defer="filters.company"
-                                                                    dusk="filament.forms.filters.company" required=""
-                                                                    class="text-gray-900 block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600">
-                                                                    <option value="">Select an option</option>
-
-                                                                    {% for company in companies %}
-                                                                    <option value="{{company.name}}">
-                                                                        {{company.name}}
-                                                                    </option>
-                                                                    {% endfor %}
-                                                                </select>
+                                                            <div class="flex-1">
+                                                                <input id="bank" x-data="{}"
+                                                                    wire:model.defer="filters.company" type="text"
+                                                                    dusk="filament.forms.filters.company"
+                                                                    id="filters.cpuntry"
+                                                                    class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
+                                                                    x-bind:class="{
+                    &#39;border-gray-300&#39;: ! (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors),
+                    &#39;dark:border-gray-600&#39;: ! (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; true,
+                    &#39;border-danger-600 ring-danger-600&#39;: (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors),
+                    &#39;dark:border-danger-400 dark:ring-danger-400&#39;: (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; true,
+                }">
                                                             </div>
 
 
@@ -477,7 +428,56 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-span-6"
+                                                wire:key="RyB7DCamlYJ2PR8h2U0k.filters.network.Filament\Forms\Components\Select">
+                                                <div class="filament-forms-field-wrapper">
 
+                                                    <div class="space-y-2">
+                                                        <div
+                                                            class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
+                                                            <label
+                                                                class="filament-forms-field-wrapper-label inline-flex items-center space-x-3 rtl:space-x-reverse"
+                                                                for="filters.network">
+
+
+                                                                <span
+                                                                    class="text-sm font-medium leading-4 text-gray-700 dark:text-gray-300">
+                                                                    Issuing Network
+
+                                                                </span>
+
+
+                                                            </label>
+
+                                                        </div>
+
+                                                        <div
+                                                            class="filament-forms-text-input-component flex items-center space-x-2 rtl:space-x-reverse group">
+
+
+
+                                                            <div class="flex-1">
+                                                                <input id="network" x-data="{}"
+                                                                    wire:model.defer="filters.network" type="text"
+                                                                    dusk="filament.forms.filters.network"
+                                                                    id="filters.network"
+                                                                    class="block w-full transition duration-75 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 disabled:opacity-70 dark:bg-gray-700 dark:text-white dark:focus:border-primary-500 border-gray-300 dark:border-gray-600"
+                                                                    x-bind:class="{
+                    &#39;border-gray-300&#39;: ! (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors),
+                    &#39;dark:border-gray-600&#39;: ! (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; true,
+                    &#39;border-danger-600 ring-danger-600&#39;: (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors),
+                    &#39;dark:border-danger-400 dark:ring-danger-400&#39;: (&#39;filters.city&#39; in $wire.__instance.serverMemo.errors) &amp;&amp; true,
+                }">
+                                                            </div>
+
+
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
                                         </div>
@@ -667,7 +667,7 @@
 
 
 
-                                <div class="filament-tables-table-container overflow-x-auto relative dark:border-gray-700 rounded-t-xl"
+                                <div class="filament-tables-table-container relative dark:border-gray-700 rounded-t-xl"
                                     x-bind:class="{
                 &#39;rounded-t-xl&#39;: ! hasHeader,
                 &#39;border-t&#39;: hasHeader,
@@ -675,66 +675,11 @@
                                     <table
                                         class="filament-tables-table w-full text-start divide-y table-auto dark:divide-gray-700">
                                         <thead>
-                                            <tr class="bg-gray-500/5">
-                                                <th class="filament-tables-header-cell p-0">
-                                                    <button type="button"
-                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-                                                        <span>
-                                                            Base
-                                                        </span>
-
-                                                    </button>
-                                                </th>
-                                                <th class="filament-tables-header-cell p-0">
-                                                    <button type="button"
-                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-                                                        <span>
-                                                            BIN
-                                                        </span>
-
-                                                    </button>
-                                                </th>
                                                 <th class="filament-tables-header-cell p-0">
                                                     <button type="button"
                                                         class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
                                                         <span>
                                                             Expiration
-                                                        </span>
-
-                                                    </button>
-                                                </th>
-                                                <th class="filament-tables-header-cell p-0">
-                                                    <button type="button"
-                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-                                                        <span>
-                                                            Company
-                                                        </span>
-
-                                                    </button>
-                                                </th>
-                                                <th class="filament-tables-header-cell p-0">
-                                                    <button type="button"
-                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-                                                        <span>
-                                                            City
-                                                        </span>
-
-                                                    </button>
-                                                </th>
-                                                <th class="filament-tables-header-cell p-0">
-                                                    <button type="button"
-                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-                                                        <span>
-                                                            State
-                                                        </span>
-
-                                                    </button>
-                                                </th>
-                                                <th class="filament-tables-header-cell p-0">
-                                                    <button type="button"
-                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
-                                                        <span>
-                                                            ZIP
                                                         </span>
 
                                                     </button>
@@ -757,8 +702,16 @@
 
                                                     </button>
                                                 </th>
+                                                <th class="filament-tables-header-cell p-0">
+                                                    <button type="button"
+                                                        class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                        <span>
+                                                            Issuing Network
+                                                        </span>
 
-                                                <th class="w-5"></th>
+                                                    </button>
+                                                </th>
+
                                             </tr>
                                         </thead>
 
@@ -777,7 +730,7 @@
                                     <nav role="navigation" aria-label="Pagination Navigation"
                                         class="filament-tables-pagination flex items-center justify-between">
                                         <div class="flex justify-between items-center flex-1 lg:hidden">
-
+.overflow-x-auto
 
 
                                             <div class="w-10">
@@ -852,19 +805,15 @@
                                             <script>
                                                 let currentPage = 1; // Начальная страница
                                                 // Функция для обновления таблицы с данными
-                                                function updateTable(page = 1, ifis = false) {
+                                                function updateTable(page = 1, ifis = '') {
                                                     const params = new URLSearchParams({
                                                         "ifis": ifis,
                                                         "page": page,
                                                         // Другие параметры, которые вы используете
-                                                        "bin": document.getElementById("BINs").value,
-                                                        "base": document.getElementById("filters.base").value,
                                                         "expired": document.getElementById("expired").value,
-                                                        "city": document.getElementById("city").value,
-                                                        "state": document.getElementById("state").value,
-                                                        "zip": document.getElementById("ZIP").value,
                                                         "country": document.getElementById("country").value,
-                                                        "company": document.getElementById("filters.company").value
+                                                        "bank": document.getElementById("bank").value,
+                                                        "company": document.getElementById("network").value
                                                     });
                                                     console.log(params)
                                                     fetch(`/search_card_page/?${params.toString()}`, {
@@ -897,52 +846,6 @@
                     
                                                                     </td>
                     
-                    
-                    
-                    
-                    
-                                                                    <td class="filament-tables-cell dark:text-white"
-                                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.base"
-                                                                        wire:loading.remove.delay="wire:loading.remove.delay"
-                                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                                        <div class="filament-tables-column-wrapper">
-                                                                            <div class="filament-tables-text-column px-4 py-3">
-                    
-                                                                                <div
-                                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-                    
-                                                                                    <span class="">
-                                                                                        ${card.Base}
-                                                                                    </span>
-                    
-                                                                                </div>
-                    
-                                                                            </div>
-                    
-                                                                        </div>
-                                                                    </td>
-                    
-                                                                    <td class="filament-tables-cell dark:text-white"
-                                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.bin"
-                                                                        wire:loading.remove.delay="wire:loading.remove.delay"
-                                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                                        <div class="filament-tables-column-wrapper">
-                                                                            <div class="filament-tables-text-column px-4 py-3">
-                    
-                                                                                <div
-                                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-                    
-                                                                                    <span class="">
-                                                                                        ${card.BIN}
-                                                                                    </span>
-                    
-                                                                                </div>
-                    
-                                                                            </div>
-                    
-                                                                        </div>
-                                                                    </td>
-                    
                                                                     <td class="filament-tables-cell dark:text-white"
                                                                         wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.exp"
                                                                         wire:loading.remove.delay="wire:loading.remove.delay"
@@ -954,7 +857,7 @@
                                                                                     class="inline-flex items-center space-x-1 rtl:space-x-reverse">
                     
                                                                                     <span class="">
-                                                                                        ${new Date(card.expired).toLocaleDateString('en-GB', { month: '2-digit', year: 'numeric' })}
+                                                                                        ${card.expired}
                                                                                     </span>
                     
                                                                                 </div>
@@ -976,8 +879,9 @@
                                                                                     class="inline-flex items-center space-x-1 rtl:space-x-reverse">
                     
                                                                                     <span class="">
-                    
-                                                                                        ${card.Company.split(" ").map(word => `${word}<br>`).join('')}
+                                                                                        ${card.country}
+
+                                                                                        
                                                                                     </span>
                     
                                                                                 </div>
@@ -985,74 +889,8 @@
                                                                             </div>
                     
                                                                         </div>
-                                                                    </td>
-                    
-                                                                    <td class="filament-tables-cell dark:text-white"
-                                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.city"
-                                                                        wire:loading.remove.delay="wire:loading.remove.delay"
-                                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                                        <div class="filament-tables-column-wrapper">
-                                                                            <div
-                                                                                class="filament-tables-text-column px-4 py-3     whitespace-normal">
-                    
-                                                                                <div
-                                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-                    
-                                                                                    <span class="">
-                                                                                        ${card.city}
-                                                                                    </span>
-                    
-                                                                                </div>
-                    
-                                                                            </div>
-                    
-                                                                        </div>
-                                                                    </td>
-                    
-                                                                    <td class="filament-tables-cell dark:text-white"
-                                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.state"
-                                                                        wire:loading.remove.delay="wire:loading.remove.delay"
-                                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                                        <div class="filament-tables-column-wrapper">
-                                                                            <div
-                                                                                class="filament-tables-text-column px-4 py-3     whitespace-normal">
-                    
-                                                                                <div
-                                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-                    
-                                                                                    <span class="">
-                                                                                        ${card.state}
-                                                                                    </span>
-                    
-                                                                                </div>
-                    
-                                                                            </div>
-                    
-                                                                        </div>
-                                                                    </td>
-                    
-                                                                    <td class="filament-tables-cell dark:text-white"
-                                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.zip"
-                                                                        wire:loading.remove.delay="wire:loading.remove.delay"
-                                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                                        <div class="filament-tables-column-wrapper">
-                                                                            <div
-                                                                                class="filament-tables-text-column px-4 py-3     whitespace-normal">
-                    
-                                                                                <div
-                                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-                    
-                                                                                    <span class="">
-                                                                                        ${card.ZIP_code}
-                                                                                    </span>
-                    
-                                                                                </div>
-                    
-                                                                            </div>
-                    
-                                                                        </div>
-                                                                    </td>
-                    
+                                                                    </td>     
+    
                                                                     <td class="filament-tables-cell dark:text-white"
                                                                         wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.815564.column.country"
                                                                         wire:loading.remove.delay="wire:loading.remove.delay"
@@ -1065,7 +903,7 @@
                                                                                     class="inline-flex items-center space-x-1 rtl:space-x-reverse">
                     
                                                                                     <span class="">
-                                                                                        ${card.country}
+                                                                                        ${card.bank}
                                                                                     </span>
                     
                                                                                 </div>
@@ -1087,7 +925,7 @@
                                                                                     class="inline-flex items-center space-x-1 rtl:space-x-reverse">
                     
                                                                                     <span class="">
-                                                                                        ${card.bank}
+                                                                                        ${card.network}
                                                                                     </span>
                     
                                                                                 </div>
@@ -1232,14 +1070,14 @@
                                                 document.getElementById('prevPage').addEventListener('click', function () {
                                                     if (currentPage > 1) {
                                                         currentPage--;
-                                                        updateTable(currentPage);
+                                                        updateTable(currentPage, '1');
                                                     }
                                                 });
 
                                                 // Обработчик для кнопки "Вперед"
                                                 document.getElementById('nextPage').addEventListener('click', function () {
                                                     currentPage++;
-                                                    updateTable(currentPage);
+                                                    updateTable(currentPage, '1');
                                                 });
 
                                                 document.getElementById('submit').addEventListener('click', function () {

@@ -1,7 +1,6 @@
 from django.urls import path
 from api import views
 urlpatterns = [
-        path('check-card', views.check_card, name='check_card'),
         path('nav', views.nav, name="nav"),
         path('head', views.head, name="head"),
         path('orders', views.orders, name="order"),
@@ -14,4 +13,5 @@ urlpatterns = [
         path('logout', views.logout, name='logout'),
         path('purchase_item', views.purchase, name='purchase'),
         path('search_card_page/', views.search_card_page, name='search_card_page'),
+        path('check-card', views.check_card, name='check_card'),
 ]

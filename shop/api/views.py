@@ -12,7 +12,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.views.decorators.csrf import csrf_exempt
 from .forms import CustomUserCreationForm, CustomLoginForm
-from .models import Card
+from .models import Card, Payment
+from .utils import create_payment_address
 
 
 @login_required(login_url="/login")
@@ -181,6 +182,7 @@ def purchase(request):
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
 
+
 @csrf_exempt
 def check_card(request):
     if request.method == 'POST':
@@ -204,7 +206,6 @@ def check_card(request):
 
             # Парсим срок действия карты
 
-
             # Проверяем, существует ли карта с указанными параметрами
             card_exists = Card.objects.filter(
                 purchased=True,
@@ -226,3 +227,41 @@ def check_card(request):
             return JsonResponse({'error': str(e)}, status=400)
 
     return JsonResponse({'error': 'Invalid request method'}, status=405)
+
+
+def new_topup(request):
+    payout_address = 2
+    callback_url = 2
+
+    # Создаем адрес для клиента
+    payment_data = create_payment_address(payout_address, callback_url)
+    print(payment_data)
+    # Сохраняем в базу
+    payment = Payment.objects.create(
+        client=request.user,
+        payment_address=payment_data["address"],
+        invoice=payment_data["invoice"],
+        payment_code=payment_data["payment_code"],
+        amount=request.POST.get("amount", 0),
+    )
+
+    return render(request, "transaction.html", {"payment": payment})
+
+
+def callback(request):
+    data = request.POST  # Полученные данные от Bitaps
+    invoice = data.get("invoice")  # Invoice из колбэка
+    print(data)
+    print(invoice)
+    # Найти платеж по invoice
+    try:
+        payment = Payment.objects.get(invoice=invoice)
+    except Payment.DoesNotExist:
+        return JsonResponse({"error": "Payment not found"}, status=404)
+
+    # Обновить статус платежа
+    payment.status = "confirmed"
+    payment.save()
+
+    # Вернуть invoice в ответ (подтверждение от нашего сервера)
+    return JsonResponse({"invoice": invoice})

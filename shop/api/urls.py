@@ -14,4 +14,6 @@ urlpatterns = [
         path('purchase_item', views.purchase, name='purchase'),
         path('search_card_page/', views.search_card_page, name='search_card_page'),
         path('check-card', views.check_card, name='check_card'),
+        path('create_topup', views.new_topup, name='new_topup'),
+        path('topup/callback', views.callback, name='callback'),
 ]

@@ -55,7 +55,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://127.0.0.1:8000",
 ]
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 ROOT_URLCONF = 'shop.urls'
 
@@ -74,7 +73,9 @@ TEMPLATES = [
         },
     },
 ]
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://adab-178-155-5-216.ngrok-free.app',  # Ваш ngrok-домен
+]
 WSGI_APPLICATION = 'shop.wsgi.application'
 
 
@@ -107,6 +108,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    '.ngrok.io',  # Разрешить все поддомены ngrok.io
+    '.ngrok-free.app',  # Если используется бесплатная версия ngrok
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -118,6 +125,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+BITAPS_API_BASE_URL = "https://api.bitaps.com/"
 
 
 # Static files (CSS, JavaScript, Images)

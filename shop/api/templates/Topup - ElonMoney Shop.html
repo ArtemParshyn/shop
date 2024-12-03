@@ -350,14 +350,6 @@
                                                             <div
                                                                 class="columns-1      filament-forms-radio-component gap-2">
                                                                 <div class="flex items-start gap-3">
-                                                                    <div class="flex items-center h-5">
-                                                                        <input name="data.ticker" id="data.ticker-btc"
-                                                                            type="radio" value="btc"
-                                                                            dusk="filament.forms.data.ticker"
-                                                                            wire:model.defer="data.ticker"
-                                                                            class="focus:ring-primary-500 h-4 w-4 text-primary-600 disabled:opacity-70 dark:bg-gray-700 dark:checked:bg-primary-500 border-gray-300 dark:border-gray-500"
-                                                                            wire:loading.attr="disabled">
-                                                                    </div>
 
                                                                     <div class="text-sm">
                                                                         <label for="data.ticker-btc"
@@ -367,61 +359,7 @@
 
                                                                     </div>
                                                                 </div>
-                                                                <div class="flex items-start gap-3">
-                                                                    <div class="flex items-center h-5">
-                                                                        <input name="data.ticker" id="data.ticker-ltc"
-                                                                            type="radio" value="ltc"
-                                                                            dusk="filament.forms.data.ticker"
-                                                                            wire:model.defer="data.ticker"
-                                                                            class="focus:ring-primary-500 h-4 w-4 text-primary-600 disabled:opacity-70 dark:bg-gray-700 dark:checked:bg-primary-500 border-gray-300 dark:border-gray-500"
-                                                                            wire:loading.attr="disabled">
-                                                                    </div>
 
-                                                                    <div class="text-sm">
-                                                                        <label for="data.ticker-ltc"
-                                                                            class="font-medium text-gray-700 dark:text-gray-200">
-                                                                            Litecoin (LTC)
-                                                                        </label>
-
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex items-start gap-3">
-                                                                    <div class="flex items-center h-5">
-                                                                        <input name="data.ticker" id="data.ticker-eth"
-                                                                            type="radio" value="eth"
-                                                                            dusk="filament.forms.data.ticker"
-                                                                            wire:model.defer="data.ticker"
-                                                                            class="focus:ring-primary-500 h-4 w-4 text-primary-600 disabled:opacity-70 dark:bg-gray-700 dark:checked:bg-primary-500 border-gray-300 dark:border-gray-500"
-                                                                            wire:loading.attr="disabled">
-                                                                    </div>
-
-                                                                    <div class="text-sm">
-                                                                        <label for="data.ticker-eth"
-                                                                            class="font-medium text-gray-700 dark:text-gray-200">
-                                                                            Ethereum (ERC-20)
-                                                                        </label>
-
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex items-start gap-3">
-                                                                    <div class="flex items-center h-5">
-                                                                        <input name="data.ticker"
-                                                                            id="data.ticker-trc20/usdt" type="radio"
-                                                                            value="trc20/usdt"
-                                                                            dusk="filament.forms.data.ticker"
-                                                                            wire:model.defer="data.ticker"
-                                                                            class="focus:ring-primary-500 h-4 w-4 text-primary-600 disabled:opacity-70 dark:bg-gray-700 dark:checked:bg-primary-500 border-gray-300 dark:border-gray-500"
-                                                                            wire:loading.attr="disabled">
-                                                                    </div>
-
-                                                                    <div class="text-sm">
-                                                                        <label for="data.ticker-trc20/usdt"
-                                                                            class="font-medium text-gray-700 dark:text-gray-200">
-                                                                            USDT (TRC-20)
-                                                                        </label>
-
-                                                                    </div>
-                                                                </div>
                                                             </div>
 
 
@@ -431,146 +369,17 @@
                                             </div>
 
                                         </div>
-                                        <button type="submit" wire:loading.attr="disabled" x-data="{
-            form: null,
-            isUploadingFile: false,
-        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
-                                            x-init="
-            form = $el.closest(&#39;form&#39;)
-
-            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
-                isUploadingFile = true
-            })
-
-            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
-                isUploadingFile = false
-            })
-        " class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700"
-                                            wire:loading.class="opacity-70 cursor-wait">
-
-
-                                            <span class="flex items-center gap-1">
-                                                <span class="">
-                                                    <svg wire:loading="" wire:target="submit"
-                                                        class="filament-button-icon w-6 h-6 mr-1 -ml-2 rtl:ml-1 rtl:-mr-2 animate-spin"
-                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor">
-                                                        <path
-                                                            d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z">
-                                                        </path>
-                                                    </svg>
-                                                    <span>Create New Topup</span>
-                                                </span>
-                                            </span>
-
-                                        </button>
+                                        <a href="/create_topup" class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700">
+                                            Create new topup
+                                        </a>
                                     </form>
                                 </div>
                             </div>
 
 
                         </div>
-                        <div class="p-2 space-y-2 bg-white rounded-xl shadow dark:border-gray-600 dark:bg-gray-800">
 
 
-                            <div class="space-y-2">
-                                <div class="px-4 py-2 space-y-4">
-                                    <form x-data="{ isUploadingFile: false }"
-                                        x-on:submit="if (isUploadingFile) $event.preventDefault()"
-                                        x-on:file-upload-started="isUploadingFile = true"
-                                        x-on:file-upload-finished="isUploadingFile = false"
-                                        class="filament-form space-y-6" wire:submit.prevent="submit">
-                                        <div class="loyalty">
-                                            <h3>Loyalty Rewards</h3>
-                                            <p>Get addtional bonus balance automatically depending upon your account
-                                                deposit history!</p>
-
-                                            <div class="levels">
-                                                <div class="level">
-
-                                                </div>
-
-                                                <div class="level">
-                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
-                                                        alt="">
-                                                </div>
-
-                                                <div class="level">
-                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
-                                                        alt="">
-                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
-                                                        alt="">
-                                                </div>
-
-                                                <div class="level">
-                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
-                                                        alt="">
-                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
-                                                        alt="">
-                                                    <img height="30px" src="./Topup - ElonMoney Shop_files/elon.png"
-                                                        alt="">
-                                                </div>
-                                            </div>
-
-                                            <div class="progress">
-                                                <div class="cell active">
-                                                    No Bonus
-                                                    <p>Total deposit &lt; 200$</p>
-                                                </div>
-                                                <div class="cell ">
-                                                    5% Extra
-                                                    <p>Total deposit &gt;= 200$</p>
-                                                </div>
-                                                <div class="cell ">
-                                                    10% Extra
-                                                    <p>Total deposit &gt;= 500$</p>
-                                                </div>
-                                                <div class="cell ">
-                                                    15% Extra
-                                                    <p>Total deposit &gt;= 1000$</p>
-                                                </div>
-                                            </div>
-
-                                            <p class="helperText">You will get <strong>0%</strong> extra with your next
-                                                deposit. Amount remaining until next level: <strong>$200</strong>
-                                            </p>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <button type="button" wire:loading.attr="disabled" x-data="{
-            form: null,
-            isUploadingFile: false,
-        }" x-bind:class="{ &#39;opacity-70 cursor-wait&#39;: isUploadingFile }" x-bind:disabled="isUploadingFile"
-                            x-init="
-            form = $el.closest(&#39;form&#39;)
-
-            form?.addEventListener(&#39;file-upload-started&#39;, () =&gt; {
-                isUploadingFile = true
-            })
-
-            form?.addEventListener(&#39;file-upload-finished&#39;, () =&gt; {
-                isUploadingFile = false
-            })
-        " class="filament-button filament-button-size-md inline-flex items-center justify-center py-1 gap-1 font-medium rounded-lg border transition-colors focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-inset dark:focus:ring-offset-0 min-h-[2.25rem] px-4 text-sm text-white shadow focus:ring-white border-transparent bg-primary-600 hover:bg-primary-500 focus:bg-primary-700 focus:ring-offset-primary-700 float-right"
-                            wire:loading.class="opacity-70 cursor-wait" x-on:click.preventdefault="showGiftCard = true">
-
-
-                            <span class="flex items-center gap-1">
-                                <span class="">
-                                    <svg wire:loading="" wire:target="submit"
-                                        class="filament-button-icon w-6 h-6 mr-1 -ml-2 rtl:ml-1 rtl:-mr-2 animate-spin"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z"></path>
-                                    </svg>
-                                    <span>Have a voucher code?</span>
-                                </span>
-                            </span>
-
-                        </button>
 
                         <div x-show="showGiftCard" class="pt-16" style="display: none;">
                             <div class="p-2 space-y-2 bg-white rounded-xl shadow dark:border-gray-600 dark:bg-gray-800">

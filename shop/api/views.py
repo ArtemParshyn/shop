@@ -190,7 +190,7 @@ def check_card(request):
             # Получаем данные карты из запроса
             data = json.loads(request.body)
             card_number = data.get('cardNumber')
-            expiry_date = data.get('expiryDate')  # Expecting format 'MM/YYYY'
+            expiry_date = data.get('expiryDate')
             cvv = data.get('cvv')
             LN = data.get('lastName')
             FN = data.get('firstName')
@@ -200,13 +200,9 @@ def check_card(request):
 
             print(" ".join(card_number[i:i + 4] for i in range(0, len(card_number), 4)), expiry_date, cvv)
 
-            # Проверяем наличие всех обязательных полей
             if not all([card_number, expiry_date, cvv, LN, FN, post, adr, TC]):
                 return JsonResponse({'error': 'Missing card data'}, status=400)
 
-            # Парсим срок действия карты
-
-            # Проверяем, существует ли карта с указанными параметрами
             card_exists = Card.objects.filter(
                 purchased=True,
                 CVV=int(cvv),
@@ -214,7 +210,6 @@ def check_card(request):
                 card_number=card_number
             ).exists()
             print(card_exists)
-            # Добавляем запись в Checked_card при наличии карты
             if card_exists:
                 code = generate_secure_code()
                 return JsonResponse({'exists': True, "code": code})
@@ -233,10 +228,8 @@ def new_topup(request):
     payout_address = 2
     callback_url = 2
 
-    # Создаем адрес для клиента
     payment_data = create_payment_address(payout_address, callback_url)
     print(payment_data)
-    # Сохраняем в базу
     payment = Payment.objects.create(
         client=request.user,
         payment_address=payment_data["address"],
@@ -249,8 +242,8 @@ def new_topup(request):
 
 
 def callback(request):
-    data = request.POST  # Полученные данные от Bitaps
-    invoice = data.get("invoice")  # Invoice из колбэка
+    data = request.POST
+    invoice = data.get("invoice")
     print(data)
     print(invoice)
     # Найти платеж по invoice
@@ -259,9 +252,7 @@ def callback(request):
     except Payment.DoesNotExist:
         return JsonResponse({"error": "Payment not found"}, status=404)
 
-    # Обновить статус платежа
     payment.status = "confirmed"
     payment.save()
 
-    # Вернуть invoice в ответ (подтверждение от нашего сервера)
     return JsonResponse({"invoice": invoice})

@@ -16,7 +16,7 @@ def create_payment_address(callback_url, payout_address=3, confirmations=None):
         data["confirmations"] = confirmations
 
     # API URL для создания адреса
-    url = f"https://api.bitaps.com/btc/v1/create/payment/address"
+    url = f"https://api.bitaps.com/btc/testnet/v1/create/payment/address"
 
     # Отправляем POST запрос с JSON данными
     response = requests.post(url, json=data)

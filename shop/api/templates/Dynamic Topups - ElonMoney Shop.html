@@ -89,7 +89,7 @@
 
 
 
-    <title>Dynamic Topups - ElonMoney Shop</title>
+    <title>Transaction History</title>
 
 
 
@@ -243,7 +243,7 @@
                             class="filament-header space-y-2 items-start justify-between sm:flex sm:space-y-0 sm:space-x-4  sm:rtl:space-x-reverse sm:py-4">
                             <div>
                                 <h1 class="filament-header-heading text-2xl font-bold tracking-tight">
-                                    Dynamic Topups
+                                   Transaction History
                                 </h1>
 
                             </div>
@@ -477,6 +477,7 @@
                                             wire:end.stop="reorderTable($event.target.sortable.toArray())"
                                             wire:sortable.options="{ animation: 100 }"
                                             class="divide-y whitespace-nowrap dark:divide-gray-700">
+                                            {% for order in orders %}
                                             <tr class="filament-tables-row transition"
                                                 wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33631" x-bind:class="{
                                     &#39;bg-gray-50 dark:bg-gray-500/10&#39;: isRecordSelected(&#39;33631&#39;),
@@ -501,7 +502,7 @@
                                                                 class="inline-flex items-center space-x-1 rtl:space-x-reverse">
 
                                                                 <span class="">
-                                                                    $ 0.00
+                                                                    $ {{order.amount}}
                                                                 </span>
 
                                                             </div>
@@ -522,7 +523,7 @@
                                                                 class="inline-flex items-center space-x-1 rtl:space-x-reverse">
 
                                                                 <span class="">
-                                                                    0.00000000 BTC
+                                                                    {{order.value}} BTC
                                                                 </span>
 
                                                             </div>
@@ -559,14 +560,25 @@
                                                     wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
                                                     <div class="filament-tables-column-wrapper">
                                                         <div class="filament-tables-badge-column flex px-4 py-3">
+                                                            {% if order.status == "pending"%}
                                                             <div
                                                                 class="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse min-h-6 px-2 py-0.5 text-sm font-medium tracking-tight rounded-xl whitespace-nowrap text-danger-700 bg-danger-500/10 dark:text-danger-500">
 
                                                                 <span>
-                                                                    Unconfirmed
+                                                                    {{order.status}}
                                                                 </span>
 
                                                             </div>
+                                                            {% else %}
+                                                            <div
+                                                                class="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse min-h-6 px-2 py-0.5 text-sm font-medium tracking-tight rounded-xl whitespace-nowrap text-success-700 bg-success-500/10 dark:text-success-500">
+
+                                                                <span>
+                                                                    {{order.status}}
+                                                                </span>
+
+                                                            </div>
+                                                            {% endif %}
                                                         </div>
 
                                                     </div>
@@ -583,7 +595,7 @@
                                                                 class="inline-flex items-center space-x-1 rtl:space-x-reverse">
 
                                                                 <span class="">
-                                                                    Sep 27, 2024
+                                                                    {{order.created_at|date:"Y-m-d"}}
                                                                 </span>
 
                                                             </div>
@@ -601,195 +613,13 @@
                                                     <div class="h-4 bg-gray-300 rounded-md dark:bg-gray-600"></div>
                                                 </td>
                                             </tr>
-
-                                            <tr class="filament-tables-row transition"
-                                                wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33630" x-bind:class="{
-                                    &#39;bg-gray-50 dark:bg-gray-500/10&#39;: isRecordSelected(&#39;33630&#39;),
-                                }">
-                                                <td
-                                                    class="filament-tables-reorder-cell w-4 px-4 whitespace-nowrap hidden">
-
-                                                </td>
+                                            {% endfor %}
 
 
-
-
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.amount"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div class="filament-tables-text-column px-4 py-3">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    $ 0.00
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.btc"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div class="filament-tables-text-column px-4 py-3">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    0.00000000 BTC
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.ticker"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div class="filament-tables-text-column px-4 py-3">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    BTC
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.status"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div class="filament-tables-badge-column flex px-4 py-3">
-                                                            <div
-                                                                class="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse min-h-6 px-2 py-0.5 text-sm font-medium tracking-tight rounded-xl whitespace-nowrap text-danger-700 bg-danger-500/10 dark:text-danger-500">
-
-                                                                <span>
-                                                                    Unconfirmed
-                                                                </span>
-
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-                                                <td class="filament-tables-cell dark:text-white"
-                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.record.33630.column.created_at"
-                                                    wire:loading.remove.delay="wire:loading.remove.delay"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="filament-tables-column-wrapper">
-                                                        <div class="filament-tables-text-column px-4 py-3">
-
-                                                            <div
-                                                                class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-
-                                                                <span class="">
-                                                                    Sep 27, 2024
-                                                                </span>
-
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-
-
-                                                <td class="w-full px-4 py-4 animate-pulse hidden" colspan="5"
-                                                    wire:loading.class.remove.delay="hidden"
-                                                    wire:key="QudXG1OyVbZhjpqhMrnC.table.records.33630.loading-cell"
-                                                    wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
-                                                    <div class="h-4 bg-gray-300 rounded-md dark:bg-gray-600"></div>
-                                                </td>
                                             </tr>
                                         </tbody>
 
                                     </table>
-                                </div>
-
-                                <div class="filament-tables-pagination-container p-2 border-t dark:border-gray-700">
-                                    <nav role="navigation" aria-label="Pagination Navigation"
-                                        class="filament-tables-pagination flex items-center justify-between">
-                                        <div class="flex justify-between items-center flex-1 lg:hidden">
-                                            <div class="w-10">
-                                            </div>
-
-                                            <div
-                                                class="flex items-center space-x-2 filament-tables-pagination-records-per-page-selector rtl:space-x-reverse">
-                                                <select wire:model="tableRecordsPerPage" id="tableRecordsPerPageSelect"
-                                                    class="h-8 text-sm pr-8 leading-none transition duration-75 border-gray-300 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 dark:text-white dark:bg-gray-700 dark:border-gray-600 dark:focus:border-primary-500">
-                                                    <option value="5">5</option>
-                                                    <option value="10">10</option>
-                                                    <option value="25">25</option>
-                                                    <option value="50">50</option>
-                                                    <option value="-1">All</option>
-                                                </select>
-
-                                                <label for="tableRecordsPerPageSelect"
-                                                    class="text-sm font-medium dark:text-white">
-                                                    per page
-                                                </label>
-                                            </div>
-
-                                            <div class="w-10">
-                                            </div>
-                                        </div>
-
-                                        <div class="hidden flex-1 items-center lg:grid grid-cols-3">
-                                            <div class="flex items-center">
-                                                <div class="pl-2 text-sm font-medium dark:text-white">
-                                                    Showing 1 to 2 of 2 results
-                                                </div>
-                                            </div>
-
-                                            <div class="flex items-center justify-center">
-                                                <div
-                                                    class="flex items-center space-x-2 filament-tables-pagination-records-per-page-selector rtl:space-x-reverse">
-                                                    <select wire:model="tableRecordsPerPage"
-                                                        id="tableRecordsPerPageSelect"
-                                                        class="h-8 text-sm pr-8 leading-none transition duration-75 border-gray-300 rounded-lg shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-inset focus:ring-primary-500 dark:text-white dark:bg-gray-700 dark:border-gray-600 dark:focus:border-primary-500">
-                                                        <option value="5">5</option>
-                                                        <option value="10">10</option>
-                                                        <option value="25">25</option>
-                                                        <option value="50">50</option>
-                                                        <option value="-1">All</option>
-                                                    </select>
-
-                                                    <label for="tableRecordsPerPageSelect"
-                                                        class="text-sm font-medium dark:text-white">
-                                                        per page
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex items-center justify-end">
-                                            </div>
-                                        </div>
-                                    </nav>
                                 </div>
                             </div>
 

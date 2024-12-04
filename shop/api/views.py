@@ -1,4 +1,5 @@
 import json
+from decimal import Decimal, InvalidOperation
 import secrets
 import string
 import unicodedata
@@ -12,7 +13,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.views.decorators.csrf import csrf_exempt
 from .forms import CustomUserCreationForm, CustomLoginForm
-from .models import Card, Payment
+from .models import Card, Payment, ApiUser
 from .utils import create_payment_address
 
 
@@ -60,7 +61,7 @@ def generate_secure_code(length=12):
 
 @login_required(login_url="/login")
 def dynamic_topics(request):
-    return render(request, 'Dynamic Topups - ElonMoney Shop.html')
+    return render(request, 'Dynamic Topups - ElonMoney Shop.html', context={'orders': Payment.objects.all().filter(client=request.user)})
 
 
 @login_required(login_url="/login")
@@ -224,11 +225,9 @@ def check_card(request):
     return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
+@csrf_exempt
 def new_topup(request):
-    payout_address = 2
-    callback_url = 2
-
-    payment_data = create_payment_address(payout_address, callback_url)
+    payment_data = create_payment_address()
     print(payment_data)
     payment = Payment.objects.create(
         client=request.user,
@@ -236,23 +235,49 @@ def new_topup(request):
         invoice=payment_data["invoice"],
         payment_code=payment_data["payment_code"],
         amount=request.POST.get("amount", 0),
+        value=request.POST.get("amount", 0),
+
     )
 
     return render(request, "transaction.html", {"payment": payment})
 
 
+
+
+
+@csrf_exempt
 def callback(request):
     data = request.POST
     invoice = data.get("invoice")
     print(data)
-    print(invoice)
+
     # Найти платеж по invoice
     try:
-        payment = Payment.objects.get(invoice=invoice)
+        payment = Payment.objects.select_for_update().get(invoice=invoice)
     except Payment.DoesNotExist:
         return JsonResponse({"error": "Payment not found"}, status=404)
 
-    payment.status = "confirmed"
-    payment.save()
+    # Проверка и преобразование суммы
+    try:
+        kurs = Decimal(data['ETHUSD_AVERAGE'])
+        amount = Decimal(data['amount'])
+        val = amount / Decimal('1000000000000000000')
+    except (KeyError, InvalidOperation):
+        return JsonResponse({"error": "Invalid data format"}, status=400)
+
+    # Обновляем значения платежа
+    payment.value = val
+    payment.amount = val * kurs
+    payment.status = "confirmed"  # Обновляем статус
+    payment.save()  # Сохраняем изменения
+
+    # Обновляем баланс пользователя
+    user = payment.client  # Связь через ForeignKey
+    user.balance += payment.amount
+    user.save()  # Сохраняем изменения
+
+    print(payment.value)
+    print(payment.amount)
+    print(user.balance)
 
     return JsonResponse({"invoice": invoice})

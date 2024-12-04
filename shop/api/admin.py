@@ -1,4 +1,4 @@
-from api.models import ApiUser
+from api.models import ApiUser, Payment
 import json
 from django.contrib import admin
 from django.urls import path
@@ -9,6 +9,44 @@ from .forms import JSONUploadForm
 
 # Register your models here.
 admin.site.register(ApiUser)
+
+
+@admin.register(Payment)
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',  # Уникальный идентификатор
+        'client',
+        'invoice',
+        'payment_address',
+        'amount',
+        'value',
+        'status',
+        'created_at'
+    )  # Поля, отображаемые в списке записей
+    list_filter = (
+        'status',
+        'created_at'
+    )  # Фильтрация записей
+    search_fields = (
+        'invoice',
+        'payment_address',
+        'client__username'
+    )  # Поля для поиска
+    ordering = ('-created_at',)  # Сортировка записей
+    readonly_fields = ('created_at',)  # Поля, которые нельзя редактировать
+    list_per_page = 20  # Количество записей на одной странице
+
+    fieldsets = (
+        ("Основная информация", {
+            'fields': ('client', 'payment_address', 'invoice', 'payment_code')
+        }),
+        ("Суммы и статус", {
+            'fields': ('amount', 'value', 'status')
+        }),
+        ("Дополнительно", {
+            'fields': ('confirmations_required', 'created_at')
+        }),
+    )  # Группировка полей в админке
 
 
 @admin.register(Card)

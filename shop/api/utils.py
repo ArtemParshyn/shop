@@ -1,16 +1,16 @@
 import requests
 
 
-def create_payment_address(callback_url, payout_address=3, confirmations=None):
+def create_payment_address(confirmations=None):
     data = {
-        "forwarding_address": "bc1qdhu5w865s0hcm4akzeqw3yxqlhf2l600y2ktkrmdeezvhcqjashs7p4h6j",
-        "callback_link": "https://a57e-178-155-5-216.ngrok-free.app/topup/callback"
+        "forwarding_address": "0x8BF1DB45Dcf0CA738D599b8e6b9906ABE9634118",
+        "callback_link": "https://0162-178-155-5-216.ngrok-free.app/topup/callback"
     }
 
     if confirmations:
         data["confirmations"] = confirmations
 
-    url = f"https://api.bitaps.com/btc/testnet/v1/create/payment/address"
+    url = f"https://api.bitaps.com/eth/testnet/v1/create/payment/address"
 
     response = requests.post(url, json=data)
 

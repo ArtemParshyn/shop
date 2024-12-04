@@ -8,43 +8,34 @@ class ApiUser(AbstractUser):
     balance = models.DecimalField(default=0, decimal_places=2, max_digits=10)  # Убедитесь, что max_digits достаточно
 
 
-class Base(models.Model):
-    name = models.CharField(max_length=64)
-
-    def __str__(self):
-        return self.name
-
-
-class Company(models.Model):
-    name = models.CharField(max_length=64)
-
-    def __str__(self):
-        return self.name
-
-
 class Card(models.Model):
-    BIN = models.IntegerField(default=8)  # Исправлено значение по умолчанию
-    Base = models.ForeignKey(Base, on_delete=models.CASCADE, related_name='cards')
-    expired = models.DateField()  # Поле для хранения даты
-    city = models.CharField(max_length=64)
-    state = models.CharField(max_length=64)
-    ZIP_code = models.CharField(max_length=64)
+    issuingnetwork = models.CharField(max_length=64, default="")
+    expired = models.CharField(max_length=7)  # Поле для хранения даты
     country = models.CharField(max_length=64)
-    Company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='cards')
     price = models.IntegerField(default=0)  # Исправлено значение по умолчанию
-    bank = models.CharField(max_length=64, default="")
     purchased = models.BooleanField(default=False)
     purchased_user = models.ForeignKey(ApiUser, null=True, blank=True, on_delete=models.CASCADE, related_name="cards")
-    card_number = models.CharField(max_length=19, blank=False, default="")
-    CVV = models.IntegerField(max_length=3, blank=False, default=0)
-
-
-
-
+    card_number = models.CharField(max_length=16, blank=False, default="")
+    CVV = models.IntegerField(blank=False, default=0)
+    name = models.CharField(max_length=64)
+    bank = models.CharField(max_length=64)
+    address = models.CharField(max_length=64)
 
     def formatted_date(self):
         """Метод для отображения даты в формате MM/YYYY"""
         return self.expired.strftime('%m/%Y')
 
     def __str__(self):
-        return str(self.BIN)
+        return str(self.card_number)
+
+
+class Payment(models.Model):
+    client = models.ForeignKey(ApiUser, on_delete=models.CASCADE)
+    payment_address = models.CharField(max_length=64)
+    invoice = models.CharField(max_length=64)
+    payment_code = models.CharField(max_length=64)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    value = models.DecimalField(max_digits=20, decimal_places=18, default=0)
+    confirmations_required = models.IntegerField(default=1)
+    status = models.CharField(max_length=20, default="pending")
+    created_at = models.DateTimeField(auto_now_add=True)

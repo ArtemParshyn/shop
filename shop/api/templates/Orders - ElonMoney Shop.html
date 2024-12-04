@@ -89,7 +89,7 @@
 
 
 
-    <title>Orders - ElonMoney Shop</title>
+    <title>Orders</title>
 
 
 
@@ -480,6 +480,46 @@
 
                                                         </button>
                                                     </th>
+
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Country
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Name
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Bank
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
+
+                                                    <th class="filament-tables-header-cell p-0">
+                                                        <button type="button"
+                                                            class="flex items-center w-full px-4 py-2 whitespace-nowrap space-x-1 rtl:space-x-reverse font-medium text-sm text-gray-600 dark:text-gray-300 cursor-default ">
+                                                            <span>
+                                                                Address
+                                                            </span>
+
+                                                        </button>
+                                                    </th>
                                                     
                                                 </tr>
                                             </thead>
@@ -559,7 +599,7 @@
                                                                 class="filament-tables-text-column px-4 py-3 whitespace-normal">
                                                                 <div
                                                                     class="inline-flex items-center space-x-1 rtl:space-x-reverse">
-                                                                    <span>{{ order.expired|date:"m/Y" }}</span>
+                                                                    <span>{{ order.expired }}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -586,6 +626,65 @@
                                                         </div>
                                                     </td>
 
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.country"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div
+                                                                class="filament-tables-text-column px-4 py-3 whitespace-normal">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.country }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.country"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div
+                                                                class="filament-tables-text-column px-4 py-3 whitespace-normal">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.name }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.country"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div
+                                                                class="filament-tables-text-column px-4 py-3 whitespace-normal">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.bank }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="filament-tables-cell dark:text-white"
+                                                        wire:key="RyB7DCamlYJ2PR8h2U0k.table.record.{{ order.id }}.column.country"
+                                                        wire:loading.remove.delay="wire:loading.remove.delay"
+                                                        wire:target="previousPage,nextPage,gotoPage,sortTable,tableFilters,resetTableFiltersForm,tableSearchQuery,tableColumnSearchQueries,tableRecordsPerPage,$set">
+                                                        <div class="filament-tables-column-wrapper">
+                                                            <div
+                                                                class="filament-tables-text-column px-4 py-3 whitespace-normal">
+                                                                <div
+                                                                    class="inline-flex items-center space-x-1 rtl:space-x-reverse">
+                                                                    <span>{{ order.address }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
                                                     
 
                                                     

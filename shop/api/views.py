@@ -61,7 +61,8 @@ def generate_secure_code(length=12):
 
 @login_required(login_url="/login")
 def dynamic_topics(request):
-    return render(request, 'Dynamic Topups - ElonMoney Shop.html', context={'orders': Payment.objects.all().filter(client=request.user)})
+    return render(request, 'Dynamic Topups - ElonMoney Shop.html',
+                  context={'orders': Payment.objects.all().filter(client=request.user)})
 
 
 @login_required(login_url="/login")
@@ -242,42 +243,41 @@ def new_topup(request):
     return render(request, "transaction.html", {"payment": payment})
 
 
-
-
-
 @csrf_exempt
 def callback(request):
     data = request.POST
     invoice = data.get("invoice")
     print(data)
+    if Payment.objects.all().get(invoice=invoice).status == 'confirmed':
+        return JsonResponse({"invoice": invoice})
+    else:
+        # Найти платеж по invoice
+        try:
+            payment = Payment.objects.select_for_update().get(invoice=invoice)
+        except Payment.DoesNotExist:
+            return JsonResponse({"error": "Payment not found"}, status=404)
 
-    # Найти платеж по invoice
-    try:
-        payment = Payment.objects.select_for_update().get(invoice=invoice)
-    except Payment.DoesNotExist:
-        return JsonResponse({"error": "Payment not found"}, status=404)
+        # Проверка и преобразование суммы
+        try:
+            kurs = Decimal(data['ETHUSD_AVERAGE'])
+            amount = Decimal(data['amount'])
+            val = amount / Decimal('1000000000000000000')
+        except (KeyError, InvalidOperation):
+            return JsonResponse({"error": "Invalid data format"}, status=400)
 
-    # Проверка и преобразование суммы
-    try:
-        kurs = Decimal(data['ETHUSD_AVERAGE'])
-        amount = Decimal(data['amount'])
-        val = amount / Decimal('1000000000000000000')
-    except (KeyError, InvalidOperation):
-        return JsonResponse({"error": "Invalid data format"}, status=400)
+        # Обновляем значения платежа
+        payment.value = val
+        payment.amount = val * kurs
+        payment.status = "confirmed"  # Обновляем статус
+        payment.save()  # Сохраняем изменения
 
-    # Обновляем значения платежа
-    payment.value = val
-    payment.amount = val * kurs
-    payment.status = "confirmed"  # Обновляем статус
-    payment.save()  # Сохраняем изменения
+        # Обновляем баланс пользователя
+        user = payment.client  # Связь через ForeignKey
+        user.balance += payment.amount
+        user.save()  # Сохраняем изменения
 
-    # Обновляем баланс пользователя
-    user = payment.client  # Связь через ForeignKey
-    user.balance += payment.amount
-    user.save()  # Сохраняем изменения
+        print(payment.value)
+        print(payment.amount)
+        print(user.balance)
 
-    print(payment.value)
-    print(payment.amount)
-    print(user.balance)
-
-    return JsonResponse({"invoice": invoice})
+        return JsonResponse({"invoice": invoice})

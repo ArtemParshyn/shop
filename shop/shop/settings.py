@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://0162-178-155-5-216.ngrok-free.app',  # Ваш ngrok-домен
+    'https://ebbd-178-155-5-216.ngrok-free.app',  # Ваш ngrok-домен
 ]
 WSGI_APPLICATION = 'shop.wsgi.application'
 

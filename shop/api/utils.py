@@ -4,7 +4,7 @@ import requests
 def create_payment_address(confirmations=None):
     data = {
         "forwarding_address": "0x8BF1DB45Dcf0CA738D599b8e6b9906ABE9634118",
-        "callback_link": "https://0162-178-155-5-216.ngrok-free.app/topup/callback"
+        "callback_link": "https://ebbd-178-155-5-216.ngrok-free.app/topup/callback"
     }
 
     if confirmations:
